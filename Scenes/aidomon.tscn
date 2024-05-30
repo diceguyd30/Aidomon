@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://c2vm0dawqcebo"]
+[gd_scene load_steps=4 format=3 uid="uid://c2vm0dawqcebo"]
+
+[ext_resource type="Shader" path="res://scenes/h_scroll.gdshader" id="1_462i7"]
+[ext_resource type="Texture2D" uid="uid://cqvkkxkuwwch2" path="res://assets/images/backgrounds/meadow_background.png" id="2_karch"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ru7lo"]
+shader = ExtResource("1_462i7")
 
 [node name="Aidomon" type="Control"]
 layout_mode = 3
@@ -7,3 +13,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ru7lo")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -52.0
+offset_right = 52.0
+offset_bottom = 243.0
+grow_horizontal = 2
+texture = ExtResource("2_karch")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_right = 71.0
+offset_bottom = 23.0
+text = "Aidomon"
