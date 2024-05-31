@@ -101,13 +101,12 @@ texture = ExtResource("2_karch")
 stretch_mode = 2
 
 [node name="ice_pixie" type="AnimatedSprite2D" parent="PanelContainer/TextureRect"]
-texture_filter = 1
 position = Vector2(498.381, 113.291)
 scale = Vector2(3.09375, 3.09375)
 sprite_frames = SubResource("SpriteFrames_602qd")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.816106
+frame_progress = 0.97926
 
 [node name="ice_pixie_area" type="Area2D" parent="PanelContainer/TextureRect/ice_pixie"]
 script = ExtResource("4_dsg5l")
