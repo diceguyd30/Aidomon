@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://0mnsjwh4dq73"]
+
+[ext_resource type="Shader" path="res://shaders/h_scroll.gdshader" id="1_0q6ks"]
+[ext_resource type="Texture2D" uid="uid://cqvkkxkuwwch2" path="res://assets/images/backgrounds/meadow_background.png" id="1_cycwo"]
+[ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="2_ct7eb"]
+[ext_resource type="Script" path="res://scripts/ice_pixie_area.gd" id="3_yc8m1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rfjd6"]
+shader = ExtResource("1_0q6ks")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogjtj"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xph4"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2kul"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbe3p"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfu3l"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixkm2"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orna2"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f5of"]
+atlas = ExtResource("2_ct7eb")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e87nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogjtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xph4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2kul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbe3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfu3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orna2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f5of")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ecun"]
+radius = 9.90858
+
+[node name="Wilderness" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_rfjd6")
+offset_left = 4.0
+offset_top = -5.0
+offset_right = 2028.0
+offset_bottom = 238.0
+texture = ExtResource("1_cycwo")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="ice_pixie" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(381, 119)
+scale = Vector2(3.09375, 3.09375)
+sprite_frames = SubResource("SpriteFrames_e87nu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="ice_pixie_area" type="Area2D" parent="Background/ice_pixie"]
+script = ExtResource("3_yc8m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ice_pixie/ice_pixie_area"]
+position = Vector2(2.10101, 4.68687)
+shape = SubResource("CircleShape2D_1ecun")
+
+[connection signal="input_event" from="Background/ice_pixie/ice_pixie_area" to="Background/ice_pixie/ice_pixie_area" method="_on_input_event"]
