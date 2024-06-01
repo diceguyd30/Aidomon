@@ -79,17 +79,17 @@ radius = 9.90858
 
 [node name="Background" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_rfjd6")
-offset_left = 4.0
-offset_top = -5.0
-offset_right = 2028.0
-offset_bottom = 238.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 2567.0
+offset_bottom = 244.0
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_cycwo")
 stretch_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="ice_pixie" type="AnimatedSprite2D" parent="Background"]
-position = Vector2(381, 119)
-scale = Vector2(3.09375, 3.09375)
+position = Vector2(393, 95)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_e87nu")
 animation = &"idle"
 autoplay = "idle"
