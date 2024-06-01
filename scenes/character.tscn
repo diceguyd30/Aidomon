@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://cvx5dp4tu6gem"]
+
+[ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="1_wmlhh"]
+[ext_resource type="Script" path="res://scripts/ice_pixie_area.gd" id="2_7bn5k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogjtj"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xph4"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2kul"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbe3p"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfu3l"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixkm2"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orna2"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f5of"]
+atlas = ExtResource("1_wmlhh")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh6ks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogjtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xph4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2kul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbe3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfu3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orna2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f5of")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfajl"]
+radius = 9.90858
+
+[node name="Character" type="Node2D"]
+
+[node name="ice_pixie" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bh6ks")
+animation = &"idle"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.0493009
+
+[node name="ice_pixie_area" type="Area2D" parent="ice_pixie"]
+script = ExtResource("2_7bn5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ice_pixie/ice_pixie_area"]
+position = Vector2(2, 5.75)
+shape = SubResource("CircleShape2D_yfajl")
+
+[connection signal="input_event" from="ice_pixie/ice_pixie_area" to="ice_pixie/ice_pixie_area" method="_on_input_event"]
