@@ -1,11 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvx5dp4tu6gem"]
+[gd_scene load_steps=14 format=3 uid="uid://cvx5dp4tu6gem"]
 
-[ext_resource type="Shader" path="res://shaders/h_scroll.gdshader" id="1_kd4m7"]
 [ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="1_wmlhh"]
 [ext_resource type="Script" path="res://scripts/ice_pixie_area.gd" id="2_7bn5k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yymjm"]
-shader = ExtResource("1_kd4m7")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogjtj"]
 atlas = ExtResource("1_wmlhh")
