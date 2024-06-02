@@ -12,10 +12,8 @@ shader = ExtResource("1_0q6ks")
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_rfjd6")
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 2567.0
-offset_bottom = 244.0
+offset_right = 640.0
+offset_bottom = 243.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_cycwo")
 stretch_mode = 1

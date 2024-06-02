@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2vm0dawqcebo"]
+[gd_scene load_steps=3 format=3 uid="uid://c2vm0dawqcebo"]
 
 [ext_resource type="PackedScene" uid="uid://0mnsjwh4dq73" path="res://scenes/wilderness.tscn" id="1_btl23"]
+[ext_resource type="Theme" uid="uid://nnrgm2jq378b" path="res://theme.tres" id="2_3hurb"]
 
 [node name="Aidomon" type="Control"]
 clip_contents = true
@@ -17,10 +18,22 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Wilderness" parent="HBoxContainer" instance=ExtResource("1_btl23")]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-offset_right = 71.0
-offset_bottom = 23.0
-text = "Aidomon"
+[node name="Wilderness" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_btl23")]
+position = Vector2(136, -1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="BaseActionGrid" type="GridContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="InventoryBtn" type="Button" parent="HBoxContainer/VBoxContainer2/BaseActionGrid"]
+layout_mode = 2
+theme = ExtResource("2_3hurb")
+text = "Inventory"
+
+[node name="BaseActionPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
