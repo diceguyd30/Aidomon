@@ -17,5 +17,4 @@ func get_offscreen_spawnpoint() -> Vector2:
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	var screensize = get_viewport().size
-	print(screensize)
 	return Vector2(screensize.x * 2 + distance_spawned_offscreen, randi_range(0 + 50, background.size.y - 50))
