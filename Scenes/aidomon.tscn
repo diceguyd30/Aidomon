@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2vm0dawqcebo"]
+[gd_scene load_steps=5 format=3 uid="uid://c2vm0dawqcebo"]
 
 [ext_resource type="PackedScene" uid="uid://0mnsjwh4dq73" path="res://scenes/wilderness.tscn" id="1_btl23"]
-[ext_resource type="Theme" uid="uid://nnrgm2jq378b" path="res://theme.tres" id="2_3hurb"]
+[ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vs2xj"]
+[ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="3_4t1hq"]
+
+[sub_resource type="Theme" id="Theme_8tpyg"]
+Fonts/fonts/default = ExtResource("3_4t1hq")
 
 [node name="Aidomon" type="Control"]
 clip_contents = true
@@ -12,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_vs2xj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -32,7 +37,7 @@ layout_mode = 2
 
 [node name="InventoryBtn" type="Button" parent="HBoxContainer/VBoxContainer2/BaseActionGrid"]
 layout_mode = 2
-theme = ExtResource("2_3hurb")
+theme = SubResource("Theme_8tpyg")
 text = "Inventory"
 
 [node name="BaseActionPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer2"]
