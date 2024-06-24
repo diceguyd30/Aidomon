@@ -1,0 +1,5 @@
+class_name Creature
+extends Resource
+
+@export var id: int
+@export var name: String
