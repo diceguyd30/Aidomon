@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://hf0gmab02eev"
+path="res://.godot/imported/capture_disc.aseprite-7e309e95483624637cc5324f3f1d6d71.res"
+
+[deps]
+
+source_file="res://assets/images/items/capture_disc.aseprite"
+dest_files=["res://.godot/imported/capture_disc.aseprite-7e309e95483624637cc5324f3f1d6d71.res"]
+
+[params]
+
