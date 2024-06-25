@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=2 format=3 uid="uid://cvirmlwpd31x"]
+[gd_resource type="Resource" script_class="Biome" load_steps=6 format=3 uid="uid://cvirmlwpd31x"]
 
 [ext_resource type="Script" path="res://resources/biomes/biome.gd" id="1_30yfx"]
+[ext_resource type="Texture2D" uid="uid://c248j2r1y0fpv" path="res://assets/images/backgrounds/meadow.png" id="1_griyq"]
+[ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="2_x4x11"]
+[ext_resource type="Resource" uid="uid://crc5mqk3kesya" path="res://resources/items/environment/rock.tres" id="3_ymd3m"]
+[ext_resource type="Resource" uid="uid://d0lasf3n7g662" path="res://resources/items/environment/aidonium_crystal.tres" id="4_n2383"]
 
 [resource]
 script = ExtResource("1_30yfx")
-id = 0
-name = ""
-environment_items = Array[Resource("res://resources/items/environment/environment_item.gd")]([])
+id = 1
+name = "Starting"
+background = ExtResource("1_griyq")
+environment_items = Array[Resource("res://resources/items/environment/environment_item.gd")]([ExtResource("2_x4x11"), ExtResource("3_ymd3m"), ExtResource("4_n2383")])

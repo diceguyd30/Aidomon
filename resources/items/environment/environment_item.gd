@@ -4,4 +4,4 @@ extends Resource
 @export var id: int
 @export var name: String
 @export var icon: Texture
-@export var reward: Item
+@export var reward: ItemBundle

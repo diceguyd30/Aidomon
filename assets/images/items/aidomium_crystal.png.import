@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2fymf5mxqamd"
-path="res://.godot/imported/stone.png-2664f55c616a7cf7ca9ef4f1dd3a39f0.ctex"
+uid="uid://cys8d84emkk23"
+path="res://.godot/imported/aidomium_crystal.png-b108a9f8fe2a7e1189c64d7d5495e8b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/stone.png"
-dest_files=["res://.godot/imported/stone.png-2664f55c616a7cf7ca9ef4f1dd3a39f0.ctex"]
+source_file="res://assets/images/items/aidomium_crystal.png"
+dest_files=["res://.godot/imported/aidomium_crystal.png-b108a9f8fe2a7e1189c64d7d5495e8b1.ctex"]
 
 [params]
 

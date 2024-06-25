@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnvironmentItem" load_steps=8 format=3 uid="uid://crc5mqk3kesya"]
+
+[ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/rock.png" id="1_s3puo"]
+[ext_resource type="Script" path="res://resources/items/environment/environment_item.gd" id="1_x0uyt"]
+[ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="2_mvgt8"]
+[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_lh6u4"]
+[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_cjxb6"]
+
+[sub_resource type="Resource" id="Resource_v1h3j"]
+script = ExtResource("3_lh6u4")
+item = ExtResource("2_mvgt8")
+count = 3
+
+[sub_resource type="Resource" id="Resource_6qo72"]
+script = ExtResource("4_cjxb6")
+item_list = Array[ExtResource("3_lh6u4")]([SubResource("Resource_v1h3j")])
+
+[resource]
+script = ExtResource("1_x0uyt")
+id = 2
+name = "Rock"
+icon = ExtResource("1_s3puo")
+reward = SubResource("Resource_6qo72")

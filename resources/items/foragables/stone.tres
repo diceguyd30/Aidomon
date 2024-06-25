@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b0flrrw1r5c5h"]
 
-[ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/stone.png" id="1_q8jxc"]
-[ext_resource type="Script" path="res://resources/items/item.gd" id="2_yh0k8"]
+[ext_resource type="Texture2D" uid="uid://c2fymf5mxqamd" path="res://assets/images/items/stone.png" id="1_4pnvu"]
+[ext_resource type="Script" path="res://resources/items/item.gd" id="2_yfrlv"]
 
 [resource]
-script = ExtResource("2_yh0k8")
+script = ExtResource("2_yfrlv")
 id = 2
 name = "Stone"
-icon = ExtResource("1_q8jxc")
+icon = ExtResource("1_4pnvu")

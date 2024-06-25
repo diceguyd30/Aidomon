@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2fymf5mxqamd"
-path="res://.godot/imported/stone.png-2664f55c616a7cf7ca9ef4f1dd3a39f0.ctex"
+uid="uid://c248j2r1y0fpv"
+path="res://.godot/imported/meadow.png-a524fcfd3fc83be7158b6329101445ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/stone.png"
-dest_files=["res://.godot/imported/stone.png-2664f55c616a7cf7ca9ef4f1dd3a39f0.ctex"]
+source_file="res://assets/images/backgrounds/meadow.png"
+dest_files=["res://.godot/imported/meadow.png-a524fcfd3fc83be7158b6329101445ba.ctex"]
 
 [params]
 
