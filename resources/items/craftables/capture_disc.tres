@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bljj1kb67qkhk"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bljj1kb67qkhk"]
 
-[ext_resource type="Script" path="res://resources/items/item.gd" id="1_04uyf"]
+[ext_resource type="Texture2D" uid="uid://dhpsrgqg4qg6t" path="res://assets/images/items/capture_disc.png" id="1_aem63"]
+[ext_resource type="Script" path="res://resources/items/item.gd" id="2_y6tg4"]
 
 [resource]
-script = ExtResource("1_04uyf")
-id = 0
-name = ""
+script = ExtResource("2_y6tg4")
+id = 4
+name = "CD"
+icon = ExtResource("1_aem63")
