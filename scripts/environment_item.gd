@@ -8,16 +8,16 @@ const ENVIRONMENT_ITEM: PackedScene = preload("res://scenes/environment_item.tsc
 
 var environment_item_data: EnvironmentItemData
 
-func _ready():
-	sprite_2d.texture = environment_item_data.icon
-		
 static func create_with_data(environment_item_data_: EnvironmentItemData) -> EnvironmentItem:
 	var item: EnvironmentItem = ENVIRONMENT_ITEM.instantiate()
 	item.environment_item_data = environment_item_data_
 	return item
 
-func _on_sprite_clicked():
+func _ready() -> void:
+	sprite_2d.texture = environment_item_data.icon
+
+func _on_sprite_clicked() -> void:
 	emit_signal("item_collected", environment_item_data.reward)
 	environment_item_data.reward.item_list.map(
-		func(x: ItemStack): print("Rewarding player with " + str(x.count)  + " " + x.item.name))
+		func(x: ItemStack): print("Rewarding player with %d %s" % [x.count, x.item.name]))
 	queue_free()
