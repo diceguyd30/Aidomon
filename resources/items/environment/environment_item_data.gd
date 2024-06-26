@@ -1,4 +1,4 @@
-class_name EnvironmentItem
+class_name EnvironmentItemData
 extends Resource
 
 @export var id: int

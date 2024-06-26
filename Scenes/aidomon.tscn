@@ -27,7 +27,7 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="Wilderness" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_btl23")]
-position = Vector2(136, -1)
+position = Vector2(363, 130)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2

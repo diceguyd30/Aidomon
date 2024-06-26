@@ -11,4 +11,4 @@ script = ExtResource("1_30yfx")
 id = 1
 name = "Starting"
 background = ExtResource("1_griyq")
-environment_items = Array[Resource("res://resources/items/environment/environment_item.gd")]([ExtResource("2_x4x11"), ExtResource("3_ymd3m"), ExtResource("4_n2383")])
+environment_items = Array[Resource("res://resources/items/environment/environment_item_data.gd")]([ExtResource("2_x4x11"), ExtResource("3_ymd3m"), ExtResource("4_n2383")])

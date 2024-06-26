@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="EnvironmentItem" load_steps=8 format=3 uid="uid://crc5mqk3kesya"]
+[gd_resource type="Resource" script_class="EnvironmentItemData" load_steps=8 format=3 uid="uid://crc5mqk3kesya"]
 
 [ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/rock.png" id="1_s3puo"]
-[ext_resource type="Script" path="res://resources/items/environment/environment_item.gd" id="1_x0uyt"]
+[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="1_x0uyt"]
 [ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="2_mvgt8"]
 [ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_lh6u4"]
 [ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_cjxb6"]
