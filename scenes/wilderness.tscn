@@ -1,28 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://0mnsjwh4dq73"]
+[gd_scene load_steps=2 format=3 uid="uid://c0m0ny8o6ha0d"]
 
-[ext_resource type="Shader" path="res://shaders/h_scroll.gdshader" id="1_0q6ks"]
-[ext_resource type="Texture2D" uid="uid://cqvkkxkuwwch2" path="res://assets/images/backgrounds/meadow_background.png" id="1_cycwo"]
-[ext_resource type="Script" path="res://scripts/TerrainGenerator.gd" id="4_wpky5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rfjd6"]
-shader = ExtResource("1_0q6ks")
+[ext_resource type="Script" path="res://scripts/wilderness.gd" id="1_exxwh"]
 
 [node name="Wilderness" type="Node2D"]
+script = ExtResource("1_exxwh")
 
 [node name="Background" type="TextureRect" parent="."]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_rfjd6")
-offset_right = 640.0
-offset_bottom = 243.0
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_cycwo")
-stretch_mode = 1
+custom_minimum_size = Vector2(228, 210)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 228.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+expand_mode = 1
 
-[node name="TerrainGenerator" type="Node" parent="Background"]
-script = ExtResource("4_wpky5")
-
-[node name="Timer" type="Timer" parent="Background/TerrainGenerator"]
-wait_time = 10.0
-autostart = true
-
-[connection signal="timeout" from="Background/TerrainGenerator/Timer" to="Background/TerrainGenerator" method="_on_timer_timeout"]
+[node name="Timer" type="Timer" parent="."]
