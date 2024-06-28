@@ -35,14 +35,16 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -620.0
+offset_bottom = -340.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i8p30")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 20.0
+offset_bottom = 20.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_y7ftk")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -53,6 +55,7 @@ theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
 [node name="Panel" type="Panel" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fvmpl")
 
@@ -60,8 +63,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fvmpl")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stretch_mode = 2
 
-[node name="ItemCountLabel" type="Label" parent="PanelContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 2
+
+[node name="ItemCountLabel" type="Label" parent="PanelContainer/MarginContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8

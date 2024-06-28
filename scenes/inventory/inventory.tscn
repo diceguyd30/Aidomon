@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scenes/inventory/inventory.gd" id="1_of7m6"]
 
 [node name="Inventory" type="Control"]
-custom_minimum_size = Vector2(160, 300)
+custom_minimum_size = Vector2(145, 300)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -480.0
+offset_right = -495.0
 offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -32,6 +32,6 @@ layout_mode = 2
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
-columns = 4
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 9
+columns = 5

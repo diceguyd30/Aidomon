@@ -15,7 +15,7 @@ func _on_timer_timeout() -> void:
 	var item: EnvironmentItem = EnvironmentItem.create_with_data(_get_environment_item())
 	item.position = _get_spawnpoint()
 	background.add_child(item)
-	timer.wait_time = randi_range(8, 20)
+	timer.wait_time = randi_range(5, 10)
 
 func _get_environment_item() -> EnvironmentItemData:
 	return biome_data.environment_items.pick_random()
