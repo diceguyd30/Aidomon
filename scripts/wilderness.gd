@@ -21,6 +21,6 @@ func _get_environment_item() -> EnvironmentItemData:
 	return biome_data.environment_items.pick_random()
 
 func _get_spawnpoint() -> Vector2:
-	var x = randi_range(0 + edge_buffer, int(background.size.x) - edge_buffer)
-	var y = randi_range(0 + edge_buffer, int(background.size.y) - edge_buffer)
+	var x: int = randi_range(0 + edge_buffer, int(background.size.x) - edge_buffer)
+	var y: int = randi_range(0 + edge_buffer, int(background.size.y) - edge_buffer)
 	return Vector2(x, y)
