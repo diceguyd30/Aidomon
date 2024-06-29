@@ -15,4 +15,5 @@ static func create_with_data(item_stack_: ItemStack) -> InventorySlot:
 
 func _ready() -> void:
 	inventory_icon.texture = self.item_stack.item.icon
-	item_count_label.text = str(self.item_stack.count)
+	var item_count: int = self.item_stack.count
+	item_count_label.text = str(item_count) if item_count > 0 else ""

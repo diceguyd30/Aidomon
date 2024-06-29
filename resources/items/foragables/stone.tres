@@ -8,3 +8,4 @@ script = ExtResource("2_yfrlv")
 id = 2
 name = "Stone"
 icon = ExtResource("1_4pnvu")
+max_stack_size = 10
