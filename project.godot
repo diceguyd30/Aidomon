@@ -17,7 +17,6 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 [autoload]
 
 GameSignals="*res://game_signals.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [debug]
 
@@ -39,10 +38,6 @@ window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [input]
 
