@@ -7,15 +7,18 @@
 [ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_jmok3"]
 
 [sub_resource type="Resource" id="Resource_0s4uq"]
+resource_local_to_scene = true
 script = ExtResource("3_nsfoy")
 item = ExtResource("2_cxvfb")
 count = 5
 
 [sub_resource type="Resource" id="Resource_m7dq8"]
+resource_local_to_scene = true
 script = ExtResource("4_jmok3")
 item_list = Array[ExtResource("3_nsfoy")]([SubResource("Resource_0s4uq")])
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_80m7a")
 id = 1
 name = "Tree"

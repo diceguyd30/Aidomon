@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://resources/items/item.gd" id="2_yhqio"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_yhqio")
 id = 1
 name = "Wood"

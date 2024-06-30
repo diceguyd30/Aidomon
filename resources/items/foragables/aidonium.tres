@@ -4,7 +4,9 @@
 [ext_resource type="Script" path="res://resources/items/item.gd" id="2_c3cpr"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_c3cpr")
 id = 3
 name = "Aidonium"
 icon = ExtResource("1_ad1yt")
+max_stack_size = 50
