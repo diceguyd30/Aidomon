@@ -3,7 +3,7 @@ extends Control
 
 @onready var wilderness_outline: ColorRect = %WildernessOutline
 @onready var wilderness_label: Label = %WildernessLabel
-
+@onready var wilderness: Wilderness = %Wilderness
 
 func _on_wilderness_mouse_entered() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
@@ -19,3 +19,11 @@ func _update_opacity(opacity_: float) -> void:
 	var color: Color = shader.get_shader_parameter("color")
 	color.a = opacity_
 	shader.set_shader_parameter("color", color)
+
+
+func _on_wilderness_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseMotion:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			print("better")
+		if Input.is_action_pressed("click"):
+			wilderness.visible = ! wilderness.visible

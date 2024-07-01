@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5yrx5jgkvg7u"]
+[gd_scene load_steps=8 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/starting_town.gd" id="1_srsep"]
 [ext_resource type="Shader" path="res://shaders/dotted_outline.gdshader" id="3_hy3yt"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="4_uw38n"]
+[ext_resource type="PackedScene" uid="uid://c0m0ny8o6ha0d" path="res://scenes/wilderness/wilderness.tscn" id="5_dwx5a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hp5la"]
 shader = ExtResource("3_hy3yt")
@@ -26,7 +27,7 @@ offset_right = -173.0
 offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 script = ExtResource("1_srsep")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -37,40 +38,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("1_0q5ji")
 expand_mode = 1
 
-[node name="Wilderness" type="Area2D" parent="TextureRect"]
+[node name="WildernessOverworldArea" type="Area2D" parent="TextureRect"]
 z_index = 1
 
-[node name="WildernessOutline" type="ColorRect" parent="TextureRect/Wilderness"]
+[node name="WildernessOutline" type="ColorRect" parent="TextureRect/WildernessOverworldArea"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_hp5la")
 offset_left = 44.0
 offset_top = 149.0
 offset_right = 176.0
 offset_bottom = 278.0
-mouse_filter = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 
-[node name="WildernessLabel" type="Label" parent="TextureRect/Wilderness"]
+[node name="WildernessLabel" type="Label" parent="TextureRect/WildernessOverworldArea"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.701961)
 offset_left = 54.0
 offset_top = 200.0
 offset_right = 166.0
 offset_bottom = 226.0
+mouse_filter = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_uw38n")
 theme_override_font_sizes/font_size = 18
 text = "Wilderness"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Wilderness"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/WildernessOverworldArea"]
 z_index = 1
 position = Vector2(110, 215)
 shape = SubResource("CircleShape2D_ybc0i")
 
-[connection signal="mouse_entered" from="TextureRect/Wilderness" to="." method="_on_wilderness_mouse_entered"]
-[connection signal="mouse_exited" from="TextureRect/Wilderness" to="." method="_on_wilderness_mouse_exited"]
+[node name="Wilderness" parent="TextureRect" instance=ExtResource("5_dwx5a")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(237, 19)
+
+[connection signal="input_event" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_input_event"]
+[connection signal="mouse_entered" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_mouse_exited"]

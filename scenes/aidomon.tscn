@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2vm0dawqcebo"]
+[gd_scene load_steps=6 format=3 uid="uid://c2vm0dawqcebo"]
 
-[ext_resource type="PackedScene" uid="uid://c0m0ny8o6ha0d" path="res://scenes/wilderness/wilderness.tscn" id="1_btl23"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vs2xj"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="3_4t1hq"]
 [ext_resource type="PackedScene" uid="uid://3ccxuhf2703l" path="res://scenes/inventory/inventory.tscn" id="3_8dr7n"]
@@ -48,8 +47,6 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
-
-[node name="Wilderness" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_btl23")]
 
 [node name="Starting Town" parent="HBoxContainer/VBoxContainer" instance=ExtResource("4_3bd0t")]
 layout_mode = 2
