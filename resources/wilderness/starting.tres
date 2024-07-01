@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=6 format=3 uid="uid://cvirmlwpd31x"]
 
-[ext_resource type="Script" path="res://resources/biomes/biome.gd" id="1_30yfx"]
+[ext_resource type="Script" path="res://resources/wilderness/wilderness_data.gd" id="1_30yfx"]
 [ext_resource type="Texture2D" uid="uid://c248j2r1y0fpv" path="res://assets/images/backgrounds/meadow.png" id="1_griyq"]
 [ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="2_x4x11"]
 [ext_resource type="Resource" uid="uid://crc5mqk3kesya" path="res://resources/items/environment/rock.tres" id="3_ymd3m"]

@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5yrx5jgkvg7u"]
+
+[ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
+[ext_resource type="Script" path="res://scenes/starting_town.gd" id="1_srsep"]
+[ext_resource type="Shader" path="res://shaders/dotted_outline.gdshader" id="3_hy3yt"]
+[ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="4_uw38n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hp5la"]
+shader = ExtResource("3_hy3yt")
+shader_parameter/color = Color(1, 1, 1, 0.701961)
+shader_parameter/diameter = 1.0
+shader_parameter/thickness = 0.05
+shader_parameter/frequency = 20.0
+shader_parameter/phase = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ybc0i"]
+radius = 64.2806
+
+[node name="Starting Town" type="Control"]
+custom_minimum_size = Vector2(467, 236)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -173.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_srsep")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_0q5ji")
+expand_mode = 1
+
+[node name="Wilderness" type="Area2D" parent="TextureRect"]
+z_index = 1
+
+[node name="WildernessOutline" type="ColorRect" parent="TextureRect/Wilderness"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_hp5la")
+offset_left = 44.0
+offset_top = 149.0
+offset_right = 176.0
+offset_bottom = 278.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+
+[node name="WildernessLabel" type="Label" parent="TextureRect/Wilderness"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.701961)
+offset_left = 54.0
+offset_top = 200.0
+offset_right = 166.0
+offset_bottom = 226.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_uw38n")
+theme_override_font_sizes/font_size = 18
+text = "Wilderness"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Wilderness"]
+z_index = 1
+position = Vector2(110, 215)
+shape = SubResource("CircleShape2D_ybc0i")
+
+[connection signal="mouse_entered" from="TextureRect/Wilderness" to="." method="_on_wilderness_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/Wilderness" to="." method="_on_wilderness_mouse_exited"]

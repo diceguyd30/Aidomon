@@ -50,6 +50,12 @@ func add_item_stack(item_stack_: ItemStack) -> ItemStack:
 		return _add_or_return_item_stack(item_stack_)
 	return _update_existing_item_stack(metadata, item_stack_)	
 
+func _add_or_return_item_stack(item_stack_: ItemStack) -> ItemStack:
+	var result_item_stack: ItemStack = _add_new_item_stack(item_stack_)
+	if result_item_stack == null or result_item_stack == item_stack_:
+		return result_item_stack
+	else:
+		return add_item_stack(result_item_stack)
 
 func _add_new_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var empty_index: int = _find_first_empty_slot_index()
@@ -115,10 +121,3 @@ func _update_or_create_new_metadata(item_stack_:ItemStack, index_:int) -> void:
 		new_metadata.item_count = item_stack_.count
 		new_metadata.index_map[index_] = true
 		self.inventory_data.inventory_metadata_map[item_stack_.item.id] = new_metadata
-
-func _add_or_return_item_stack(item_stack_: ItemStack) -> ItemStack:
-	var result_item_stack: ItemStack = _add_new_item_stack(item_stack_)
-	if result_item_stack == null or result_item_stack == item_stack_:
-		return result_item_stack
-	else:
-		return add_item_stack(result_item_stack)
