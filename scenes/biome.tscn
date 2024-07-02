@@ -18,10 +18,10 @@ shader_parameter/phase = 0.0
 radius = 64.2806
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruiyx"]
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
@@ -106,14 +106,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Panel" type="Panel" parent="TextureRect/MarginContainer/WildernessPanel"]
-custom_minimum_size = Vector2(232, 214)
+custom_minimum_size = Vector2(238, 220)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_ruiyx")
 
 [node name="Wilderness" parent="TextureRect/MarginContainer/WildernessPanel/Panel" instance=ExtResource("5_dwx5a")]
-position = Vector2(2, 2)
+position = Vector2(5, 5)
 
 [connection signal="input_event" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_input_event"]
 [connection signal="mouse_entered" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_mouse_entered"]
