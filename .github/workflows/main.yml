@@ -1,7 +1,7 @@
 name: Run Unit Tests
 on: push
 jobs:
-  test:
+  Test:
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -12,4 +12,3 @@ jobs:
           godot-version: '4.2.1'
           version: 'latest'
           paths: 'res://test'
-          upload-report: false
