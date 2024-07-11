@@ -2,20 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/starting_town.gd" id="1_srsep"]
-[ext_resource type="Shader" path="res://shaders/dotted_outline.gdshader" id="3_hy3yt"]
+[ext_resource type="Texture2D" uid="uid://duh6mt145frff" path="res://assets/images/items/wilderness_default.png" id="3_patlw"]
+[ext_resource type="Texture2D" uid="uid://klvlsxl3xko3" path="res://assets/images/items/wilderness_selected.png" id="4_panlu"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="4_uw38n"]
 [ext_resource type="PackedScene" uid="uid://c0m0ny8o6ha0d" path="res://scenes/wilderness/wilderness.tscn" id="5_dwx5a"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hp5la"]
-shader = ExtResource("3_hy3yt")
-shader_parameter/color = Color(1, 1, 1, 0.701961)
-shader_parameter/diameter = 1.0
-shader_parameter/thickness = 0.05
-shader_parameter/frequency = 20.0
-shader_parameter/phase = 0.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ybc0i"]
-radius = 64.2806
+[ext_resource type="Texture2D" uid="uid://c0x3icnww880e" path="res://assets/images/items/wilderness_hover.png" id="5_k7e0b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruiyx"]
 border_width_left = 5
@@ -52,37 +43,33 @@ grow_vertical = 2
 texture = ExtResource("1_0q5ji")
 expand_mode = 1
 
-[node name="WildernessOverworldArea" type="Area2D" parent="TextureRect"]
-z_index = 1
+[node name="WildernessBtn" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 180.0
+offset_right = 100.0
+offset_bottom = 212.0
+toggle_mode = true
+texture_normal = ExtResource("3_patlw")
+texture_pressed = ExtResource("4_panlu")
+texture_hover = ExtResource("5_k7e0b")
+stretch_mode = 0
 
-[node name="WildernessOutline" type="ColorRect" parent="TextureRect/WildernessOverworldArea"]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_hp5la")
-offset_left = 44.0
-offset_top = 149.0
-offset_right = 176.0
-offset_bottom = 278.0
-mouse_filter = 1
-mouse_force_pass_scroll_events = false
-
-[node name="WildernessLabel" type="Label" parent="TextureRect/WildernessOverworldArea"]
+[node name="WildernessLabel" type="Label" parent="TextureRect"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.701961)
-offset_left = 54.0
-offset_top = 200.0
-offset_right = 166.0
-offset_bottom = 226.0
+layout_mode = 0
+offset_left = 53.0
+offset_top = 208.0
+offset_right = 118.0
+offset_bottom = 234.0
 mouse_filter = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_uw38n")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 9
 text = "Wilderness"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/WildernessOverworldArea"]
-z_index = 1
-position = Vector2(110, 215)
-shape = SubResource("CircleShape2D_ybc0i")
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
@@ -115,6 +102,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ruiyx")
 [node name="Wilderness" parent="TextureRect/MarginContainer/WildernessPanel/Panel" instance=ExtResource("5_dwx5a")]
 position = Vector2(5, 5)
 
-[connection signal="input_event" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_input_event"]
-[connection signal="mouse_entered" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_mouse_entered"]
-[connection signal="mouse_exited" from="TextureRect/WildernessOverworldArea" to="." method="_on_wilderness_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/WildernessBtn" to="." method="_on_wilderness_btn_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/WildernessBtn" to="." method="_on_wilderness_btn_mouse_exited"]
+[connection signal="toggled" from="TextureRect/WildernessBtn" to="." method="_on_wilderness_btn_toggled"]
