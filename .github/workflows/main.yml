@@ -13,4 +13,5 @@ jobs:
         with:
           godot-version: '4.2.1'
           version: 'latest'
+          project_dir: './Aidomon/'
           paths: 'res://test'
