@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-      - uses: MikeSchulze/gdUnit4-action@v1
+      - uses: actions/checkout@v4
       - uses: MikeSchulze/gdUnit4-action@v1.1.1
         with:
           godot-version: '4.2.1'
