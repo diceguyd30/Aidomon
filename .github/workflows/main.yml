@@ -11,4 +11,5 @@ jobs:
         with:
           godot-version: '4.2.1'
           paths: 'res://test'
-          upload-report: false
+          publish-report: false
+          report-name: unit_test_report
