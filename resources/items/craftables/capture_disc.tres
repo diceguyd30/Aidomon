@@ -8,3 +8,4 @@ script = ExtResource("2_y6tg4")
 id = 4
 name = "CD"
 icon = ExtResource("1_aem63")
+max_stack_size = 10
