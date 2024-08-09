@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0x3icnww880e"
-path="res://.godot/imported/wilderness_hover.png-71cce568492c79ebd90ff87e45415f0c.ctex"
+uid="uid://dmigp2q3u12nn"
+path="res://.godot/imported/craftbench.png-f406c829ec6c70df175ee0d760de8a7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/wilderness_hover.png"
-dest_files=["res://.godot/imported/wilderness_hover.png-71cce568492c79ebd90ff87e45415f0c.ctex"]
+source_file="res://assets/images/buttons/craftbench/craftbench.png"
+dest_files=["res://.godot/imported/craftbench.png-f406c829ec6c70df175ee0d760de8a7f.ctex"]
 
 [params]
 

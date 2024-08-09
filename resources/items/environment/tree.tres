@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnvironmentItemData" load_steps=8 format=3 uid="uid://dubyfvmqtm5uq"]
 
-[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/tree.png" id="1_24oqq"]
+[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="1_24oqq"]
 [ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="1_80m7a"]
 [ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="2_cxvfb"]
 [ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_nsfoy"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bhn4cw38wj8m3"]
 
-[ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/aidomium.png" id="1_ad1yt"]
+[ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/foragables/aidomium.png" id="1_ad1yt"]
 [ext_resource type="Script" path="res://resources/items/item.gd" id="2_c3cpr"]
 
 [resource]

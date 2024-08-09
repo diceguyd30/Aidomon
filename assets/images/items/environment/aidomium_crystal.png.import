@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmigp2q3u12nn"
-path="res://.godot/imported/workbench.png-0aed6b6c0ddef3522caee4139cd80909.ctex"
+uid="uid://cys8d84emkk23"
+path="res://.godot/imported/aidomium_crystal.png-5f9c3aac957c1301970be35d6e21f1f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/workbench.png"
-dest_files=["res://.godot/imported/workbench.png-0aed6b6c0ddef3522caee4139cd80909.ctex"]
+source_file="res://assets/images/items/environment/aidomium_crystal.png"
+dest_files=["res://.godot/imported/aidomium_crystal.png-5f9c3aac957c1301970be35d6e21f1f5.ctex"]
 
 [params]
 

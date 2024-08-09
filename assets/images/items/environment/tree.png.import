@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q04t8dy8bve3"
-path="res://.godot/imported/workbench_hover.png-f15b9e439150bcc681f3e2902ab53c86.ctex"
+uid="uid://bm5n7l6kajbx5"
+path="res://.godot/imported/tree.png-56222a9a6b70ad44e3d66b8d35d01d15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/workbench_hover.png"
-dest_files=["res://.godot/imported/workbench_hover.png-f15b9e439150bcc681f3e2902ab53c86.ctex"]
+source_file="res://assets/images/items/environment/tree.png"
+dest_files=["res://.godot/imported/tree.png-56222a9a6b70ad44e3d66b8d35d01d15.ctex"]
 
 [params]
 

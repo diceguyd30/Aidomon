@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doiclqp8atdyy"
-path="res://.godot/imported/wood.png-7ece4ef39f651068706fea6765ae29f1.ctex"
+uid="uid://klvlsxl3xko3"
+path="res://.godot/imported/wilderness_selected.png-d152394f5da22b0251df120cec572717.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/wood.png"
-dest_files=["res://.godot/imported/wood.png-7ece4ef39f651068706fea6765ae29f1.ctex"]
+source_file="res://assets/images/buttons/wilderness/wilderness_selected.png"
+dest_files=["res://.godot/imported/wilderness_selected.png-d152394f5da22b0251df120cec572717.ctex"]
 
 [params]
 

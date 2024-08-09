@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://klvlsxl3xko3"
-path="res://.godot/imported/wilderness_selected.png-b8ed406d5c7171525c78b03dc8a87103.ctex"
+uid="uid://drxmrbg5x6n7e"
+path="res://.godot/imported/aidomium.png-fc6a1c1742039fa924cf66a9dbd5c102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/wilderness_selected.png"
-dest_files=["res://.godot/imported/wilderness_selected.png-b8ed406d5c7171525c78b03dc8a87103.ctex"]
+source_file="res://assets/images/items/foragables/aidomium.png"
+dest_files=["res://.godot/imported/aidomium.png-fc6a1c1742039fa924cf66a9dbd5c102.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vs2xj"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="3_4t1hq"]
 [ext_resource type="PackedScene" uid="uid://3ccxuhf2703l" path="res://scenes/inventory/inventory.tscn" id="3_8dr7n"]
-[ext_resource type="PackedScene" uid="uid://b5yrx5jgkvg7u" path="res://scenes/biome.tscn" id="4_3bd0t"]
+[ext_resource type="PackedScene" uid="uid://b5yrx5jgkvg7u" path="res://scenes/biomes/starting_town.tscn" id="4_3bd0t"]
 
 [sub_resource type="Theme" id="Theme_8tpyg"]
 Fonts/fonts/default = ExtResource("3_4t1hq")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhpsrgqg4qg6t"
-path="res://.godot/imported/capture_disc.png-e50ce306272b443a8113031ff6fa6de8.ctex"
+uid="uid://d18q3ximanf4j"
+path="res://.godot/imported/craftbench_selected.png-13aede6bb7d181f7c8bcb6c58fc8ea41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/capture_disc.png"
-dest_files=["res://.godot/imported/capture_disc.png-e50ce306272b443a8113031ff6fa6de8.ctex"]
+source_file="res://assets/images/buttons/craftbench/craftbench_selected.png"
+dest_files=["res://.godot/imported/craftbench_selected.png-13aede6bb7d181f7c8bcb6c58fc8ea41.ctex"]
 
 [params]
 
