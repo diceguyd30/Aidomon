@@ -1,5 +1,5 @@
 class_name Wilderness
-extends Node2D
+extends Control
 
 var wilderness_data: WildernessData = preload("res://resources/wilderness/starting.tres")
 @onready var background: TextureRect = $Background

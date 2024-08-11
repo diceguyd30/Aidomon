@@ -143,7 +143,10 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_ruiyx")
 
 [node name="Wilderness" parent="TextureRect/MarginContainer/WildernessPanel/Panel" instance=ExtResource("5_dwx5a")]
-position = Vector2(5, 5)
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
 
 [connection signal="mouse_entered" from="TextureRect/Wilderness/WildernessBtn" to="." method="_on_wilderness_btn_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/Wilderness/WildernessBtn" to="." method="_on_wilderness_btn_mouse_exited"]

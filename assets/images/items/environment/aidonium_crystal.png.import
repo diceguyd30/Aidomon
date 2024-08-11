@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drxmrbg5x6n7e"
-path="res://.godot/imported/aidomium.png-fc6a1c1742039fa924cf66a9dbd5c102.ctex"
+uid="uid://cys8d84emkk23"
+path="res://.godot/imported/aidonium_crystal.png-5224416fa2d784f7899d197620a0248d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/items/foragables/aidomium.png"
-dest_files=["res://.godot/imported/aidomium.png-fc6a1c1742039fa924cf66a9dbd5c102.ctex"]
+source_file="res://assets/images/items/environment/aidonium_crystal.png"
+dest_files=["res://.godot/imported/aidonium_crystal.png-5224416fa2d784f7899d197620a0248d.ctex"]
 
 [params]
 

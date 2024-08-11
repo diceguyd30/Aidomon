@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgw4tl8gxnr3t"]
+
+[ext_resource type="Texture2D" uid="uid://dhpsrgqg4qg6t" path="res://assets/images/items/craftables/capture_disc.png" id="1_3ucy0"]
+[ext_resource type="Script" path="res://scenes/craftbench/crafting_menu_item.gd" id="1_u3khq"]
+[ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="2_duph1"]
+[ext_resource type="Script" path="res://scenes/craftbench/item_cost.gd" id="3_dknbj"]
+
+[node name="CraftingMenuItem" type="Control"]
+custom_minimum_size = Vector2(212, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 212.0
+offset_bottom = 50.0
+script = ExtResource("1_u3khq")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(212, 50)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button/MarginContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Button/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_3ucy0")
+
+[node name="ItemName" type="Label" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 36.0
+offset_top = 18.0
+offset_right = 103.0
+offset_bottom = 31.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_duph1")
+theme_override_font_sizes/font_size = 9
+text = "Capture Disc"
+visible_ratio = -0.0833333
+
+[node name="MarginContainer2" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -22.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="Button/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="Button/MarginContainer2/PanelContainer"]
+layout_direction = 2
+layout_mode = 2
+columns = 2
+
+[node name="ItemCost" type="Control" parent="Button/MarginContainer2/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+script = ExtResource("3_dknbj")
