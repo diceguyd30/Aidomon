@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dodbuvvecuffi"]
+
+[ext_resource type="PackedScene" uid="uid://ok7tkdp440jp" path="res://scenes/common/item_stack_ui.tscn" id="1_asfcn"]
+
+[node name="BigItemStackUI" instance=ExtResource("1_asfcn")]
+custom_minimum_size = Vector2(48, 48)
+offset_right = -592.0
+offset_bottom = -312.0
+
+[node name="MarginContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryIcon" parent="MarginContainer" index="1"]
+custom_minimum_size = Vector2(32, 32)
+stretch_mode = 0

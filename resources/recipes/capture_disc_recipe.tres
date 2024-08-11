@@ -33,6 +33,6 @@ item_list = Array[ExtResource("2_0mna4")]([SubResource("Resource_mkdrl")])
 [resource]
 script = ExtResource("1_6q4i2")
 id = 1
-name = "CD"
+name = "Capture Disc"
 cost = SubResource("Resource_qhnp7")
 reward = SubResource("Resource_6xpm8")

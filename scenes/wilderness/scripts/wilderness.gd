@@ -2,7 +2,7 @@ class_name Wilderness
 extends Control
 
 var wilderness_data: WildernessData = preload("res://resources/wilderness/starting.tres")
-@onready var background: TextureRect = $Background
+@onready var background: TextureRect = %Background
 @onready var timer: Timer = $Timer
 
 var off_screen_distance: int = 100

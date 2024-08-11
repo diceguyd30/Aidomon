@@ -1,22 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0m0ny8o6ha0d"]
+[gd_scene load_steps=3 format=3 uid="uid://c0m0ny8o6ha0d"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/scripts/wilderness.gd" id="1_cbj5x"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scugx"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Wilderness" type="Control"]
+custom_minimum_size = Vector2(228, 210)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cbj5x")
 
-[node name="Background" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(228, 210)
+[node name="Panel Container" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 228.0
-offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_scugx")
+
+[node name="Background" type="TextureRect" parent="Panel Container"]
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
 expand_mode = 1

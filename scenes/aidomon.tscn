@@ -29,6 +29,7 @@ layout_mode = 2
 
 [node name="Inventory" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("3_8dr7n")]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="BaseActionGrid" type="GridContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
