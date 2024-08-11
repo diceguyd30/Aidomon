@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ok7tkdp440jp"]
 
-[ext_resource type="Script" path="res://scenes/inventory/inventory_slot.gd" id="1_i8p30"]
-[ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="2_ygrxm"]
+[ext_resource type="Script" path="res://scenes/common/item_stack_ui.gd" id="1_svrjx"]
+[ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="2_f4hdx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7ftk"]
 bg_color = Color(0.400698, 0.400698, 0.400698, 1)
@@ -24,7 +24,7 @@ expand_margin_bottom = 1.0
 anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_k7cqd"]
-font = ExtResource("2_ygrxm")
+font = ExtResource("2_f4hdx")
 font_size = 9
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
@@ -40,9 +40,10 @@ offset_right = -620.0
 offset_bottom = -340.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_i8p30")
+script = ExtResource("1_svrjx")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0

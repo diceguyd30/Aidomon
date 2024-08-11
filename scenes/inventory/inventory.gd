@@ -19,6 +19,6 @@ func _update_inventory() -> void:
 		child.queue_free()
 	inventory_manager.inventory_data.inventory_items.map(
 		func(x: ItemStack) -> void:
-			var slot: InventorySlot = InventorySlot.create_with_data(x)
+			var slot: ItemStackUI = ItemStackUI.create_with_data(x)
 			grid_container.add_child(slot)
 	)

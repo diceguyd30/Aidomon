@@ -1,4 +1,4 @@
-class_name InventorySlot
+class_name ItemStackUI
 extends Control
 
 var item_stack: ItemStack
@@ -6,12 +6,12 @@ var item_stack: ItemStack
 @onready var inventory_icon: TextureRect = %InventoryIcon
 @onready var item_count_label: Label = %ItemCountLabel
 
-const INVENTORY_SLOT: PackedScene = preload("res://scenes/inventory/inventory_slot.tscn")
+const ITEM_STACK: PackedScene = preload("res://scenes/common/item_stack_ui.tscn")
 
-static func create_with_data(item_stack_: ItemStack) -> InventorySlot:
-	var slot: InventorySlot = INVENTORY_SLOT.instantiate()
-	slot.item_stack = item_stack_
-	return slot
+static func create_with_data(item_stack_: ItemStack) -> ItemStackUI:
+	var stack: ItemStackUI = ITEM_STACK.instantiate()
+	stack.item_stack = item_stack_
+	return stack
 
 func _ready() -> void:
 	if item_stack.item != null:
