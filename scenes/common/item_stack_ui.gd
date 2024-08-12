@@ -4,15 +4,15 @@ extends Control
 @export var item_stack: ItemStack:
 	set(value):
 		item_stack = value
-		_update_values()
+		_update()
 
 @onready var inventory_icon: TextureRect = %InventoryIcon
 @onready var item_count_label: Label = %ItemCountLabel
 
 func _ready() -> void:
-	_update_values()
+	_update()
 	
-func _update_values() -> void:
+func _update() -> void:
 	if self.item_stack.item == null:
 		return
 	if inventory_icon != null:

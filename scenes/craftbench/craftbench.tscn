@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtvb0ufibm0kq"]
+[gd_scene load_steps=3 format=3 uid="uid://dtvb0ufibm0kq"]
 
 [ext_resource type="PackedScene" uid="uid://cgw4tl8gxnr3t" path="res://scenes/craftbench/crafting_menu_item.tscn" id="1_45mam"]
-[ext_resource type="Resource" uid="uid://cnhwwpoxylh52" path="res://resources/recipes/capture_disc_recipe.tres" id="2_kibwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apsuw"]
 bg_color = Color(0.366595, 0.366595, 0.366594, 1)
@@ -48,4 +47,3 @@ size_flags_vertical = 4
 
 [node name="CraftingMenuItem2" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_45mam")]
 layout_mode = 2
-recipe = ExtResource("2_kibwj")
