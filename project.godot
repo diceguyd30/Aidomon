@@ -44,6 +44,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
 
+[gdunit4]
+
+settings/test/test_discovery=true
+
 [input]
 
 click={
