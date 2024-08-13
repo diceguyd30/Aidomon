@@ -7,8 +7,7 @@ extends Control
 const ITEM_STACK_UI = preload("res://scenes/common/item_stack_ui.tscn")
 
 func _ready() -> void:
-	inventory_manager = InventoryManager.new()
-	inventory_manager.load_with_inventory(null)
+	inventory_manager = InventoryManager.new().with_inventory(null)
 	GameSignals.connect("reward_player", _add_bundle_to_inventory)
 	_update_inventory()
 	

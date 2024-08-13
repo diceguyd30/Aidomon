@@ -5,13 +5,14 @@ extends Node
 
 @export var inventory_data: InventoryData
 
-func load_with_inventory(inventory_data_: InventoryData = null) -> void:
+func with_inventory(inventory_data_: InventoryData = null) -> InventoryManager:
 	if inventory_data_ == null:
-		self.inventory_data = create_new_inventory_data()
+		self.inventory_data = InventoryManager.create_new_inventory_data()
 	else:
 		self.inventory_data = inventory_data_
+	return self
 
-func create_new_inventory_data(max_inventory_size_: int = -1) -> InventoryData:
+static func create_new_inventory_data(max_inventory_size_: int = -1) -> InventoryData:
 	var new_inventory: InventoryData = InventoryData.new()
 	if max_inventory_size_ > 0:
 		new_inventory.max_inventory_size = max_inventory_size_
