@@ -1,19 +1,17 @@
 class_name InventoryManager
-extends Object
+extends Node
 
 # Represents behaviors that can be taken on an InventoryData resource.
 
-var inventory_data: InventoryData
+@export var inventory_data: InventoryData
 
-static func load_with_inventory(inventory_data_: InventoryData = null) -> InventoryManager:
-	var inventory_manager: InventoryManager = InventoryManager.new()
+func load_with_inventory(inventory_data_: InventoryData = null) -> void:
 	if inventory_data_ == null:
-		inventory_manager.inventory_data = create_new_inventory_data()
+		self.inventory_data = create_new_inventory_data()
 	else:
-		inventory_manager.inventory_data = inventory_data_
-	return inventory_manager
+		self.inventory_data = inventory_data_
 
-static func create_new_inventory_data(max_inventory_size_: int = -1) -> InventoryData:
+func create_new_inventory_data(max_inventory_size_: int = -1) -> InventoryData:
 	var new_inventory: InventoryData = InventoryData.new()
 	if max_inventory_size_ > 0:
 		new_inventory.max_inventory_size = max_inventory_size_

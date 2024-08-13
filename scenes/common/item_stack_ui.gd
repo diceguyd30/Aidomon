@@ -9,6 +9,10 @@ extends Control
 @onready var inventory_icon: TextureRect = %InventoryIcon
 @onready var item_count_label: Label = %ItemCountLabel
 
+func with_data(item_stack_: ItemStack) -> ItemStackUI:
+	self.item_stack = item_stack_
+	return self
+
 func _ready() -> void:
 	_update()
 	

@@ -8,6 +8,10 @@ extends Node2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+func with_data(environment_item_data_: EnvironmentItemData) -> EnvironmentItem:
+	self.environment_item_data = environment_item_data_
+	return self
+
 func _ready() -> void:
 	_update()
 

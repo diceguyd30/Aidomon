@@ -22,15 +22,13 @@ func _update() -> void:
 	
 	if reward_list != null:
 		for item: ItemStack in recipe.reward.item_list:
-			var reward_stack: ItemStackUI = BIG_ITEM_STACK_UI.instantiate()
-			reward_stack.item_stack = item
+			var reward_stack: ItemStackUI = BIG_ITEM_STACK_UI.instantiate().with_data(item)
 			reward_list.add_child(reward_stack)
 	if item_name != null:
 		item_name.text = recipe.name
 	if cost_grid != null:
 		for item: ItemStack in recipe.cost.item_list:
-			var cost_stack: ItemStackUI = ITEM_STACK_UI.instantiate()
-			cost_stack.item_stack = item
+			var cost_stack: ItemStackUI = ITEM_STACK_UI.instantiate().with_data(item)
 			cost_grid.add_child(cost_stack)
 
 func _on_button_pressed() -> void:

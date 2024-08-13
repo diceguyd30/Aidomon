@@ -15,8 +15,7 @@ func _ready() -> void:
 	background.texture = wilderness_data.background
 
 func _on_timer_timeout() -> void:
-	var item: EnvironmentItem = ENVIRONMENT_ITEM.instantiate()
-	item.environment_item_data = _get_environment_item()
+	var item: EnvironmentItem = ENVIRONMENT_ITEM.instantiate().with_data(_get_environment_item())
 	item.position = _get_spawnpoint()
 	background.add_child(item)
 	timer.wait_time = randi_range(5, 10)

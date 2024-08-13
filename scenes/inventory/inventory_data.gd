@@ -1,13 +1,13 @@
 class_name InventoryData
 extends Resource
 
-var max_inventory_size: int = 10
+@export var max_inventory_size: int = 10
 # Ordered inventory items as they should appear in the UI
-var inventory_items: Array[ItemStack] = []
+@export var inventory_items: Array[ItemStack] = []
 # Dictionary<ItemID: _InventoryMetadata>
-var inventory_metadata_map: Dictionary = {}
+@export var inventory_metadata_map: Dictionary = {}
 
 class _InventoryMetadata:
-	var item_count: int = 0
+	@export var item_count: int = 0
 	# Dictionary<inventory_index: true>  Used as a Set
-	var index_map: Dictionary
+	@export var index_map: Dictionary
