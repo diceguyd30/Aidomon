@@ -23,4 +23,3 @@ func _on_craftbench_btn_mouse_exited() -> void:
 
 func _on_craftbench_btn_toggled(toggled_on: bool) -> void:
 	craftbench_panel.visible = toggled_on
-
