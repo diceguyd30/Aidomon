@@ -1,4 +1,6 @@
 extends Node
 
-@warning_ignore("unused_signal") # Signal buses do not emit signals by design.
-signal reward_player(reward: ItemBundle)
+signal reward_player_signal(reward: ItemBundle)
+
+func reward_player(reward: ItemBundle) -> void:
+	reward_player_signal.emit(reward)

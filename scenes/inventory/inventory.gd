@@ -8,7 +8,7 @@ const ITEM_STACK_UI = preload("res://scenes/common/item_stack_ui.tscn")
 
 func _ready() -> void:
 	inventory_manager = InventoryManager.new().with_inventory(null)
-	GameSignals.connect("reward_player", _add_bundle_to_inventory)
+	GameSignals.reward_player_signal.connect(_add_bundle_to_inventory)
 	_update_inventory()
 	
 func _add_bundle_to_inventory(reward: ItemBundle) -> void:

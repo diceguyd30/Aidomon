@@ -32,4 +32,4 @@ func _update() -> void:
 			cost_grid.add_child(cost_stack)
 
 func _on_button_pressed() -> void:
-	GameSignals.reward_player.emit(recipe.reward)
+	GameSignals.reward_player(recipe.reward)

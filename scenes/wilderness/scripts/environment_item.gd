@@ -20,7 +20,7 @@ func _update() -> void:
 		sprite_2d.texture = environment_item_data.icon
 
 func _on_sprite_clicked() -> void:
-	GameSignals.reward_player.emit(environment_item_data.reward)
+	GameSignals.reward_player(environment_item_data.reward)
 	environment_item_data.reward.item_list.map(
 		func(x: ItemStack) -> void: 
 			print("Rewarding player with %d %s" % [x.count, x.item.name]))
