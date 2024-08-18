@@ -30,14 +30,15 @@ static func create_new_inventory_data(max_inventory_size_: int = -1) -> Inventor
 func add_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
 	var result: ItemBundle = ItemBundle.new()
 	for item in item_bundle_.item_list:
-		var overflow: ItemStack = add_item_stack(item.duplicate())
+		var overflow: ItemStack = _add_item_stack(item.duplicate())
 		if overflow != null:
 			result.item_list.append(overflow)
 	if result.item_list.size() > 0:
 		return result
+	GameSignals.inventory_updated()
 	return null
 
-func add_item_stack(item_stack_: ItemStack) -> ItemStack:
+func _add_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var metadata: InventoryData._InventoryMetadata = \
 		self.inventory_data.inventory_metadata_map.get(item_stack_.item.id)
 	if metadata == null:
@@ -54,7 +55,7 @@ func _add_or_return_item_stack(item_stack_: ItemStack) -> ItemStack:
 	if result_item_stack == null or result_item_stack == item_stack_:
 		return result_item_stack
 	else:
-		return add_item_stack(result_item_stack)
+		return _add_item_stack(result_item_stack)
 
 func _add_new_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var empty_index: int = _find_first_empty_slot_index()

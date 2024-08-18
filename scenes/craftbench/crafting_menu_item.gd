@@ -14,6 +14,7 @@ const BIG_ITEM_STACK_UI = preload("res://scenes/common/big_item_stack_ui.tscn")
 const ITEM_STACK_UI = preload("res://scenes/common/item_stack_ui.tscn")
 
 func _ready() -> void:
+	
 	_update()
 	
 func _update() -> void:
