@@ -18,6 +18,7 @@ corner_detail = 5
 anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_k7cqd"]
+resource_local_to_scene = true
 font = ExtResource("2_f4hdx")
 font_size = 9
 outline_size = 3
