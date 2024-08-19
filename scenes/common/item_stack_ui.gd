@@ -9,16 +9,21 @@ extends Control
 @onready var inventory_icon: TextureRect = %InventoryIcon
 @onready var item_count_label: Label = %ItemCountLabel
 
+var _inventory_tracking: bool = false
+
 func with_data(item_stack_: ItemStack) -> ItemStackUI:
 	self.item_stack = item_stack_
 	return self
 	
 func with_inventory_tracking() -> ItemStackUI:
 	GameSignals.update_inventory_signal.connect(_update_color)
+	self._inventory_tracking = true
 	return self
 
 func _ready() -> void:
 	_update()
+	if _inventory_tracking:
+		_update_color()
 	
 func _update() -> void:
 	if self.item_stack.item == null:
