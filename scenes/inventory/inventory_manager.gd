@@ -3,13 +3,14 @@ extends Node
 
 # Represents behaviors that can be taken on an InventoryData resource.
 
-@export var inventory_data: InventoryData
+@export var get_inventory: Callable
 
-func with_inventory(inventory_data_: InventoryData = null) -> InventoryManager:
-	if inventory_data_ == null:
-		self.inventory_data = InventoryManager.create_new_inventory_data()
-	else:
-		self.inventory_data = inventory_data_
+var inventory: InventoryData:
+	get:
+		return get_inventory.call()
+
+func with_inventory(get_inventory_: Callable) -> InventoryManager:
+	self.get_inventory = get_inventory_
 	return self
 
 static func create_new_inventory_data(max_inventory_size_: int = -1) -> InventoryData:
@@ -40,9 +41,9 @@ func add_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
 
 func _add_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var metadata: InventoryData._InventoryMetadata = \
-		self.inventory_data.inventory_metadata_map.get(item_stack_.item.id)
+		self.inventory.inventory_metadata_map.get(item_stack_.item.id)
 	if metadata == null:
-		var empty_dict: Dictionary = self.inventory_data.inventory_metadata_map[null].index_map
+		var empty_dict: Dictionary = self.inventory.inventory_metadata_map[null].index_map
 		if empty_dict.size() < 1:
 			print("Inventory is full and does not already contain %s. It cannot be added." \
 				 % item_stack_.item.name)
@@ -63,14 +64,14 @@ func _add_new_item_stack(item_stack_: ItemStack) -> ItemStack:
 		print("Inventory is full! Cannot add %s" % item_stack_.item.name)
 		return item_stack_
 	var result: ItemStack = _update_and_return_overflow_item_stack(item_stack_)
-	self.inventory_data.inventory_items[empty_index] = item_stack_
+	self.inventory.inventory_items[empty_index] = item_stack_
 	_update_or_create_new_metadata(item_stack_, empty_index)
-	self.inventory_data.inventory_metadata_map[null].index_map.erase(empty_index)
+	self.inventory.inventory_metadata_map[null].index_map.erase(empty_index)
 	return result
 
 func _find_first_empty_slot_index() -> int:
-	for i: int in self.inventory_data.inventory_items.size():
-		if self.inventory_data.inventory_items[i].item == null:
+	for i: int in self.inventory.inventory_items.size():
+		if self.inventory.inventory_items[i].item == null:
 			return i
 	return -1
 
@@ -79,7 +80,7 @@ func _update_existing_item_stack(
 		item_stack_: ItemStack) -> ItemStack:
 	var needs_to_be_added: int = item_stack_.count
 	for i: int in metadata_.index_map.keys():
-		needs_to_be_added = _pack_existing_item_stack(inventory_data.inventory_items[i], needs_to_be_added)
+		needs_to_be_added = _pack_existing_item_stack(inventory.inventory_items[i], needs_to_be_added)
 		if needs_to_be_added <= 0:
 			break
 	if needs_to_be_added > 0:
@@ -93,11 +94,11 @@ func _pack_existing_item_stack(item_stack_: ItemStack, items_to_pack_: int) -> i
 	var items_to_max: int = item_stack_.item.max_stack_size - item_stack_.count
 	if items_to_max > items_to_pack_:
 		item_stack_.count += items_to_pack_
-		inventory_data.inventory_metadata_map[item_stack_.item.id].item_count += items_to_pack_
+		inventory.inventory_metadata_map[item_stack_.item.id].item_count += items_to_pack_
 		return 0
 	else:
 		item_stack_.count = item_stack_.item.max_stack_size
-		inventory_data.inventory_metadata_map[item_stack_.item.id].item_count \
+		inventory.inventory_metadata_map[item_stack_.item.id].item_count \
 				+= (item_stack_.item.max_stack_size - item_stack_.count)
 		return items_to_pack_ - items_to_max
 
@@ -111,13 +112,13 @@ func _update_and_return_overflow_item_stack(item_stack_: ItemStack) -> ItemStack
 	return result
 
 func _update_or_create_new_metadata(item_stack_:ItemStack, index_:int) -> void:
-	if self.inventory_data.inventory_metadata_map.has(item_stack_.item.id):
+	if self.inventory.inventory_metadata_map.has(item_stack_.item.id):
 		var metadata: InventoryData._InventoryMetadata = \
-				self.inventory_data.inventory_metadata_map[item_stack_.item.id]
+				self.inventory.inventory_metadata_map[item_stack_.item.id]
 		metadata.item_count += item_stack_.count
 		metadata.index_map[index_] = true
 	else:
 		var new_metadata: InventoryData._InventoryMetadata = InventoryData._InventoryMetadata.new()
 		new_metadata.item_count = item_stack_.count
 		new_metadata.index_map[index_] = true
-		self.inventory_data.inventory_metadata_map[item_stack_.item.id] = new_metadata
+		self.inventory.inventory_metadata_map[item_stack_.item.id] = new_metadata
