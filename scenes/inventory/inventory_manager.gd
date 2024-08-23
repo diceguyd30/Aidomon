@@ -3,7 +3,7 @@ extends Node
 
 # Represents behaviors that can be taken on an InventoryData resource.
 
-@export var get_inventory: Callable
+var get_inventory: Callable
 
 var inventory: InventoryData:
 	get:
@@ -49,7 +49,7 @@ func _add_item_stack(item_stack_: ItemStack) -> ItemStack:
 				 % item_stack_.item.name)
 			return item_stack_
 		return _add_or_return_item_stack(item_stack_)
-	return _update_existing_item_stack(metadata, item_stack_)	
+	return _update_existing_item_stack(metadata, item_stack_)
 
 func _add_or_return_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var result_item_stack: ItemStack = _add_new_item_stack(item_stack_)
@@ -122,3 +122,23 @@ func _update_or_create_new_metadata(item_stack_:ItemStack, index_:int) -> void:
 		new_metadata.item_count = item_stack_.count
 		new_metadata.index_map[index_] = true
 		self.inventory.inventory_metadata_map[item_stack_.item.id] = new_metadata
+
+func has_all(item_bundle_: ItemBundle) -> bool:
+	return item_bundle_.item_list.all(func(x: ItemStack) -> bool: return has_enough(x))
+
+func has_enough(item_stack_: ItemStack) -> bool:
+	return self.inventory.inventory_metadata_map[item_stack_.item.id].item_count >= item_stack_.count
+
+func remove_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
+	var result: ItemBundle = ItemBundle.new()
+	for item in item_bundle_.item_list:
+		var overflow: ItemStack = _remove_item_stack(item)
+		if overflow != null:
+			result.item_list.append(overflow)
+	if result.item_list.size() > 0:
+		return result
+	GameSignals.inventory_updated()
+	return null
+	
+func _remove_item_stack(item_stack_: ItemStack) -> ItemStack:
+	return null
