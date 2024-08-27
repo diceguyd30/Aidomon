@@ -140,5 +140,37 @@ func remove_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
 	GameSignals.inventory_updated()
 	return null
 	
-func _remove_item_stack(item_stack_: ItemStack) -> ItemStack:
-	return null
+func _remove_item_stack(item_stack_: ItemStack) -> ItemStack: 
+	var overflow: ItemStack = _remove_item_stack_single_pass(item_stack_)
+	if overflow == null or overflow == item_stack_:
+		return overflow
+	return _remove_item_stack(overflow)
+	
+func _remove_item_stack_single_pass(item_stack_: ItemStack) -> ItemStack:
+	if !self.inventory.inventory_metadata_map.has(item_stack_.item.id):
+		return item_stack_
+	var metadata: InventoryData._InventoryMetadata = \
+			self.inventory.inventory_metadata_map[item_stack_.item.id]
+	var index: int = metadata.index_map.keys()[metadata.index_map.size() - 1]
+	if self.inventory.inventory_items[index].count >= item_stack_.count:
+		self.inventory.inventory_items[index].count -= item_stack_.count
+		metadata.item_count -= item_stack_.count
+		if self.inventory.inventory_items[index].count == 0:
+			self.inventory.inventory_items[index] = ItemStack.new()
+			_move_index_to_null_stack(item_stack_, index)
+		return null
+	item_stack_.count -= self.inventory.inventory_items[index].count
+	metadata.item_count -= item_stack_.count
+	self.inventory.inventory_items[index] = ItemStack.new()
+	_move_index_to_null_stack(item_stack_, index)
+	return item_stack_
+
+func _move_index_to_null_stack(item_stack_: ItemStack, index_: int) -> void:
+	var metadata: InventoryData._InventoryMetadata = \
+			self.inventory.inventory_metadata_map[item_stack_.item.id]
+	metadata.index_map.erase(index_)
+	if metadata.index_map.is_empty():
+		self.inventory.inventory_metadata_map.erase(item_stack_.item.id)
+	var null_metadata: InventoryData._InventoryMetadata = self.inventory.inventory_metadata_map[null]
+	null_metadata.index_map[index_] = true
+	

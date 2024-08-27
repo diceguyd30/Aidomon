@@ -87,3 +87,40 @@ func test_update_item_multiple_stack_overflow() -> void:
 			.is_equal(InventoryHelpers.DEFAULT_MAX_STACK_SIZE)
 	assert_that(self.inventory_manager.inventory.inventory_metadata_map[item_stack_2.item.id] \
 			.index_map.size()).is_equal(3)
+
+func test_remove_item_exact_count_one_stack() -> void:
+	inventory_data = InventoryManager.create_new_inventory_data()
+	var item_stack: ItemStack = InventoryHelpers.build_test_item_stack()
+	item_stack.count = 5
+	assert_that(self.inventory_manager._add_item_stack(item_stack)).is_null()
+	assert_that(self.inventory_manager._remove_item_stack(item_stack)).is_null()
+	assert_that(self.inventory_manager.inventory.inventory_metadata_map \
+			.has(item_stack.item.id)).is_equal(false)
+	assert_that(self.inventory_manager.inventory.inventory_metadata_map[null].index_map.has(0)).is_equal(true)
+
+func test_remove_item_less_than_one_stack() -> void:
+	inventory_data = InventoryManager.create_new_inventory_data()
+	var item_stack: ItemStack = InventoryHelpers.build_test_item_stack()
+	item_stack.count = 5
+	assert_that(self.inventory_manager._add_item_stack(item_stack)).is_null()
+	var remove_stack: ItemStack = InventoryHelpers.build_test_item_stack()
+	remove_stack.count = 3
+	assert_that(self.inventory_manager._remove_item_stack(remove_stack)).is_null()
+	assert_that(self.inventory_manager.inventory.inventory_metadata_map \
+			.has(item_stack.item.id)).is_equal(true)
+	assert_that(self.inventory_manager.inventory.inventory_metadata_map[null].index_map.has(0)).is_equal(false)
+	assert_that(self.inventory_manager.inventory.inventory_metadata_map[item_stack.item.id].item_count == 2)
+
+func test_remove_item_more_than_one_stack() -> void:
+	inventory_data = InventoryManager.create_new_inventory_data()
+	var item_stack: ItemStack = InventoryHelpers.build_test_item_stack()
+	item_stack.count = 5
+	assert_that(self.inventory_manager._add_item_stack(item_stack)).is_null()
+	var remove_stack: ItemStack = InventoryHelpers.build_test_item_stack()
+	remove_stack.count = 7
+	var result_stack: ItemStack = InventoryHelpers.build_test_item_stack()
+	result_stack.count = 2
+	assert_that(self.inventory_manager._remove_item_stack(remove_stack)).is_equal(result_stack)
+	assert_that(self.inventory_manager.inventory.inventory_metadata_map \
+			.has(item_stack.item.id)).is_equal(false)
+	assert_that(self.inventory_manager.inventory.inventory_metadata_map[null].index_map.has(0)).is_equal(true)
