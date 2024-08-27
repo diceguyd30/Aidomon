@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://3ccxuhf2703l"]
+[gd_scene load_steps=2 format=3 uid="uid://3ccxuhf2703l"]
 
 [ext_resource type="Script" path="res://scenes/inventory/inventory.gd" id="1_of7m6"]
-[ext_resource type="Script" path="res://scenes/inventory/inventory_manager.gd" id="2_3aoea"]
 
 [node name="Inventory" type="Control"]
 custom_minimum_size = Vector2(145, 300)
@@ -47,7 +46,3 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 5
-
-[node name="InventoryManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_3aoea")

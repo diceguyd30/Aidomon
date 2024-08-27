@@ -21,14 +21,15 @@ offset_bottom = 50.0
 script = ExtResource("1_h7hqn")
 recipe = ExtResource("2_a3tob")
 
-[node name="Button" type="Button" parent="."]
+[node name="CraftButton" type="Button" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(212, 50)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h6nb0")
 
-[node name="MarginContainer" type="MarginContainer" parent="Button"]
+[node name="MarginContainer" type="MarginContainer" parent="CraftButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,26 +39,26 @@ grow_vertical = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Button/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CraftButton/MarginContainer"]
 layout_mode = 2
 
-[node name="RewardList" type="HBoxContainer" parent="Button/MarginContainer/HBoxContainer"]
+[node name="RewardList" type="HBoxContainer" parent="CraftButton/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Button/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CraftButton/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 
-[node name="ItemName" type="Label" parent="Button/MarginContainer/HBoxContainer/MarginContainer"]
+[node name="ItemName" type="Label" parent="CraftButton/MarginContainer/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 label_settings = SubResource("LabelSettings_w8dxo")
 
-[node name="MarginContainer2" type="MarginContainer" parent="Button"]
+[node name="MarginContainer2" type="MarginContainer" parent="CraftButton"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -71,7 +72,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_right = 5
 
-[node name="CostGrid" type="GridContainer" parent="Button/MarginContainer2"]
+[node name="CostGrid" type="GridContainer" parent="CraftButton/MarginContainer2"]
 unique_name_in_owner = true
 layout_direction = 2
 layout_mode = 2
@@ -79,4 +80,4 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CraftButton" to="." method="_on_button_pressed"]

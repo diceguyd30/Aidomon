@@ -1,3 +1,3 @@
 extends Node
 
-var player_inventory: InventoryData = InventoryManager.create_new_inventory_data(10)
+var player_inventory: InventoryData = InventoryData.new().with_initialized_inventory(10)
