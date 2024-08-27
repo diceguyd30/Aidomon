@@ -37,6 +37,25 @@ func add_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
 	GameSignals.inventory_updated()
 	return null
 
+func has_all(item_bundle_: ItemBundle) -> bool:
+	return item_bundle_.item_list.all(func(x: ItemStack) -> bool: return has_enough(x))
+
+func has_enough(item_stack_: ItemStack) -> bool:
+	if !inventory_metadata_map.has(item_stack_.item.id):
+		return false
+	return inventory_metadata_map[item_stack_.item.id].item_count >= item_stack_.count
+
+func remove_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
+	var result: ItemBundle = ItemBundle.new()
+	for item in item_bundle_.item_list:
+		var overflow: ItemStack = _remove_item_stack(item)
+		if overflow != null:
+			result.item_list.append(overflow)
+	GameSignals.inventory_updated()
+	if result.item_list.size() > 0:
+		return result
+	return null
+
 func _add_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var metadata: InventoryData._InventoryMetadata = \
 		inventory_metadata_map.get(item_stack_.item.id)
@@ -121,31 +140,12 @@ func _update_or_create_new_metadata(item_stack_:ItemStack, index_:int) -> void:
 		new_metadata.index_map[index_] = true
 		inventory_metadata_map[item_stack_.item.id] = new_metadata
 
-func has_all(item_bundle_: ItemBundle) -> bool:
-	return item_bundle_.item_list.all(func(x: ItemStack) -> bool: return has_enough(x))
-
-func has_enough(item_stack_: ItemStack) -> bool:
-	if !inventory_metadata_map.has(item_stack_.item.id):
-		return false
-	return inventory_metadata_map[item_stack_.item.id].item_count >= item_stack_.count
-
-func remove_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
-	var result: ItemBundle = ItemBundle.new()
-	for item in item_bundle_.item_list:
-		var overflow: ItemStack = _remove_item_stack(item)
-		if overflow != null:
-			result.item_list.append(overflow)
-	GameSignals.inventory_updated()
-	if result.item_list.size() > 0:
-		return result
-	return null
-	
 func _remove_item_stack(item_stack_: ItemStack) -> ItemStack: 
 	var overflow: ItemStack = _remove_item_stack_single_pass(item_stack_)
 	if overflow == null or overflow == item_stack_:
 		return overflow
 	return _remove_item_stack(overflow)
-	
+
 func _remove_item_stack_single_pass(item_stack_: ItemStack) -> ItemStack:
 	if !inventory_metadata_map.has(item_stack_.item.id):
 		return item_stack_
