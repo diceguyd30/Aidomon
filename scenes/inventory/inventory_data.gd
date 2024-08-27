@@ -159,11 +159,13 @@ func _remove_item_stack_single_pass(item_stack_: ItemStack) -> ItemStack:
 			inventory_items[index] = ItemStack.new()
 			_move_index_to_null_stack(item_stack_, index)
 		return null
-	item_stack_.count -= inventory_items[index].count
-	metadata.item_count -= item_stack_.count
+	var result: ItemStack = ItemStack.new()
+	result.item = item_stack_.item
+	result.count = item_stack_.count - inventory_items[index].count
+	metadata.item_count -= inventory_items[index].count
 	inventory_items[index] = ItemStack.new()
 	_move_index_to_null_stack(item_stack_, index)
-	return item_stack_
+	return result
 
 func _move_index_to_null_stack(item_stack_: ItemStack, index_: int) -> void:
 	var metadata: InventoryData._InventoryMetadata = \

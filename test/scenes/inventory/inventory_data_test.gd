@@ -93,7 +93,7 @@ func test_remove_item_exact_count_one_stack() -> void:
 	assert_that(inventory_data._remove_item_stack(item_stack)).is_null()
 	assert_that(inventory_data.inventory_metadata_map \
 			.has(item_stack.item.id)).is_equal(false)
-	assert_that(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_equal(true)
+	assert_bool(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_true()
 
 func test_remove_item_less_than_one_stack() -> void:
 	inventory_data = InventoryData.new().with_initialized_inventory()
@@ -105,7 +105,7 @@ func test_remove_item_less_than_one_stack() -> void:
 	assert_that(inventory_data._remove_item_stack(remove_stack)).is_null()
 	assert_that(inventory_data.inventory_metadata_map \
 			.has(item_stack.item.id)).is_equal(true)
-	assert_that(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_equal(false)
+	assert_bool(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_false()
 	assert_that(inventory_data.inventory_metadata_map[item_stack.item.id].item_count == 2)
 
 func test_remove_item_more_than_one_stack() -> void:
@@ -120,4 +120,16 @@ func test_remove_item_more_than_one_stack() -> void:
 	assert_that(inventory_data._remove_item_stack(remove_stack)).is_equal(result_stack)
 	assert_that(inventory_data.inventory_metadata_map \
 			.has(item_stack.item.id)).is_equal(false)
-	assert_that(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_equal(true)
+	assert_bool(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_true()
+
+func test_remove_stack_from_multiple_slots() -> void:
+	inventory_data = InventoryData.new().with_initialized_inventory()
+	var item_stack: ItemStack = InventoryHelpers.build_test_item_stack(1, 5)
+	item_stack.count = 7
+	assert_that(inventory_data._add_item_stack(item_stack)).is_null()
+	assert_that(inventory_data.inventory_metadata_map[1].index_map.size()).is_equal(2)
+	var remove_stack: ItemStack = InventoryHelpers.build_test_item_stack(1)
+	remove_stack.count = 5
+	assert_that(inventory_data._remove_item_stack(remove_stack)).is_null()
+	assert_that(inventory_data.inventory_metadata_map[1].index_map.size()).is_equal(1)
+	assert_that(inventory_data.inventory_metadata_map[1].item_count).is_equal(2)
