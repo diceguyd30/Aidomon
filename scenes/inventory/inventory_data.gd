@@ -135,9 +135,9 @@ func remove_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
 		var overflow: ItemStack = _remove_item_stack(item)
 		if overflow != null:
 			result.item_list.append(overflow)
+	GameSignals.inventory_updated()
 	if result.item_list.size() > 0:
 		return result
-	GameSignals.inventory_updated()
 	return null
 	
 func _remove_item_stack(item_stack_: ItemStack) -> ItemStack: 
