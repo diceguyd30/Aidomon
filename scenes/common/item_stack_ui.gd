@@ -8,7 +8,6 @@ extends Control
 
 @onready var inventory_icon: TextureRect = %InventoryIcon
 @onready var item_count_label: Label = %ItemCountLabel
-@onready var craft_button: Button = %CraftButton
 
 var _inventory_tracking: bool = false
 
