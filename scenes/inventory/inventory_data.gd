@@ -114,9 +114,9 @@ func _pack_existing_item_stack(item_stack_: ItemStack, items_to_pack_: int) -> i
 		inventory_metadata_map[item_stack_.item.id].item_count += items_to_pack_
 		return 0
 	else:
-		item_stack_.count = item_stack_.item.max_stack_size
 		inventory_metadata_map[item_stack_.item.id].item_count \
 				+= (item_stack_.item.max_stack_size - item_stack_.count)
+		item_stack_.count = item_stack_.item.max_stack_size
 		return items_to_pack_ - items_to_max
 
 func _update_and_return_overflow_item_stack(item_stack_: ItemStack) -> ItemStack:
