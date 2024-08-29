@@ -1,9 +1,14 @@
 class_name InventoryData
-extends RefCounted
+extends Resource
 
-var max_inventory_size: int = 10
+@export var max_inventory_size: int = 10:
+	set(value):
+		max_inventory_size = value
+		_initialze_inventory()
 # Ordered inventory items as they should appear in the UI
-var inventory_items: Array[ItemStack] = []
+@export var inventory_items: Array[ItemStack] = []:
+	set(value):
+		_initialze_inventory(value)
 # Dictionary<ItemID: _InventoryMetadata>
 var inventory_metadata_map: Dictionary = {}
 
@@ -12,18 +17,8 @@ class _InventoryMetadata:
 	# Dictionary<inventory_index: true>  Used as a Set
 	var index_map: Dictionary
 
-func with_initialized_inventory(max_inventory_size_: int = -1) -> InventoryData:
-	if max_inventory_size_ > 0:
-		max_inventory_size = max_inventory_size_
-	var empty_item: ItemStack = ItemStack.new()
-	inventory_items.resize(max_inventory_size)
-	inventory_items.fill(empty_item)
-	var empty_metadata: InventoryData._InventoryMetadata = InventoryData._InventoryMetadata.new()
-	var metadata_map: Dictionary = {}
-	for i: int in inventory_items.size():
-		metadata_map[i] = true
-	empty_metadata.index_map = metadata_map
-	inventory_metadata_map[null] = empty_metadata
+func of_size(max_inventory_size_: int) -> InventoryData:
+	max_inventory_size = max_inventory_size_
 	return self
 
 func add_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
@@ -55,6 +50,35 @@ func remove_item_bundle(item_bundle_: ItemBundle) -> ItemBundle:
 	if result.item_list.size() > 0:
 		return result
 	return null
+
+func _initialze_inventory(starting_items_: Array[ItemStack] = []) -> void:
+	if max_inventory_size <= 0:
+		return
+	var empty_item: ItemStack = ItemStack.new()
+	inventory_items.resize(max_inventory_size)
+	inventory_items.fill(empty_item)
+	for i: int in min(inventory_items.size(), starting_items_.size()):
+		inventory_items[i] = starting_items_[i]
+	_initialize_metadata_map()
+
+func _initialize_metadata_map() -> void:
+	for i: int in inventory_items.size():
+		var item_: ItemStack = inventory_items[i]
+		var id_: Variant
+		if item_.item == null:
+			id_ = null
+		else:
+			id_ = item_.item.id
+		if inventory_metadata_map.has(id_):
+			inventory_metadata_map[id_].item_count += item_.count
+			inventory_metadata_map[id_].index_map[i] = true
+		else:
+			var new_metadata: _InventoryMetadata = _InventoryMetadata.new()
+			new_metadata.item_count += item_.count
+			var index_map: Dictionary = {}
+			index_map[i] = true
+			new_metadata.index_map = index_map
+			inventory_metadata_map[id_] = new_metadata
 
 func _add_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var metadata: InventoryData._InventoryMetadata = \
