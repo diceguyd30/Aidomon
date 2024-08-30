@@ -1,32 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhnc7gpi2p7d2"]
+[gd_scene load_steps=7 format=3 uid="uid://bhnc7gpi2p7d2"]
 
-[ext_resource type="Script" path="res://town_location.gd" id="1_8hoe4"]
+[ext_resource type="Script" path="res://scenes/common/town_location.gd" id="1_8hoe4"]
 [ext_resource type="Texture2D" uid="uid://dmigp2q3u12nn" path="res://assets/images/buttons/craftbench/craftbench.png" id="2_wjob2"]
+[ext_resource type="Resource" uid="uid://48t3bpeipc1f" path="res://resources/unlocks/craftbench.tres" id="2_yspen"]
 [ext_resource type="Texture2D" uid="uid://d18q3ximanf4j" path="res://assets/images/buttons/craftbench/craftbench_selected.png" id="3_b4qkw"]
 [ext_resource type="Texture2D" uid="uid://q04t8dy8bve3" path="res://assets/images/buttons/craftbench/craftbench_hover.png" id="4_xwbxd"]
-[ext_resource type="Texture2D" uid="uid://k8pakj6nbw30" path="res://assets/images/buttons/craftbench/craftbench_disabled.png" id="5_c65h2"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="6_lud8l"]
-[ext_resource type="PackedScene" uid="uid://dbmv5pxijm5da" path="res://scenes/common/cost.tscn" id="7_3gt1q"]
 
 [node name="TownLocation" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 160.0
-offset_top = 104.0
-offset_right = 160.0
-offset_bottom = 104.0
 size_flags_vertical = 4
 script = ExtResource("1_8hoe4")
+unlock = ExtResource("2_yspen")
+texture = ExtResource("2_wjob2")
+hover_texture = ExtResource("4_xwbxd")
+selected_texture = ExtResource("3_b4qkw")
 
 [node name="LocationContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -30.0
 offset_top = -24.5
 offset_right = 30.0
 offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = -1
+metadata/_edit_use_anchors_ = true
 
 [node name="LocationBtn" type="TextureButton" parent="LocationContainer"]
 unique_name_in_owner = true
@@ -38,7 +46,6 @@ toggle_mode = true
 texture_normal = ExtResource("2_wjob2")
 texture_pressed = ExtResource("3_b4qkw")
 texture_hover = ExtResource("4_xwbxd")
-texture_disabled = ExtResource("5_c65h2")
 stretch_mode = 0
 
 [node name="LocationLbl" type="Label" parent="LocationContainer"]
@@ -60,5 +67,6 @@ offset_bottom = -0.5
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Cost" parent="CostContainer" instance=ExtResource("7_3gt1q")]
-layout_mode = 2
+[connection signal="mouse_entered" from="LocationContainer/LocationBtn" to="." method="_on_location_btn_mouse_entered"]
+[connection signal="mouse_exited" from="LocationContainer/LocationBtn" to="." method="_on_location_btn_mouse_exited"]
+[connection signal="toggled" from="LocationContainer/LocationBtn" to="." method="_on_location_btn_toggled"]

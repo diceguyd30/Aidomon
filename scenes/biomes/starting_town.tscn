@@ -1,18 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5yrx5jgkvg7u"]
+[gd_scene load_steps=10 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
 [ext_resource type="Texture2D" uid="uid://duh6mt145frff" path="res://assets/images/buttons/wilderness/wilderness_default.png" id="3_patlw"]
 [ext_resource type="Texture2D" uid="uid://klvlsxl3xko3" path="res://assets/images/buttons/wilderness/wilderness_selected.png" id="4_panlu"]
-[ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="4_uw38n"]
 [ext_resource type="PackedScene" uid="uid://c0m0ny8o6ha0d" path="res://scenes/wilderness/wilderness.tscn" id="5_dwx5a"]
 [ext_resource type="Texture2D" uid="uid://c0x3icnww880e" path="res://assets/images/buttons/wilderness/wilderness_hover.png" id="5_k7e0b"]
-[ext_resource type="Texture2D" uid="uid://dmigp2q3u12nn" path="res://assets/images/buttons/craftbench/craftbench.png" id="8_aovou"]
-[ext_resource type="Texture2D" uid="uid://d18q3ximanf4j" path="res://assets/images/buttons/craftbench/craftbench_selected.png" id="9_6eb62"]
-[ext_resource type="Texture2D" uid="uid://q04t8dy8bve3" path="res://assets/images/buttons/craftbench/craftbench_hover.png" id="10_0b14m"]
-[ext_resource type="Texture2D" uid="uid://k8pakj6nbw30" path="res://assets/images/buttons/craftbench/craftbench_disabled.png" id="11_6tuua"]
+[ext_resource type="PackedScene" uid="uid://bhnc7gpi2p7d2" path="res://scenes/common/town_location.tscn" id="10_6dk6d"]
+[ext_resource type="Resource" uid="uid://m3ynggnj3fl4" path="res://resources/unlocks/wilderness.tres" id="11_qtf4h"]
 [ext_resource type="PackedScene" uid="uid://dtvb0ufibm0kq" path="res://scenes/craftbench/craftbench.tscn" id="12_pmi1a"]
-[ext_resource type="PackedScene" uid="uid://dbmv5pxijm5da" path="res://scenes/common/cost.tscn" id="13_h2egy"]
 
 [node name="Starting Town" type="Control"]
 custom_minimum_size = Vector2(467, 236)
@@ -38,80 +34,23 @@ grow_vertical = 2
 texture = ExtResource("1_0q5ji")
 expand_mode = 1
 
-[node name="Wilderness" type="Control" parent="TextureRect"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 1
-
-[node name="WildernessBtn" type="TextureButton" parent="TextureRect/Wilderness"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 180.0
-offset_right = 100.0
-offset_bottom = 212.0
-toggle_mode = true
-texture_normal = ExtResource("3_patlw")
-texture_pressed = ExtResource("4_panlu")
-texture_hover = ExtResource("5_k7e0b")
-stretch_mode = 0
-
-[node name="WildernessLbl" type="Label" parent="TextureRect/Wilderness"]
-unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.701961)
-layout_mode = 0
-offset_left = 53.0
+[node name="WildernessMapLocation" parent="TextureRect" instance=ExtResource("10_6dk6d")]
+offset_left = 72.0
 offset_top = 208.0
-offset_right = 118.0
-offset_bottom = 234.0
-mouse_filter = 1
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("4_uw38n")
-theme_override_font_sizes/font_size = 9
-text = "Wilderness"
-horizontal_alignment = 1
+offset_right = 72.0
+offset_bottom = 208.0
+unlock = ExtResource("11_qtf4h")
+texture = ExtResource("3_patlw")
+hover_texture = ExtResource("5_k7e0b")
+selected_texture = ExtResource("4_panlu")
 
-[node name="Craftbench" type="Control" parent="TextureRect"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CraftbenchMapLocation" parent="TextureRect" instance=ExtResource("10_6dk6d")]
+offset_left = 352.0
+offset_top = 168.0
+offset_right = 352.0
+offset_bottom = 168.0
 
-[node name="CraftbenchBtn" type="TextureButton" parent="TextureRect/Craftbench"]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 178.0
-offset_right = 441.0
-offset_bottom = 210.0
-toggle_mode = true
-texture_normal = ExtResource("8_aovou")
-texture_pressed = ExtResource("9_6eb62")
-texture_hover = ExtResource("10_0b14m")
-texture_disabled = ExtResource("11_6tuua")
-stretch_mode = 0
-
-[node name="CraftbenchLbl" type="Label" parent="TextureRect/Craftbench"]
-unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.701961)
-layout_mode = 0
-offset_left = 396.0
-offset_top = 210.0
-offset_right = 456.0
-offset_bottom = 233.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("4_uw38n")
-theme_override_font_sizes/font_size = 9
-text = "Craftbench"
-
-[node name="Cost" parent="TextureRect/Craftbench" instance=ExtResource("13_h2egy")]
-layout_mode = 1
-offset_left = 320.0
-offset_top = 112.0
-offset_right = 320.0
-offset_bottom = 112.0
-
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+[node name="WildernessContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -126,15 +65,15 @@ grow_vertical = 2
 mouse_filter = 0
 theme_override_constants/margin_right = 10
 
-[node name="WildernessPanel" type="PanelContainer" parent="TextureRect/MarginContainer"]
+[node name="WildernessPanel" type="PanelContainer" parent="TextureRect/WildernessContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Wilderness" parent="TextureRect/MarginContainer/WildernessPanel" instance=ExtResource("5_dwx5a")]
+[node name="Wilderness" parent="TextureRect/WildernessContainer/WildernessPanel" instance=ExtResource("5_dwx5a")]
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="TextureRect"]
+[node name="CraftbenchContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -145,17 +84,13 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_constants/margin_left = 10
 
-[node name="CraftbenchPanel" type="PanelContainer" parent="TextureRect/MarginContainer2"]
+[node name="CraftbenchPanel" type="PanelContainer" parent="TextureRect/CraftbenchContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Craftbench" parent="TextureRect/MarginContainer2/CraftbenchPanel" instance=ExtResource("12_pmi1a")]
+[node name="Craftbench" parent="TextureRect/CraftbenchContainer/CraftbenchPanel" instance=ExtResource("12_pmi1a")]
 layout_mode = 2
 
-[connection signal="mouse_entered" from="TextureRect/Wilderness/WildernessBtn" to="." method="_on_wilderness_btn_mouse_entered"]
-[connection signal="mouse_exited" from="TextureRect/Wilderness/WildernessBtn" to="." method="_on_wilderness_btn_mouse_exited"]
-[connection signal="toggled" from="TextureRect/Wilderness/WildernessBtn" to="." method="_on_wilderness_btn_toggled"]
-[connection signal="mouse_entered" from="TextureRect/Craftbench/CraftbenchBtn" to="." method="_on_craftbench_btn_mouse_entered"]
-[connection signal="mouse_exited" from="TextureRect/Craftbench/CraftbenchBtn" to="." method="_on_craftbench_btn_mouse_exited"]
-[connection signal="toggled" from="TextureRect/Craftbench/CraftbenchBtn" to="." method="_on_craftbench_btn_toggled"]
+[connection signal="toggled" from="TextureRect/WildernessMapLocation" to="." method="_on_wilderness_map_location_toggled"]
+[connection signal="toggled" from="TextureRect/CraftbenchMapLocation" to="." method="_on_craftbench_map_location_toggled"]
