@@ -1,4 +1,4 @@
-extends Node
+extends RefCounted
 
 signal reward_player_signal(reward: ItemBundle)
 signal update_inventory_signal

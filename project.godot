@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
-GameSignals="*res://game_signals.gd"
-Player="*res://player.gd"
+GameSignals="*res://state/game_signals.gd"
+Player="*res://state/player.gd"
 
 [debug]
 
