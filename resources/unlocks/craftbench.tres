@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Unlock" load_steps=9 format=3 uid="uid://48t3bpeipc1f"]
+
+[ext_resource type="Script" path="res://resources/unlocks/unlock.gd" id="1_ehjju"]
+[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="1_jobil"]
+[ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="2_ccvxi"]
+[ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="3_yoeq5"]
+[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_tf2td"]
+
+[sub_resource type="Resource" id="Resource_owqs4"]
+script = ExtResource("1_jobil")
+item = ExtResource("2_ccvxi")
+count = 10
+
+[sub_resource type="Resource" id="Resource_j2wdi"]
+script = ExtResource("1_jobil")
+item = ExtResource("3_yoeq5")
+count = 15
+
+[sub_resource type="Resource" id="Resource_lpvx6"]
+script = ExtResource("4_tf2td")
+item_list = Array[ExtResource("1_jobil")]([SubResource("Resource_owqs4"), SubResource("Resource_j2wdi")])
+
+[resource]
+script = ExtResource("1_ehjju")
+id = 1
+name = "Craftbench"
+cost = SubResource("Resource_lpvx6")
