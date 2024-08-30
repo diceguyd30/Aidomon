@@ -26,7 +26,7 @@ func _ready() -> void:
 		_update_color()
 	
 func _update() -> void:
-	if self.item_stack.item == null:
+	if self.item_stack == null or self.item_stack.item == null:
 		return
 	if inventory_icon != null:
 		inventory_icon.texture = self.item_stack.item.icon

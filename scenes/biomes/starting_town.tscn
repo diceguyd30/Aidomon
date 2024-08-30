@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5yrx5jgkvg7u"]
+[gd_scene load_steps=14 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://q04t8dy8bve3" path="res://assets/images/buttons/craftbench/craftbench_hover.png" id="10_0b14m"]
 [ext_resource type="Texture2D" uid="uid://k8pakj6nbw30" path="res://assets/images/buttons/craftbench/craftbench_disabled.png" id="11_6tuua"]
 [ext_resource type="PackedScene" uid="uid://dtvb0ufibm0kq" path="res://scenes/craftbench/craftbench.tscn" id="12_pmi1a"]
+[ext_resource type="PackedScene" uid="uid://dbmv5pxijm5da" path="res://scenes/common/cost.tscn" id="13_h2egy"]
 
 [node name="Starting Town" type="Control"]
 custom_minimum_size = Vector2(467, 236)
@@ -144,6 +145,13 @@ layout_mode = 2
 
 [node name="Craftbench" parent="TextureRect/MarginContainer2/CraftbenchPanel" instance=ExtResource("12_pmi1a")]
 layout_mode = 2
+
+[node name="Cost" parent="." instance=ExtResource("13_h2egy")]
+layout_mode = 1
+offset_left = 320.0
+offset_top = 112.0
+offset_right = 320.0
+offset_bottom = 112.0
 
 [connection signal="mouse_entered" from="TextureRect/Wilderness/WildernessBtn" to="." method="_on_wilderness_btn_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/Wilderness/WildernessBtn" to="." method="_on_wilderness_btn_mouse_exited"]

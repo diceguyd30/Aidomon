@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbmv5pxijm5da"]
+
+[ext_resource type="Script" path="res://scenes/common/cost.gd" id="1_yvb4b"]
+[ext_resource type="Resource" uid="uid://48t3bpeipc1f" path="res://resources/unlocks/craftbench.tres" id="2_xugpg"]
+[ext_resource type="LabelSettings" uid="uid://tlt8lh7am57b" path="res://assets/fonts/large_pixel_text.tres" id="3_5yl78"]
+[ext_resource type="LabelSettings" uid="uid://cxmfmenswhmkb" path="res://assets/fonts/pixel_text.tres" id="4_obyij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4hi3"]
+bg_color = Color(0.235294, 0.235294, 0.235294, 0.509804)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tgjk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e0v0"]
+bg_color = Color(0.192157, 0.192157, 0.192157, 0.196078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqkor"]
+bg_color = Color(0.201527, 0.201527, 0.201526, 0.392157)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1f2d"]
+
+[node name="Cost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yvb4b")
+unlock = ExtResource("2_xugpg")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_r4hi3")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Title"
+label_settings = ExtResource("3_5yl78")
+
+[node name="Description" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Fun description of the unlock"
+label_settings = ExtResource("4_obyij")
+autowrap_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CostGrid" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+columns = 2
+
+[node name="UnlockBtn" type="Button" parent="PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6tgjk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0e0v0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sqkor")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y1f2d")

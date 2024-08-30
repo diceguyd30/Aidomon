@@ -24,4 +24,5 @@ item_list = Array[ExtResource("1_jobil")]([SubResource("Resource_owqs4"), SubRes
 script = ExtResource("1_ehjju")
 id = 1
 name = "Craftbench"
+description = "Great for crafting all sorts of useful things"
 cost = SubResource("Resource_lpvx6")

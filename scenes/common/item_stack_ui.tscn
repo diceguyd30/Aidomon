@@ -36,6 +36,7 @@ offset_right = -616.0
 offset_bottom = -336.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
 mouse_filter = 1
 script = ExtResource("1_svrjx")
 

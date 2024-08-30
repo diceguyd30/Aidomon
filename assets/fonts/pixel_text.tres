@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cxmfmenswhmkb"]
+
+[ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="1_8w72w"]
+
+[resource]
+font = ExtResource("1_8w72w")
+font_size = 9
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
