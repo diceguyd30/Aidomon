@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ok7tkdp440jp"]
+[gd_scene load_steps=8 format=3 uid="uid://ok7tkdp440jp"]
 
 [ext_resource type="Script" path="res://scenes/common/item_stack_ui.gd" id="1_svrjx"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="2_f4hdx"]
+[ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="2_vadxj"]
+[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_f685j"]
+
+[sub_resource type="Resource" id="Resource_twnya"]
+script = ExtResource("3_f685j")
+item = ExtResource("2_vadxj")
+count = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvmpl"]
 bg_color = Color(0, 0, 0, 0)
@@ -26,22 +33,17 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
 
 [node name="ItemStackUI" type="Control"]
-clip_contents = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -616.0
-offset_bottom = -336.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
+anchors_preset = 0
+offset_right = 24.0
+offset_bottom = 24.0
 mouse_filter = 1
 script = ExtResource("1_svrjx")
+item_stack = SubResource("Resource_twnya")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0
 theme_override_constants/margin_left = 1
