@@ -1,9 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvx5dp4tu6gem"]
+[gd_scene load_steps=13 format=3 uid="uid://cvx5dp4tu6gem"]
 
 [ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="1_wmlhh"]
 [ext_resource type="Script" path="res://scripts/ice_pixie_area.gd" id="2_7bn5k"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yymjm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogjtj"]
 atlas = ExtResource("1_wmlhh")
@@ -73,8 +71,7 @@ animations = [{
 radius = 9.90858
 
 [node name="Character" type="Node2D"]
-material = SubResource("ShaderMaterial_yymjm")
-scale = Vector2(4, 4)
+position = Vector2(40, 40)
 
 [node name="ice_pixie" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
