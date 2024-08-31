@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6a4pvu7vet3b"]
+[gd_scene load_steps=4 format=3 uid="uid://b6a4pvu7vet3b"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/scripts/environment_item.gd" id="1_xohhh"]
 [ext_resource type="Script" path="res://scenes/wilderness/scripts/environment_item_sprite.gd" id="2_87dtt"]
+[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="2_epvsv"]
 
 [node name="EnvironmentItem" type="Node2D"]
 script = ExtResource("1_xohhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_epvsv")
 script = ExtResource("2_87dtt")
 
 [connection signal="clicked" from="Sprite2D" to="." method="_on_sprite_clicked"]
