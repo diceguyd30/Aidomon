@@ -51,7 +51,6 @@ offset_right = 352.0
 offset_bottom = 168.0
 
 [node name="WildernessContainer" type="MarginContainer" parent="TextureRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -68,6 +67,7 @@ theme_override_constants/margin_right = 80
 
 [node name="WildernessPanel" type="PanelContainer" parent="TextureRect/WildernessContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Wilderness" parent="TextureRect/WildernessContainer/WildernessPanel" instance=ExtResource("5_dwx5a")]
