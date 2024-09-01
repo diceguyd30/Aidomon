@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2vm0dawqcebo"]
+[gd_scene load_steps=7 format=3 uid="uid://c2vm0dawqcebo"]
 
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vs2xj"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="3_4t1hq"]
 [ext_resource type="PackedScene" uid="uid://3ccxuhf2703l" path="res://scenes/inventory/inventory.tscn" id="3_8dr7n"]
 [ext_resource type="PackedScene" uid="uid://b5yrx5jgkvg7u" path="res://scenes/biomes/starting_town.tscn" id="4_3bd0t"]
+[ext_resource type="PackedScene" uid="uid://td8q2wavc8qh" path="res://scenes/interactions/character_interactions.tscn" id="4_x8yiw"]
 
 [sub_resource type="Theme" id="Theme_8tpyg"]
 Fonts/fonts/default = ExtResource("3_4t1hq")
@@ -45,8 +46,7 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 75)
+[node name="CharacterInteractions" parent="HBoxContainer/VBoxContainer" instance=ExtResource("4_x8yiw")]
 layout_mode = 2
 
 [node name="Starting Town" parent="HBoxContainer/VBoxContainer" instance=ExtResource("4_3bd0t")]
