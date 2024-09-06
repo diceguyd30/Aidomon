@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://td8q2wavc8qh"]
+[gd_scene load_steps=4 format=3 uid="uid://td8q2wavc8qh"]
 
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vcxre"]
+[ext_resource type="PackedScene" uid="uid://cqgnm2o6g44w1" path="res://scenes/interactions/encounters.tscn" id="2_ohtai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_528h5"]
 bg_color = Color(0.281187, 0.281187, 0.281187, 0.588235)
@@ -71,3 +72,6 @@ text = "Encounters"
 layout_mode = 2
 theme = ExtResource("1_vcxre")
 text = "Trainers"
+
+[node name="encounters" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_ohtai")]
+layout_mode = 2
