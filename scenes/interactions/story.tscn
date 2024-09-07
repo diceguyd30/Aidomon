@@ -13,7 +13,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="encounters" type="Control"]
+[node name="story" type="Control"]
 custom_minimum_size = Vector2(380, 100)
 layout_mode = 3
 anchors_preset = 15

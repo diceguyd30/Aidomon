@@ -100,7 +100,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="encounters" type="Control"]
+[node name="party" type="Control"]
 custom_minimum_size = Vector2(380, 100)
 layout_mode = 3
 anchors_preset = 15

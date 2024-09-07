@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://td8q2wavc8qh"]
+[gd_scene load_steps=8 format=3 uid="uid://td8q2wavc8qh"]
 
+[ext_resource type="Script" path="res://scenes/interactions/character_interactions.gd" id="1_8eb50"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vcxre"]
+[ext_resource type="PackedScene" uid="uid://y86be0nvi05v" path="res://scenes/interactions/party.tscn" id="2_gihlk"]
 [ext_resource type="PackedScene" uid="uid://cqgnm2o6g44w1" path="res://scenes/interactions/encounters.tscn" id="2_ohtai"]
+[ext_resource type="PackedScene" uid="uid://bq0nswkvuicwd" path="res://scenes/interactions/story.tscn" id="3_4hnlv"]
+[ext_resource type="PackedScene" uid="uid://b2b426euq35ld" path="res://scenes/interactions/trainers.tscn" id="5_xbeyp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_528h5"]
 bg_color = Color(0.281187, 0.281187, 0.281187, 0.588235)
@@ -26,6 +30,7 @@ offset_bottom = -260.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+script = ExtResource("1_8eb50")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -73,5 +78,22 @@ layout_mode = 2
 theme = ExtResource("1_vcxre")
 text = "Trainers"
 
-[node name="encounters" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_ohtai")]
+[node name="Party" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_gihlk")]
 layout_mode = 2
+
+[node name="Story" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_4hnlv")]
+visible = false
+layout_mode = 2
+
+[node name="Encounters" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_ohtai")]
+visible = false
+layout_mode = 2
+
+[node name="Trainers" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("5_xbeyp")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PartyBtn" to="." method="_on_party_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/StoryBtn" to="." method="_on_story_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/EncountersBtn" to="." method="_on_encounters_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TrainersBtn" to="." method="_on_trainers_btn_pressed"]
