@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq0nswkvuicwd"]
+
+[ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_22bk1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgc23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_22bk1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="encounters" type="Control"]
+custom_minimum_size = Vector2(380, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -260.0
+offset_bottom = -260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.266505, 0.536519, 0.88626, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/HBoxContainer/MarginContainer2/CenterContainer"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_jgc23")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_right = 40
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="HBoxContainer/HBoxContainer2/MarginContainer/CenterContainer"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_jgc23")
+flip_h = true

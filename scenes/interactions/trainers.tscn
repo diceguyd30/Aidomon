@@ -1,16 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://cqgnm2o6g44w1"]
+[gd_scene load_steps=27 format=3 uid="uid://b2b426euq35ld"]
 
-[ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="1_ndnjm"]
-[ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_u3fwb"]
-[ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_wt6u3"]
-[ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="2_x3voh"]
-[ext_resource type="Texture2D" uid="uid://dhpsrgqg4qg6t" path="res://assets/images/items/craftables/capture_disc.png" id="5_rerre"]
+[ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_1emlf"]
+[ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_35uqq"]
+[ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="3_e8qqm"]
+[ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="4_vlakr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jgc23"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_u3fwb")
+"texture": ExtResource("1_1emlf")
 }],
 "loop": true,
 "name": &"default",
@@ -18,47 +17,47 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_moqxs"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_015oc"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpo8y"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a1me"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1b0q"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37156"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srxo0"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(288, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rtxgb"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nvwr"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(384, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uardm"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(432, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07xaf"]
-atlas = ExtResource("2_wt6u3")
+atlas = ExtResource("2_35uqq")
 region = Rect2(480, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvwq3"]
@@ -104,35 +103,35 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hh0t2"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6hr4"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6s0jm"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrfyr"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xf8dg"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6r45y"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vo5jl"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66xon"]
-atlas = ExtResource("1_ndnjm")
+atlas = ExtResource("3_e8qqm")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dw6hp"]
@@ -225,7 +224,7 @@ size_flags_vertical = 4
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="HBoxContainer/HBoxContainer/MarginContainer/CenterContainer"]
 sprite_frames = SubResource("SpriteFrames_kvwq3")
 autoplay = "default"
-frame_progress = 0.290993
+frame_progress = 0.78348
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -244,8 +243,7 @@ size_flags_vertical = 4
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/HBoxContainer2/MarginContainer/CenterContainer"]
 sprite_frames = SubResource("SpriteFrames_dw6hp")
 autoplay = "default"
-frame = 1
-frame_progress = 0.498451
+frame_progress = 0.0429228
 flip_h = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/HBoxContainer2"]
@@ -272,7 +270,7 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_x3voh")
+theme = ExtResource("4_vlakr")
 text = "Auto Attack"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer"]
@@ -280,19 +278,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button" type="TextureButton" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("2_x3voh")
-texture_normal = ExtResource("5_rerre")
+theme = ExtResource("4_vlakr")
+text = "C"
 
 [node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_x3voh")
+theme = ExtResource("4_vlakr")
 text = "R"
 
 [node name="Button3" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_x3voh")
+theme = ExtResource("4_vlakr")
 text = "S"

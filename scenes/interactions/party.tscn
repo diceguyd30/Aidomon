@@ -1,0 +1,161 @@
+[gd_scene load_steps=16 format=3 uid="uid://y86be0nvi05v"]
+
+[ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_0lokg"]
+[ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_4lipm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgc23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0lokg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moqxs"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_015oc"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpo8y"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a1me"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1b0q"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37156"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srxo0"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtxgb"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nvwr"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uardm"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07xaf"]
+atlas = ExtResource("2_4lipm")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvwq3"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moqxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_015oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpo8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a1me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1b0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37156")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srxo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtxgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nvwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uardm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07xaf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="encounters" type="Control"]
+custom_minimum_size = Vector2(380, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -260.0
+offset_bottom = -260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.266505, 0.536519, 0.88626, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/HBoxContainer/MarginContainer2/CenterContainer"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_jgc23")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="HBoxContainer/HBoxContainer/MarginContainer/CenterContainer"]
+sprite_frames = SubResource("SpriteFrames_kvwq3")
+autoplay = "default"
+frame_progress = 0.78348
