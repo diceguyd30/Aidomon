@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0m0ny8o6ha0d"]
+[gd_scene load_steps=5 format=3 uid="uid://c0m0ny8o6ha0d"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/scripts/wilderness.gd" id="1_cbj5x"]
 [ext_resource type="Resource" uid="uid://cvirmlwpd31x" path="res://resources/wilderness/starting.tres" id="2_4w8wo"]
+[ext_resource type="Texture2D" uid="uid://c248j2r1y0fpv" path="res://assets/images/backgrounds/meadow.png" id="3_yyple"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scugx"]
 border_width_left = 5
@@ -37,6 +38,7 @@ custom_minimum_size = Vector2(218, 210)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
+texture = ExtResource("3_yyple")
 expand_mode = 1
 
 [node name="Timer" type="Timer" parent="."]
