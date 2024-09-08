@@ -1,24 +1,13 @@
+@tool
 class_name TownLocation
 extends Control
 
 signal toggled(toggled_on: bool)
 
-@export var unlock: Unlock:
-	set(value):
-		unlock = value
-		_update()
-@export var texture: Texture:
-	set(value):
-		texture = value
-		_update()
-@export var hover_texture: Texture:
-	set(value):
-		hover_texture = value
-		_update()
-@export var selected_texture: Texture:
-	set(value):
-		selected_texture = value
-		_update()
+@export var unlock: Unlock
+@export var texture: Texture
+@export var hover_texture: Texture
+@export var selected_texture: Texture
 
 @onready var location_container: VBoxContainer = %LocationContainer
 @onready var location_btn: TextureButton = %LocationBtn
@@ -28,13 +17,6 @@ signal toggled(toggled_on: bool)
 const COST = preload("res://scenes/common/cost.tscn")
 
 func _ready() -> void:
-	_update()
-
-func _update() -> void:
-	if [location_container, location_btn, location_lbl, cost_container, unlock] \
-			.any(func(x: Variant) -> bool: return x == null):
-		return
-	
 	location_lbl.text = unlock.name
 	var cost: Cost = COST.instantiate().with_data(unlock)
 	cost.purchased.connect(_location_unlocked)
@@ -43,9 +25,9 @@ func _update() -> void:
 	location_btn.texture_hover = hover_texture
 	location_btn.texture_pressed = selected_texture
 	_update_visibility()
-	
+
 func _update_visibility() -> void:
-	if Player.biome_unlocks.unlock_map[unlock.id]:
+	if  Engine.is_editor_hint() or Player.biome_unlocks.unlock_map[unlock.id]:
 		location_container.visible = true
 		cost_container.visible = false
 	else:

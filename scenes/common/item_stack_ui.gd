@@ -1,3 +1,4 @@
+@tool
 class_name ItemStackUI
 extends Control
 
@@ -16,7 +17,8 @@ func with_data(item_stack_: ItemStack) -> ItemStackUI:
 	return self
 	
 func with_inventory_tracking() -> ItemStackUI:
-	GameSignals.update_inventory_signal.connect(_update_color)
+	if !Engine.is_editor_hint():
+		GameSignals.update_inventory_signal.connect(_update_color)
 	self._inventory_tracking = true
 	return self
 
@@ -26,18 +28,20 @@ func _ready() -> void:
 		_update_color()
 	
 func _update() -> void:
-	if self.item_stack == null or self.item_stack.item == null:
+	if inventory_icon == null or item_count_label == null:
 		return
-	if inventory_icon != null:
+	var item_count: int = self.item_stack.count
+	if item_stack.item == null:
+		inventory_icon.texture = null
+		item_count = 0
+	else:
 		inventory_icon.texture = self.item_stack.item.icon
-	if item_count_label != null:
-		var item_count: int = self.item_stack.count
-		item_count_label.text = str(item_count) if item_count > 0 else ""
+	item_count_label.text = str(item_count) if item_count > 0 else ""
 
 func _update_color() -> void:
 	if item_count_label == null or item_stack.item == null:
 		return
-	if Player.player_inventory.has_enough(item_stack):
+	if Engine.is_editor_hint() or Player.player_inventory.has_enough(item_stack):
 		item_count_label.label_settings.font_color = Color(0, 1.0, 0, 1.0)
 		return
 	item_count_label.label_settings.font_color = Color(1.0, 0, 0, 1.0)

@@ -31,5 +31,5 @@ func _on_encounters_btn_pressed() -> void:
 func _on_trainers_btn_pressed() -> void:
 	party.visible = false
 	story.visible = false
-	encounters.visible = true
-	trainers.visible = false
+	encounters.visible = false
+	trainers.visible = true

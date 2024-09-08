@@ -1,10 +1,8 @@
+@tool
 class_name CraftingMenuItem
 extends Control
 
-@export var recipe: Recipe:
-	set(value):
-		recipe = value
-		_update()
+@export var recipe: Recipe
 
 @onready var reward_list: HBoxContainer = %RewardList
 @onready var item_name: Label = %ItemName
@@ -15,14 +13,9 @@ const BIG_ITEM_STACK_UI = preload("res://scenes/common/big_item_stack_ui.tscn")
 const ITEM_STACK_UI = preload("res://scenes/common/item_stack_ui.tscn")
 
 func _ready() -> void:
-	GameSignals.update_inventory_signal.connect(_update_enabled)
-	_update()
-	_update_enabled()
-	
-func _update() -> void:
-	if recipe == null:
-		return
-	
+	if !Engine.is_editor_hint():
+		GameSignals.update_inventory_signal.connect(_update_enabled)
+		_update_enabled()
 	if reward_list != null:
 		for item: ItemStack in recipe.reward.item_list:
 			reward_list.add_child(BIG_ITEM_STACK_UI.instantiate().with_data(item))

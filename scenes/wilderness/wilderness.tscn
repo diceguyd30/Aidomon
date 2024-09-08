@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0m0ny8o6ha0d"]
+[gd_scene load_steps=4 format=3 uid="uid://c0m0ny8o6ha0d"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/scripts/wilderness.gd" id="1_cbj5x"]
+[ext_resource type="Resource" uid="uid://cvirmlwpd31x" path="res://resources/wilderness/starting.tres" id="2_4w8wo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scugx"]
 border_width_left = 5
@@ -18,6 +19,7 @@ custom_minimum_size = Vector2(228, 210)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cbj5x")
+wilderness_data = ExtResource("2_4w8wo")
 
 [node name="Panel Container" type="PanelContainer" parent="."]
 layout_mode = 1

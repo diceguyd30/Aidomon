@@ -1,12 +1,10 @@
+@tool
 class_name Cost
 extends Control
 
 signal purchased(unlock: Unlock)
 
-@export var unlock: Unlock:
-	set(value):
-		unlock = value
-		_update()
+@export var unlock: Unlock
 
 @onready var title: Label = %Title
 @onready var description: Label = %Description
@@ -20,13 +18,9 @@ func with_data(unlock_: Unlock) -> Cost:
 	return self
 
 func _ready() -> void:
-	GameSignals.update_inventory_signal.connect(_update_enabled)
-	_update()
+	if !Engine.is_editor_hint():
+		GameSignals.update_inventory_signal.connect(_update_enabled)
 	_update_enabled()
-
-func _update() -> void:
-	if title == null or description == null or cost_grid == null:
-		return
 	title.text = unlock.name
 	description.text = unlock.description
 	for item: ItemStack in unlock.cost.item_list:
@@ -36,4 +30,4 @@ func _on_unlock_btn_pressed() -> void:
 	purchased.emit(unlock)
 
 func _update_enabled() -> void:
-	unlock_btn.disabled = !Player.player_inventory.has_all(unlock.cost)
+	unlock_btn.disabled = Engine.is_editor_hint() or !Player.player_inventory.has_all(unlock.cost)

@@ -56,6 +56,7 @@ theme_override_constants/margin_left = 5
 [node name="ItemName" type="Label" parent="CraftButton/MarginContainer/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Capture Disc"
 label_settings = SubResource("LabelSettings_w8dxo")
 
 [node name="MarginContainer2" type="MarginContainer" parent="CraftButton"]
