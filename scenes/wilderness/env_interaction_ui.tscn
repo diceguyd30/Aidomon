@@ -1,35 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdun18iw0br7p"]
+[gd_scene load_steps=10 format=3 uid="uid://bdun18iw0br7p"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/env_interaction_ui.gd" id="1_edqk5"]
 [ext_resource type="PackedScene" uid="uid://dodbuvvecuffi" path="res://scenes/common/big_item_stack_ui.tscn" id="2_w0eb2"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="3_sck0y"]
+[ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="4_naowa"]
+[ext_resource type="LabelSettings" uid="uid://cxmfmenswhmkb" path="res://assets/fonts/pixel_text.tres" id="4_xbik4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo07r"]
+bg_color = Color(0.172833, 0.172833, 0.172833, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8eli"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_620rv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svp3h"]
+bg_color = Color(0.254902, 0.701961, 0.384314, 0.490196)
 
 [node name="EnvInteractionUI" type="Control"]
+custom_minimum_size = Vector2(70, 80)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -580.0
+offset_right = -570.0
 offset_bottom = -280.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_edqk5")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jo07r")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer"]
+clip_children = 2
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v8eli")
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxEmpty_620rv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_svp3h")
+value = 66.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="PanelContainer/PanelContainer/ProgressBar"]
+unique_name_in_owner = true
+wait_time = 5.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ItemStackContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_left = 2
@@ -37,14 +83,14 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="BigItemStackUI" parent="PanelContainer/VBoxContainer/CenterContainer/ItemStackContainer" instance=ExtResource("2_w0eb2")]
+[node name="BigItemStackUI" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer/MarginContainer" instance=ExtResource("2_w0eb2")]
 layout_mode = 2
 
-[node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/VBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/CenterContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/margin_left = 2
@@ -52,8 +98,44 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="BtnCollect" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer2/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="BtnCollect" type="Button" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_sck0y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
 text = "Collect"
+label_settings = ExtResource("4_xbik4")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/GridContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+texture = ExtResource("4_naowa")
+
+[connection signal="pressed" from="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/BtnCollect" to="." method="_on_btn_collect_pressed"]
