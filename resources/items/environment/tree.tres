@@ -24,4 +24,4 @@ id = 1
 name = "Tree"
 icon = ExtResource("1_24oqq")
 reward = SubResource("Resource_m7dq8")
-bg_color = Color(0.563708, 0.244036, 0.0135788, 1)
+bg_color = Color(0.4, 0.223529, 0.192157, 1)

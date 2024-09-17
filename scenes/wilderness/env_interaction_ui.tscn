@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdun18iw0br7p"]
+[gd_scene load_steps=13 format=3 uid="uid://bdun18iw0br7p"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/env_interaction_ui.gd" id="1_edqk5"]
 [ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="2_1ss7j"]
@@ -30,7 +30,8 @@ anti_aliasing = false
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_620rv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svp3h"]
-bg_color = Color(0.563708, 0.244036, 0.0135788, 1)
+resource_local_to_scene = true
+bg_color = Color(0.219626, 0.445708, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0pm2"]
 bg_color = Color(0, 0, 0, 0)
@@ -45,6 +46,10 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 5
 anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73sjv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cfgcn"]
 
 [node name="EnvInteractionUI" type="Control"]
 custom_minimum_size = Vector2(70, 80)
@@ -139,7 +144,8 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_sck0y")
-toggle_mode = true
+theme_override_styles/focus = SubResource("StyleBoxEmpty_73sjv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cfgcn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -168,4 +174,4 @@ size_flags_vertical = 4
 mouse_filter = 2
 
 [connection signal="timeout" from="PanelContainer/PanelContainer/ProgressBar/Timer" to="." method="_on_timer_timeout"]
-[connection signal="toggled" from="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/BtnCollect" to="." method="_on_btn_collect_toggled"]
+[connection signal="pressed" from="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/BtnCollect" to="." method="_on_btn_collect_pressed"]

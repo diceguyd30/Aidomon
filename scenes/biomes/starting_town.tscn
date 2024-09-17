@@ -1,9 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://b5yrx5jgkvg7u"]
+[gd_scene load_steps=13 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
 [ext_resource type="Texture2D" uid="uid://duh6mt145frff" path="res://assets/images/buttons/wilderness/wilderness_default.png" id="5_d2vnt"]
-[ext_resource type="PackedScene" uid="uid://c0m0ny8o6ha0d" path="res://scenes/wilderness/wilderness.tscn" id="5_dwx5a"]
+[ext_resource type="PackedScene" uid="uid://b0eiradaxlki3" path="res://scenes/wilderness/wilderness.tscn" id="5_dwx5a"]
 [ext_resource type="Texture2D" uid="uid://c0x3icnww880e" path="res://assets/images/buttons/wilderness/wilderness_hover.png" id="6_ombcp"]
 [ext_resource type="Texture2D" uid="uid://klvlsxl3xko3" path="res://assets/images/buttons/wilderness/wilderness_selected.png" id="7_5kcs3"]
 [ext_resource type="Texture2D" uid="uid://dmigp2q3u12nn" path="res://assets/images/buttons/craftbench/craftbench.png" id="8_pftn8"]
@@ -11,111 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhnc7gpi2p7d2" path="res://scenes/wilderness/town_location.tscn" id="10_6dk6d"]
 [ext_resource type="Texture2D" uid="uid://d18q3ximanf4j" path="res://assets/images/buttons/craftbench/craftbench_selected.png" id="10_axrab"]
 [ext_resource type="Resource" uid="uid://m3ynggnj3fl4" path="res://resources/unlocks/wilderness.tres" id="11_qtf4h"]
-[ext_resource type="Texture2D" uid="uid://c248j2r1y0fpv" path="res://assets/images/backgrounds/meadow.png" id="12_5udrd"]
 [ext_resource type="PackedScene" uid="uid://dtvb0ufibm0kq" path="res://scenes/craftbench/craftbench.tscn" id="12_pmi1a"]
-[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="13_3406x"]
-[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="14_sfana"]
-[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="15_guuon"]
-[ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="16_d5hf0"]
-[ext_resource type="Script" path="res://resources/items/item.gd" id="17_sq43g"]
-[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="18_i366a"]
-[ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/environment/rock.png" id="19_2sten"]
-[ext_resource type="Texture2D" uid="uid://c2fymf5mxqamd" path="res://assets/images/items/foragables/stone.png" id="20_2spmi"]
-[ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="21_tf3jp"]
-[ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/foragables/aidonium.png" id="22_s6yl6"]
-[ext_resource type="Script" path="res://resources/wilderness/wilderness_data.gd" id="23_lo66h"]
-
-[sub_resource type="Resource" id="Resource_fqa1q"]
-resource_local_to_scene = true
-script = ExtResource("17_sq43g")
-id = 1
-name = "Wood"
-icon = ExtResource("16_d5hf0")
-max_stack_size = 30
-
-[sub_resource type="Resource" id="Resource_d38q2"]
-resource_local_to_scene = true
-script = ExtResource("15_guuon")
-item = SubResource("Resource_fqa1q")
-count = 2
-
-[sub_resource type="Resource" id="Resource_00dvi"]
-resource_local_to_scene = true
-script = ExtResource("18_i366a")
-item_list = Array[ExtResource("15_guuon")]([SubResource("Resource_d38q2")])
-
-[sub_resource type="Resource" id="Resource_uwmxg"]
-resource_local_to_scene = true
-script = ExtResource("13_3406x")
-id = 1
-name = "Tree"
-icon = ExtResource("14_sfana")
-reward = SubResource("Resource_00dvi")
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Resource" id="Resource_kvpdw"]
-resource_local_to_scene = true
-script = ExtResource("17_sq43g")
-id = 2
-name = "Stone"
-icon = ExtResource("20_2spmi")
-max_stack_size = 10
-
-[sub_resource type="Resource" id="Resource_lt7ve"]
-resource_local_to_scene = true
-script = ExtResource("15_guuon")
-item = SubResource("Resource_kvpdw")
-count = 3
-
-[sub_resource type="Resource" id="Resource_xql6y"]
-resource_local_to_scene = true
-script = ExtResource("18_i366a")
-item_list = Array[ExtResource("15_guuon")]([SubResource("Resource_lt7ve")])
-
-[sub_resource type="Resource" id="Resource_bhq2h"]
-resource_local_to_scene = true
-script = ExtResource("13_3406x")
-id = 2
-name = "Rock"
-icon = ExtResource("19_2sten")
-reward = SubResource("Resource_xql6y")
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Resource" id="Resource_jfdi6"]
-resource_local_to_scene = true
-script = ExtResource("17_sq43g")
-id = 3
-name = "Aidonium"
-icon = ExtResource("22_s6yl6")
-max_stack_size = 50
-
-[sub_resource type="Resource" id="Resource_elx4d"]
-resource_local_to_scene = true
-script = ExtResource("15_guuon")
-item = SubResource("Resource_jfdi6")
-count = 4
-
-[sub_resource type="Resource" id="Resource_xe8e8"]
-resource_local_to_scene = true
-script = ExtResource("18_i366a")
-item_list = Array[ExtResource("15_guuon")]([SubResource("Resource_elx4d")])
-
-[sub_resource type="Resource" id="Resource_6ce7r"]
-resource_local_to_scene = true
-script = ExtResource("13_3406x")
-id = 3
-name = "Aidonium Crystal"
-icon = ExtResource("21_tf3jp")
-reward = SubResource("Resource_xe8e8")
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Resource" id="Resource_isyq2"]
-resource_local_to_scene = true
-script = ExtResource("23_lo66h")
-id = 1
-name = "Starting"
-background = ExtResource("12_5udrd")
-environment_items = Array[ExtResource("13_3406x")]([SubResource("Resource_uwmxg"), SubResource("Resource_bhq2h"), SubResource("Resource_6ce7r")])
 
 [node name="Starting Town" type="Control"]
 custom_minimum_size = Vector2(467, 236)
@@ -182,7 +78,6 @@ layout_mode = 2
 
 [node name="Wilderness" parent="TextureRect/WildernessContainer/WildernessPanel" instance=ExtResource("5_dwx5a")]
 layout_mode = 2
-wilderness_data = SubResource("Resource_isyq2")
 
 [node name="CraftbenchContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
