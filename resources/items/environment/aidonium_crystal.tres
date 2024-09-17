@@ -24,3 +24,4 @@ id = 3
 name = "Aidonium Crystal"
 icon = ExtResource("1_rxgei")
 reward = SubResource("Resource_gt53l")
+bg_color = Color(0.219626, 0.445708, 1, 1)

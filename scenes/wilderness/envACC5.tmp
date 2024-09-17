@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bdun18iw0br7p"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/env_interaction_ui.gd" id="1_edqk5"]
-[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="2_1ss7j"]
 [ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="2_v2suc"]
+[ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/environment/rock.png" id="3_1kqq2"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="3_sck0y"]
 [ext_resource type="LabelSettings" uid="uid://cxmfmenswhmkb" path="res://assets/fonts/pixel_text.tres" id="4_xbik4"]
 
@@ -30,7 +30,7 @@ anti_aliasing = false
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_620rv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svp3h"]
-bg_color = Color(0.563708, 0.244036, 0.0135788, 1)
+bg_color = Color(0.355314, 0.355314, 0.355314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0pm2"]
 bg_color = Color(0, 0, 0, 0)
@@ -118,7 +118,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_1ss7j")
+texture = ExtResource("3_1kqq2")
 
 [node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

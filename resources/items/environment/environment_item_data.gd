@@ -5,3 +5,4 @@ extends Resource
 @export var name: String
 @export var icon: Texture
 @export var reward: ItemBundle
+@export var bg_color: Color

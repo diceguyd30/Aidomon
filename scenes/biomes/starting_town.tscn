@@ -51,6 +51,7 @@ id = 1
 name = "Tree"
 icon = ExtResource("14_sfana")
 reward = SubResource("Resource_00dvi")
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_kvpdw"]
 resource_local_to_scene = true
@@ -78,6 +79,7 @@ id = 2
 name = "Rock"
 icon = ExtResource("19_2sten")
 reward = SubResource("Resource_xql6y")
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_jfdi6"]
 resource_local_to_scene = true
@@ -105,6 +107,7 @@ id = 3
 name = "Aidonium Crystal"
 icon = ExtResource("21_tf3jp")
 reward = SubResource("Resource_xe8e8")
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_isyq2"]
 resource_local_to_scene = true

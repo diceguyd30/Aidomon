@@ -24,3 +24,4 @@ id = 2
 name = "Rock"
 icon = ExtResource("1_s3puo")
 reward = SubResource("Resource_6qo72")
+bg_color = Color(0.355314, 0.355314, 0.355314, 1)
