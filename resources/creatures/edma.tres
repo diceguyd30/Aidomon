@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="Creature" load_steps=12 format=3 uid="uid://btlhb22lvjifr"]
+
+[ext_resource type="Texture2D" uid="uid://cr7gx6fex4eay" path="res://assets/images/creatures/Edma-Sheet.png" id="1_cgmgk"]
+[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="1_ghdnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_618uh"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl1uk"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7wm2"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yamft"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgvh0"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv71s"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h0v1"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dndlt"]
+atlas = ExtResource("1_cgmgk")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq2r6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_618uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl1uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7wm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yamft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgvh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv71s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h0v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dndlt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_ghdnx")
+id = 4
+name = "Edma"
+idle_animation = SubResource("SpriteFrames_oq2r6")

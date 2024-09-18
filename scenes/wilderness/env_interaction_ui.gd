@@ -29,6 +29,7 @@ func _update() -> void:
 		var new_texture: TextureRect = TextureRect.new()
 		new_texture.texture = item.item.icon
 		new_texture.size = Vector2(16, 16)
+		new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		reward_grid.add_child(new_texture)
 
 func _clear_reward_grid() -> void:
