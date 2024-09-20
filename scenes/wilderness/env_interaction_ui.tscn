@@ -154,11 +154,12 @@ mouse_filter = 2
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 2
+theme_override_constants/margin_left = 6
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer/MarginContainer"]
+[node name="ActivityVerbLbl" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Collect"
+text = "Chop"
 label_settings = ExtResource("4_xbik4")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer"]

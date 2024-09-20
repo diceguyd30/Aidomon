@@ -20,8 +20,9 @@ item_list = Array[ExtResource("3_lh6u4")]([SubResource("Resource_v1h3j")])
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_x0uyt")
-id = 2
+id = 3
 name = "Rock"
 icon = ExtResource("1_s3puo")
 reward = SubResource("Resource_6qo72")
 bg_color = Color(0.355314, 0.355314, 0.355314, 1)
+activity_verb = "Mine"

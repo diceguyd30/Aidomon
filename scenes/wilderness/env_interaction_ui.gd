@@ -1,6 +1,8 @@
 @tool
 extends Control
 
+signal activity_pressed
+
 @export var environment_item: EnvironmentItemData:
 	set(value):
 		environment_item = value
@@ -11,6 +13,7 @@ extends Control
 @onready var btn_collect: Button = %BtnCollect
 @onready var environment_item_icon: TextureRect = %EnvironmentItemIcon
 @onready var reward_grid: GridContainer = %RewardGrid
+@onready var activity_verb_lbl: Label = %ActivityVerbLbl
 
 func _ready() -> void:
 	if !Engine.is_editor_hint():
@@ -18,12 +21,13 @@ func _ready() -> void:
 	_update()
 
 func _update() -> void:
-	if [environment_item_icon, progress_bar, reward_grid] \
+	if [environment_item_icon, progress_bar, reward_grid, activity_verb_lbl] \
 			.any(func(x: Node) -> bool: return x == null):
 		return
 	environment_item_icon.texture = environment_item.icon
 	var fill: StyleBoxFlat = progress_bar.get_theme_stylebox("fill")
 	fill.bg_color = environment_item.bg_color
+	activity_verb_lbl.text = environment_item.activity_verb
 	_clear_reward_grid()
 	for item: ItemStack in environment_item.reward.item_list:
 		var new_texture: TextureRect = TextureRect.new()
@@ -47,8 +51,7 @@ func _on_timer_timeout() -> void:
 	timer.start()
 
 func _on_btn_collect_pressed() -> void:
-	if !Engine.is_editor_hint():
-		GameSignals.player_being_assigned_to_work()
+	activity_pressed.emit()
 	timer.start()
 
 func _unassign_from_work() -> void:
