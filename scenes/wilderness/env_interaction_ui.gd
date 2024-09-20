@@ -29,12 +29,13 @@ func _update() -> void:
 	fill.bg_color = environment_item.bg_color
 	activity_verb_lbl.text = environment_item.activity_verb
 	_clear_reward_grid()
-	for item: ItemStack in environment_item.reward.item_list:
-		var new_texture: TextureRect = TextureRect.new()
-		new_texture.texture = item.item.icon
-		new_texture.size = Vector2(16, 16)
-		new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		reward_grid.add_child(new_texture)
+	if environment_item.reward != null:
+		for item: ItemStack in environment_item.reward.item_list:
+			var new_texture: TextureRect = TextureRect.new()
+			new_texture.texture = item.item.icon
+			new_texture.size = Vector2(16, 16)
+			new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			reward_grid.add_child(new_texture)
 
 func _clear_reward_grid() -> void:
 	for child: Node in reward_grid.get_children():
