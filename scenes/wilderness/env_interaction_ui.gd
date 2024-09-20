@@ -25,6 +25,7 @@ func _update() -> void:
 			.any(func(x: Node) -> bool: return x == null):
 		return
 	environment_item_icon.texture = environment_item.icon
+	progress_bar.max_value = environment_item.activity_duration_seconds
 	var fill: StyleBoxFlat = progress_bar.get_theme_stylebox("fill")
 	fill.bg_color = environment_item.bg_color
 	activity_verb_lbl.text = environment_item.activity_verb
@@ -45,7 +46,7 @@ func _clear_reward_grid() -> void:
 
 func _process(_delta: float) -> void:
 	if !timer.is_stopped():
-		progress_bar.value = ((timer.wait_time - timer.time_left) / timer.wait_time) * 100
+		progress_bar.value = timer.wait_time - timer.time_left
 
 func _on_timer_timeout() -> void:
 	if !Engine.is_editor_hint():
