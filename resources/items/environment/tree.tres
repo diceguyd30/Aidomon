@@ -26,3 +26,4 @@ icon = ExtResource("1_24oqq")
 reward = SubResource("Resource_m7dq8")
 bg_color = Color(0.4, 0.223529, 0.192157, 1)
 activity_verb = "Chop"
+activity_duration_seconds = 5.0

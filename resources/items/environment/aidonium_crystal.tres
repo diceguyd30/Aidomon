@@ -26,3 +26,4 @@ icon = ExtResource("1_rxgei")
 reward = SubResource("Resource_gt53l")
 bg_color = Color(0.219626, 0.445708, 1, 1)
 activity_verb = "Mine"
+activity_duration_seconds = 15.0

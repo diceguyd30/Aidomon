@@ -26,3 +26,4 @@ icon = ExtResource("1_s3puo")
 reward = SubResource("Resource_6qo72")
 bg_color = Color(0.355314, 0.355314, 0.355314, 1)
 activity_verb = "Mine"
+activity_duration_seconds = 10.0

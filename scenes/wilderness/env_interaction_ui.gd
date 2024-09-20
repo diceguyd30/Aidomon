@@ -21,13 +21,14 @@ func _ready() -> void:
 	_update()
 
 func _update() -> void:
-	if [environment_item_icon, progress_bar, reward_grid, activity_verb_lbl] \
+	if [environment_item_icon, progress_bar, reward_grid, activity_verb_lbl, timer] \
 			.any(func(x: Node) -> bool: return x == null):
 		return
 	environment_item_icon.texture = environment_item.icon
 	var fill: StyleBoxFlat = progress_bar.get_theme_stylebox("fill")
 	fill.bg_color = environment_item.bg_color
 	activity_verb_lbl.text = environment_item.activity_verb
+	timer.wait_time = environment_item.activity_duration_seconds
 	_clear_reward_grid()
 	if environment_item.reward != null:
 		for item: ItemStack in environment_item.reward.item_list:

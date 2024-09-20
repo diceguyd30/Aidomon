@@ -10,3 +10,4 @@ name = "Creature"
 icon = ExtResource("1_y4trp")
 bg_color = Color(0.187176, 0.187176, 0.187176, 1)
 activity_verb = "Search"
+activity_duration_seconds = 30.0

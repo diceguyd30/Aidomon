@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0eiradaxlki3"]
+[gd_scene load_steps=26 format=3 uid="uid://b0eiradaxlki3"]
 
 [ext_resource type="PackedScene" uid="uid://bdun18iw0br7p" path="res://scenes/wilderness/env_interaction_ui.tscn" id="1_4pygp"]
 [ext_resource type="Script" path="res://scenes/wilderness/wilderness.gd" id="1_ij334"]
-[ext_resource type="Resource" uid="uid://crc5mqk3kesya" path="res://resources/items/environment/rock.tres" id="3_h300i"]
-[ext_resource type="Resource" uid="uid://d0lasf3n7g662" path="res://resources/items/environment/aidonium_crystal.tres" id="4_nroww"]
+[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="2_3hy8i"]
+[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_s4lib"]
+[ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="4_jrnlj"]
+[ext_resource type="Script" path="res://resources/items/item.gd" id="5_3shp6"]
+[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="6_oyb1g"]
+[ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/foragables/aidonium.png" id="7_u0wca"]
+[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="7_wk3tq"]
+[ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/environment/rock.png" id="8_mgv27"]
+[ext_resource type="Texture2D" uid="uid://c2fymf5mxqamd" path="res://assets/images/items/foragables/stone.png" id="10_6q0sx"]
+[ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="10_gw7eq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ein4n"]
 bg_color = Color(0.2, 0.2, 0.2, 0.458824)
@@ -16,6 +24,96 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="Resource" id="Resource_8g4we"]
+resource_local_to_scene = true
+script = ExtResource("5_3shp6")
+id = 1
+name = "Wood"
+icon = ExtResource("4_jrnlj")
+max_stack_size = 30
+
+[sub_resource type="Resource" id="Resource_lqie2"]
+resource_local_to_scene = true
+script = ExtResource("3_s4lib")
+item = SubResource("Resource_8g4we")
+count = 2
+
+[sub_resource type="Resource" id="Resource_bq6gd"]
+resource_local_to_scene = true
+script = ExtResource("6_oyb1g")
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_lqie2")])
+
+[sub_resource type="Resource" id="Resource_5n8r2"]
+resource_local_to_scene = true
+script = ExtResource("7_wk3tq")
+id = 1
+name = "Tree"
+icon = ExtResource("2_3hy8i")
+reward = SubResource("Resource_bq6gd")
+bg_color = Color(0.4, 0.223529, 0.192157, 1)
+activity_verb = "Chop"
+activity_duration_seconds = 15.0
+
+[sub_resource type="Resource" id="Resource_m6cyf"]
+resource_local_to_scene = true
+script = ExtResource("5_3shp6")
+id = 2
+name = "Stone"
+icon = ExtResource("10_6q0sx")
+max_stack_size = 10
+
+[sub_resource type="Resource" id="Resource_ujmoj"]
+resource_local_to_scene = true
+script = ExtResource("3_s4lib")
+item = SubResource("Resource_m6cyf")
+count = 3
+
+[sub_resource type="Resource" id="Resource_8bey0"]
+resource_local_to_scene = true
+script = ExtResource("6_oyb1g")
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_ujmoj")])
+
+[sub_resource type="Resource" id="Resource_ckmjx"]
+resource_local_to_scene = true
+script = ExtResource("7_wk3tq")
+id = 3
+name = "Rock"
+icon = ExtResource("8_mgv27")
+reward = SubResource("Resource_8bey0")
+bg_color = Color(0.355314, 0.355314, 0.355314, 1)
+activity_verb = "Mine"
+activity_duration_seconds = 10.0
+
+[sub_resource type="Resource" id="Resource_4bvgy"]
+resource_local_to_scene = true
+script = ExtResource("5_3shp6")
+id = 3
+name = "Aidonium"
+icon = ExtResource("7_u0wca")
+max_stack_size = 50
+
+[sub_resource type="Resource" id="Resource_13x0a"]
+resource_local_to_scene = true
+script = ExtResource("3_s4lib")
+item = SubResource("Resource_4bvgy")
+count = 4
+
+[sub_resource type="Resource" id="Resource_ae8kb"]
+resource_local_to_scene = true
+script = ExtResource("6_oyb1g")
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_13x0a")])
+
+[sub_resource type="Resource" id="Resource_lfeqw"]
+resource_local_to_scene = true
+script = ExtResource("7_wk3tq")
+id = 3
+name = "Aidonium Crystal"
+icon = ExtResource("10_gw7eq")
+reward = SubResource("Resource_ae8kb")
+bg_color = Color(0.219626, 0.445708, 1, 1)
+activity_verb = "Mine"
+activity_duration_seconds = 15.0
 
 [node name="Wilderness" type="Control"]
 custom_minimum_size = Vector2(228, 210)
@@ -52,18 +150,24 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+environment_item = SubResource("Resource_5n8r2")
+
+[node name="Creature" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [node name="Rock" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = ExtResource("3_h300i")
+environment_item = SubResource("Resource_ckmjx")
 
 [node name="Crystal" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = ExtResource("4_nroww")
+environment_item = SubResource("Resource_lfeqw")
 
 [connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Tree" to="." method="_on_activity_pressed"]
 [connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Rock" to="." method="_on_activity_pressed"]

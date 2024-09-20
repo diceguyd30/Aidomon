@@ -7,3 +7,4 @@ extends Resource
 @export var reward: ItemBundle
 @export var bg_color: Color
 @export var activity_verb: String
+@export var activity_duration_seconds: float
