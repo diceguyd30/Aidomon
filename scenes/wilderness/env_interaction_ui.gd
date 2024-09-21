@@ -1,6 +1,8 @@
 @tool
 extends Control
 
+const util = preload("res://scripts/util.gd")
+
 signal activity_pressed
 signal activity_completed(item_bundle: ItemBundle)
 
@@ -23,7 +25,7 @@ func _ready() -> void:
 
 func _update() -> void:
 	if [environment_item_icon, progress_bar, reward_grid, activity_verb_lbl, timer] \
-			.any(func(x: Node) -> bool: return x == null):
+			.any(util.are_null):
 		return
 	environment_item_icon.texture = environment_item.icon
 	progress_bar.max_value = environment_item.activity_duration_seconds
