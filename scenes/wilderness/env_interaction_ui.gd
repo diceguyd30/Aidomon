@@ -13,7 +13,6 @@ signal activity_completed(item_bundle: ItemBundle)
 
 @onready var progress_bar: ProgressBar = %ProgressBar
 @onready var timer: Timer = %Timer
-@onready var btn_collect: Button = %BtnCollect
 @onready var environment_item_icon: TextureRect = %EnvironmentItemIcon
 @onready var reward_grid: GridContainer = %RewardGrid
 @onready var activity_verb_lbl: Label = %ActivityVerbLbl
