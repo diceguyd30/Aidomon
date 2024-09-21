@@ -32,7 +32,7 @@ func _update() -> void:
 	fill.bg_color = environment_item.bg_color
 	activity_verb_lbl.text = environment_item.activity_verb
 	timer.wait_time = environment_item.activity_duration_seconds
-	_clear_reward_grid()
+	util.clear_children(reward_grid)
 	if environment_item.reward != null:
 		for item: ItemStack in environment_item.reward.item_list:
 			var new_texture: TextureRect = TextureRect.new()
@@ -40,11 +40,6 @@ func _update() -> void:
 			new_texture.size = Vector2(16, 16)
 			new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			reward_grid.add_child(new_texture)
-
-func _clear_reward_grid() -> void:
-	for child: Node in reward_grid.get_children():
-		reward_grid.remove_child(child)
-		child.queue_free()
 
 func _process(_delta: float) -> void:
 	if !timer.is_stopped():
