@@ -1,7 +1,7 @@
 @tool
 extends Control
 
-const util = preload("res://scripts/util.gd")
+const UTIL = preload("res://scripts/util.gd")
 
 signal activity_pressed
 signal activity_completed(item_bundle: ItemBundle)
@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func _update() -> void:
 	if [environment_item_icon, progress_bar, reward_grid, activity_verb_lbl, timer] \
-			.any(util.are_null):
+			.any(UTIL.are_null):
 		return
 	environment_item_icon.texture = environment_item.icon
 	progress_bar.max_value = environment_item.activity_duration_seconds
@@ -32,7 +32,7 @@ func _update() -> void:
 	fill.bg_color = environment_item.bg_color
 	activity_verb_lbl.text = environment_item.activity_verb
 	timer.wait_time = environment_item.activity_duration_seconds
-	util.clear_children(reward_grid)
+	UTIL.clear_children(reward_grid)
 	if environment_item.reward != null:
 		for item: ItemStack in environment_item.reward.item_list:
 			var new_texture: TextureRect = TextureRect.new()
