@@ -2,6 +2,7 @@
 extends Control
 
 signal activity_pressed
+signal activity_completed(item_bundle: ItemBundle)
 
 @export var environment_item: EnvironmentItemData:
 	set(value):
@@ -49,8 +50,7 @@ func _process(_delta: float) -> void:
 		progress_bar.value = timer.wait_time - timer.time_left
 
 func _on_timer_timeout() -> void:
-	if !Engine.is_editor_hint():
-		GameSignals.reward_player(environment_item.reward)
+	activity_completed.emit(environment_item.reward)
 	timer.start()
 
 func _on_btn_collect_pressed() -> void:

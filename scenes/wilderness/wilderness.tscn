@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://b0eiradaxlki3"]
+[gd_scene load_steps=26 format=3 uid="uid://b0eiradaxlki3"]
 
 [ext_resource type="PackedScene" uid="uid://bdun18iw0br7p" path="res://scenes/wilderness/env_interaction_ui.tscn" id="1_4pygp"]
 [ext_resource type="Script" path="res://scenes/wilderness/wilderness.gd" id="1_ij334"]
+[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="2_3hy8i"]
 [ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_s4lib"]
-[ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="3_xwh2l"]
+[ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="4_jrnlj"]
 [ext_resource type="Script" path="res://resources/items/item.gd" id="5_3shp6"]
 [ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="6_oyb1g"]
 [ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/foragables/aidonium.png" id="7_u0wca"]
@@ -24,7 +25,37 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="Resource" id="Resource_jj68g"]
+[sub_resource type="Resource" id="Resource_avd4e"]
+resource_local_to_scene = true
+script = ExtResource("5_3shp6")
+id = 1
+name = "Wood"
+icon = ExtResource("4_jrnlj")
+max_stack_size = 30
+
+[sub_resource type="Resource" id="Resource_avij8"]
+resource_local_to_scene = true
+script = ExtResource("3_s4lib")
+item = SubResource("Resource_avd4e")
+count = 2
+
+[sub_resource type="Resource" id="Resource_oe0ae"]
+resource_local_to_scene = true
+script = ExtResource("6_oyb1g")
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_avij8")])
+
+[sub_resource type="Resource" id="Resource_3bgbc"]
+resource_local_to_scene = true
+script = ExtResource("7_wk3tq")
+id = 1
+name = "Tree"
+icon = ExtResource("2_3hy8i")
+reward = SubResource("Resource_oe0ae")
+bg_color = Color(0.4, 0.223529, 0.192157, 1)
+activity_verb = "Chop"
+activity_duration_seconds = 5.0
+
+[sub_resource type="Resource" id="Resource_x8xoq"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 2
@@ -32,29 +63,29 @@ name = "Stone"
 icon = ExtResource("10_6q0sx")
 max_stack_size = 10
 
-[sub_resource type="Resource" id="Resource_kb7tg"]
+[sub_resource type="Resource" id="Resource_pyknb"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_jj68g")
+item = SubResource("Resource_x8xoq")
 count = 3
 
-[sub_resource type="Resource" id="Resource_cs14r"]
+[sub_resource type="Resource" id="Resource_h3ybr"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_kb7tg")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_pyknb")])
 
-[sub_resource type="Resource" id="Resource_r47ct"]
+[sub_resource type="Resource" id="Resource_42owc"]
 resource_local_to_scene = true
 script = ExtResource("7_wk3tq")
 id = 3
 name = "Rock"
 icon = ExtResource("8_mgv27")
-reward = SubResource("Resource_cs14r")
+reward = SubResource("Resource_h3ybr")
 bg_color = Color(0.355314, 0.355314, 0.355314, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 10.0
 
-[sub_resource type="Resource" id="Resource_toi3f"]
+[sub_resource type="Resource" id="Resource_i267q"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 3
@@ -62,24 +93,24 @@ name = "Aidonium"
 icon = ExtResource("7_u0wca")
 max_stack_size = 50
 
-[sub_resource type="Resource" id="Resource_vdlxg"]
+[sub_resource type="Resource" id="Resource_dve8a"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_toi3f")
+item = SubResource("Resource_i267q")
 count = 4
 
-[sub_resource type="Resource" id="Resource_0hpw3"]
+[sub_resource type="Resource" id="Resource_ua1no"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_vdlxg")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_dve8a")])
 
-[sub_resource type="Resource" id="Resource_7ra00"]
+[sub_resource type="Resource" id="Resource_d4qyq"]
 resource_local_to_scene = true
 script = ExtResource("7_wk3tq")
 id = 3
 name = "Aidonium Crystal"
 icon = ExtResource("10_gw7eq")
-reward = SubResource("Resource_0hpw3")
+reward = SubResource("Resource_ua1no")
 bg_color = Color(0.219626, 0.445708, 1, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 15.0
@@ -119,7 +150,7 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = ExtResource("3_xwh2l")
+environment_item = SubResource("Resource_3bgbc")
 
 [node name="Creature" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
@@ -130,15 +161,19 @@ size_flags_vertical = 6
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = SubResource("Resource_r47ct")
+environment_item = SubResource("Resource_42owc")
 
 [node name="Crystal" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = SubResource("Resource_7ra00")
+environment_item = SubResource("Resource_d4qyq")
 
+[connection signal="activity_completed" from="PanelContainer/HBoxContainer/GridContainer/Tree" to="." method="_on_activity_completed"]
 [connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Tree" to="." method="_on_activity_pressed"]
-[connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Creature" to="." method="_on_creature_activity_pressed"]
+[connection signal="activity_completed" from="PanelContainer/HBoxContainer/GridContainer/Creature" to="." method="_on_creature_activity_completed"]
+[connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Creature" to="." method="_on_activity_pressed"]
+[connection signal="activity_completed" from="PanelContainer/HBoxContainer/GridContainer/Rock" to="." method="_on_activity_completed"]
 [connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Rock" to="." method="_on_activity_pressed"]
+[connection signal="activity_completed" from="PanelContainer/HBoxContainer/GridContainer/Crystal" to="." method="_on_activity_completed"]
 [connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Crystal" to="." method="_on_activity_pressed"]
