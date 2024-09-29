@@ -25,7 +25,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="Resource" id="Resource_avd4e"]
+[sub_resource type="Resource" id="Resource_88xvf"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 1
@@ -33,29 +33,29 @@ name = "Wood"
 icon = ExtResource("4_jrnlj")
 max_stack_size = 30
 
-[sub_resource type="Resource" id="Resource_avij8"]
+[sub_resource type="Resource" id="Resource_2labs"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_avd4e")
+item = SubResource("Resource_88xvf")
 count = 2
 
-[sub_resource type="Resource" id="Resource_oe0ae"]
+[sub_resource type="Resource" id="Resource_hviov"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_avij8")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_2labs")])
 
-[sub_resource type="Resource" id="Resource_3bgbc"]
+[sub_resource type="Resource" id="Resource_wp6sw"]
 resource_local_to_scene = true
 script = ExtResource("7_wk3tq")
 id = 1
 name = "Tree"
 icon = ExtResource("2_3hy8i")
-reward = SubResource("Resource_oe0ae")
+reward = SubResource("Resource_hviov")
 bg_color = Color(0.4, 0.223529, 0.192157, 1)
 activity_verb = "Chop"
 activity_duration_seconds = 5.0
 
-[sub_resource type="Resource" id="Resource_x8xoq"]
+[sub_resource type="Resource" id="Resource_i2m4e"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 2
@@ -63,29 +63,29 @@ name = "Stone"
 icon = ExtResource("10_6q0sx")
 max_stack_size = 10
 
-[sub_resource type="Resource" id="Resource_pyknb"]
+[sub_resource type="Resource" id="Resource_hfdns"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_x8xoq")
+item = SubResource("Resource_i2m4e")
 count = 3
 
-[sub_resource type="Resource" id="Resource_h3ybr"]
+[sub_resource type="Resource" id="Resource_ftmq5"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_pyknb")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_hfdns")])
 
-[sub_resource type="Resource" id="Resource_42owc"]
+[sub_resource type="Resource" id="Resource_idmx5"]
 resource_local_to_scene = true
 script = ExtResource("7_wk3tq")
 id = 3
 name = "Rock"
 icon = ExtResource("8_mgv27")
-reward = SubResource("Resource_h3ybr")
+reward = SubResource("Resource_ftmq5")
 bg_color = Color(0.355314, 0.355314, 0.355314, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 10.0
 
-[sub_resource type="Resource" id="Resource_i267q"]
+[sub_resource type="Resource" id="Resource_573oy"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 3
@@ -93,24 +93,24 @@ name = "Aidonium"
 icon = ExtResource("7_u0wca")
 max_stack_size = 50
 
-[sub_resource type="Resource" id="Resource_dve8a"]
+[sub_resource type="Resource" id="Resource_r7gap"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_i267q")
+item = SubResource("Resource_573oy")
 count = 4
 
-[sub_resource type="Resource" id="Resource_ua1no"]
+[sub_resource type="Resource" id="Resource_cd1mq"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_dve8a")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_r7gap")])
 
-[sub_resource type="Resource" id="Resource_d4qyq"]
+[sub_resource type="Resource" id="Resource_mk7sr"]
 resource_local_to_scene = true
 script = ExtResource("7_wk3tq")
 id = 3
 name = "Aidonium Crystal"
 icon = ExtResource("10_gw7eq")
-reward = SubResource("Resource_ua1no")
+reward = SubResource("Resource_cd1mq")
 bg_color = Color(0.219626, 0.445708, 1, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 15.0
@@ -150,7 +150,7 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = SubResource("Resource_3bgbc")
+environment_item = SubResource("Resource_wp6sw")
 
 [node name="Creature" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
@@ -161,13 +161,13 @@ size_flags_vertical = 6
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = SubResource("Resource_42owc")
+environment_item = SubResource("Resource_idmx5")
 
 [node name="Crystal" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = SubResource("Resource_d4qyq")
+environment_item = SubResource("Resource_mk7sr")
 
 [connection signal="activity_completed" from="PanelContainer/HBoxContainer/GridContainer/Tree" to="." method="_on_activity_completed"]
 [connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Tree" to="." method="_on_activity_pressed"]
