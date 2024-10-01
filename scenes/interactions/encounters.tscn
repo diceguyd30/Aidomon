@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cqgnm2o6g44w1"]
+[gd_scene load_steps=32 format=3 uid="uid://cqgnm2o6g44w1"]
 
 [ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="1_ndnjm"]
 [ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_u3fwb"]
@@ -167,6 +167,14 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqlc3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0jpw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrltl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouwy1"]
+
 [node name="encounters" type="Control"]
 custom_minimum_size = Vector2(380, 100)
 layout_mode = 3
@@ -273,6 +281,8 @@ layout_mode = 2
 [node name="Button" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_x3voh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uqlc3")
+toggle_mode = true
 text = "Auto Attack"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer"]
@@ -280,19 +290,50 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button" type="TextureButton" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("2_x3voh")
-texture_normal = ExtResource("5_rerre")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h0jpw")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_rerre")
 
 [node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme = ExtResource("2_x3voh")
-text = "R"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yrltl")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button2"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_rerre")
 
 [node name="Button3" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme = ExtResource("2_x3voh")
-text = "S"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ouwy1")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button3"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_rerre")
