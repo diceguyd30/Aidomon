@@ -1,10 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://cqgnm2o6g44w1"]
+[gd_scene load_steps=34 format=3 uid="uid://cqgnm2o6g44w1"]
 
 [ext_resource type="Texture2D" uid="uid://tr2dqhp001ir" path="res://assets/images/creatures/Ice Pixie-Sheet.png" id="1_ndnjm"]
 [ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_u3fwb"]
 [ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_wt6u3"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="2_x3voh"]
 [ext_resource type="Texture2D" uid="uid://dhpsrgqg4qg6t" path="res://assets/images/items/craftables/capture_disc.png" id="5_rerre"]
+[ext_resource type="Texture2D" uid="uid://c1420oa4iuc4d" path="res://assets/images/buttons/interactions/run.png" id="6_7xxy0"]
+[ext_resource type="Texture2D" uid="uid://cdxfqrgbyawl8" path="res://assets/images/buttons/interactions/settings.png" id="7_kdf2w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jgc23"]
 animations = [{
@@ -319,8 +321,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.0131695
 mouse_filter = 2
-texture = ExtResource("5_rerre")
+texture = ExtResource("6_7xxy0")
 
 [node name="Button3" type="Button" parent="HBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(16, 16)
@@ -335,5 +338,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.00187225
 mouse_filter = 2
-texture = ExtResource("5_rerre")
+texture = ExtResource("7_kdf2w")
