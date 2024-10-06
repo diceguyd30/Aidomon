@@ -1,3 +1,4 @@
+@tool
 extends Control
 
 func _on_activity_pressed() -> void:
