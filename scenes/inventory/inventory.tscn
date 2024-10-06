@@ -1,6 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://3ccxuhf2703l"]
+[gd_scene load_steps=10 format=3 uid="uid://3ccxuhf2703l"]
 
 [ext_resource type="Script" path="res://scenes/inventory/inventory.gd" id="1_of7m6"]
+[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="2_spghu"]
+[ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="3_3o02x"]
+[ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="4_l86ll"]
+[ext_resource type="Script" path="res://scenes/inventory/inventory_data.gd" id="5_sth7a"]
+
+[sub_resource type="Resource" id="Resource_t4df5"]
+script = ExtResource("2_spghu")
+item = ExtResource("3_3o02x")
+count = 10
+
+[sub_resource type="Resource" id="Resource_75hml"]
+script = ExtResource("2_spghu")
+item = ExtResource("4_l86ll")
+count = 5
+
+[sub_resource type="Resource" id="Resource_0w6qq"]
+script = ExtResource("5_sth7a")
+max_inventory_size = 10
+inventory_items = Array[ExtResource("2_spghu")]([SubResource("Resource_t4df5"), SubResource("Resource_75hml")])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhyk2"]
+bg_color = Color(0.190762, 0.190762, 0.190762, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Inventory" type="Control"]
 custom_minimum_size = Vector2(145, 300)
@@ -12,7 +43,9 @@ offset_right = -495.0
 offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.000548846
 script = ExtResource("1_of7m6")
+inventory = SubResource("Resource_0w6qq")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -21,6 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xhyk2")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
 layout_mode = 2
