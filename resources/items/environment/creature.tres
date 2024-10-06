@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://g0eel3nowluc" path="res://assets/images/creatures/concealed_creature.png" id="1_y4trp"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_qhfup")
 id = 4
 name = "Creature"

@@ -1,10 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://bdun18iw0br7p"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/env_interaction_ui.gd" id="1_edqk5"]
-[ext_resource type="Resource" uid="uid://bqukdu171l7sr" path="res://resources/items/environment/creature.tres" id="2_5ihed"]
+[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="2_4wb7l"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="3_sck0y"]
-[ext_resource type="Texture2D" uid="uid://g0eel3nowluc" path="res://assets/images/creatures/concealed_creature.png" id="3_utfyx"]
 [ext_resource type="LabelSettings" uid="uid://cxmfmenswhmkb" path="res://assets/fonts/pixel_text.tres" id="4_xbik4"]
+
+[sub_resource type="Resource" id="Resource_1cshy"]
+script = ExtResource("2_4wb7l")
+id = 0
+name = ""
+bg_color = Color(0, 0, 0, 1)
+activity_verb = ""
+activity_duration_seconds = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo07r"]
 bg_color = Color(0.172833, 0.172833, 0.172833, 0)
@@ -32,7 +39,7 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svp3h"]
 resource_local_to_scene = true
-bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0pm2"]
 bg_color = Color(0, 0, 0, 0)
@@ -65,7 +72,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_edqk5")
-environment_item = ExtResource("2_5ihed")
+environment_item = SubResource("Resource_1cshy")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 clip_contents = true
@@ -89,7 +96,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxEmpty_620rv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_svp3h")
-max_value = 30.0
+max_value = 0.0
 fill_mode = 3
 show_percentage = false
 
@@ -124,7 +131,6 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_utfyx")
 
 [node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -159,7 +165,6 @@ theme_override_constants/margin_left = 6
 [node name="ActivityVerbLbl" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Search"
 label_settings = ExtResource("4_xbik4")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer"]

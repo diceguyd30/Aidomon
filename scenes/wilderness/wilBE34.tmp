@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0eiradaxlki3"]
+[gd_scene load_steps=26 format=3 uid="uid://b0eiradaxlki3"]
 
 [ext_resource type="PackedScene" uid="uid://bdun18iw0br7p" path="res://scenes/wilderness/env_interaction_ui.tscn" id="1_4pygp"]
 [ext_resource type="Script" path="res://scenes/wilderness/wilderness.gd" id="1_ij334"]
-[ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="3_qujrj"]
+[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="2_3hy8i"]
 [ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_s4lib"]
-[ext_resource type="Resource" uid="uid://crc5mqk3kesya" path="res://resources/items/environment/rock.tres" id="4_51tiw"]
+[ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="4_jrnlj"]
 [ext_resource type="Script" path="res://resources/items/item.gd" id="5_3shp6"]
 [ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="6_oyb1g"]
 [ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/foragables/aidonium.png" id="7_u0wca"]
-[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="7_wk3tq"]
+[ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/environment/rock.png" id="8_mgv27"]
+[ext_resource type="Texture2D" uid="uid://c2fymf5mxqamd" path="res://assets/images/items/foragables/stone.png" id="10_6q0sx"]
 [ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="10_gw7eq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ein4n"]
@@ -23,7 +24,80 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="Resource" id="Resource_ibjob"]
+[sub_resource type="Resource" id="Resource_0b8yc"]
+resource_local_to_scene = true
+script = ExtResource("5_3shp6")
+id = 1
+name = "Wood"
+icon = ExtResource("4_jrnlj")
+max_stack_size = 30
+
+[sub_resource type="Resource" id="Resource_dua8x"]
+resource_local_to_scene = true
+script = ExtResource("3_s4lib")
+item = SubResource("Resource_0b8yc")
+count = 2
+
+[sub_resource type="Resource" id="Resource_taoa3"]
+resource_local_to_scene = true
+script = ExtResource("6_oyb1g")
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_dua8x")])
+
+[sub_resource type="GDScript" id="GDScript_d3iju"]
+script/source = "class_name EnvironmentItemData
+extends Resource
+
+@export var id: int
+@export var name: String
+@export var icon: Texture
+@export var reward: ItemBundle
+@export var bg_color: Color
+@export var activity_verb: String
+@export var activity_duration_seconds: float
+"
+
+[sub_resource type="Resource" id="Resource_ituql"]
+resource_local_to_scene = true
+script = SubResource("GDScript_d3iju")
+id = 1
+name = "Tree"
+icon = ExtResource("2_3hy8i")
+reward = SubResource("Resource_taoa3")
+bg_color = Color(0.4, 0.223529, 0.192157, 1)
+activity_verb = "Chop"
+activity_duration_seconds = 5.0
+
+[sub_resource type="Resource" id="Resource_10r08"]
+resource_local_to_scene = true
+script = ExtResource("5_3shp6")
+id = 2
+name = "Stone"
+icon = ExtResource("10_6q0sx")
+max_stack_size = 10
+
+[sub_resource type="Resource" id="Resource_4jhld"]
+resource_local_to_scene = true
+script = ExtResource("3_s4lib")
+item = SubResource("Resource_10r08")
+count = 3
+
+[sub_resource type="Resource" id="Resource_a331j"]
+resource_local_to_scene = true
+script = ExtResource("6_oyb1g")
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_4jhld")])
+
+[sub_resource type="Resource" id="Resource_xo766"]
+resource_local_to_scene = true
+script = SubResource("GDScript_d3iju")
+id = 3
+name = "Rock"
+icon = ExtResource("8_mgv27")
+reward = SubResource("Resource_a331j")
+bg_color = Color(0.355314, 0.355314, 0.355314, 1)
+activity_verb = "Mine"
+activity_duration_seconds = 10.0
+
+[sub_resource type="Resource" id="Resource_cbyfp"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 3
@@ -31,24 +105,24 @@ name = "Aidonium"
 icon = ExtResource("7_u0wca")
 max_stack_size = 50
 
-[sub_resource type="Resource" id="Resource_o37wd"]
+[sub_resource type="Resource" id="Resource_s6ck4"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_ibjob")
+item = SubResource("Resource_cbyfp")
 count = 4
 
-[sub_resource type="Resource" id="Resource_jlel1"]
+[sub_resource type="Resource" id="Resource_ulcij"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_o37wd")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_s6ck4")])
 
-[sub_resource type="Resource" id="Resource_rf570"]
+[sub_resource type="Resource" id="Resource_gk3e6"]
 resource_local_to_scene = true
-script = ExtResource("7_wk3tq")
+script = SubResource("GDScript_d3iju")
 id = 3
 name = "Aidonium Crystal"
 icon = ExtResource("10_gw7eq")
-reward = SubResource("Resource_jlel1")
+reward = SubResource("Resource_ulcij")
 bg_color = Color(0.219626, 0.445708, 1, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 15.0
@@ -88,7 +162,7 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = ExtResource("3_qujrj")
+environment_item = SubResource("Resource_ituql")
 
 [node name="Creature" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
@@ -99,13 +173,13 @@ size_flags_vertical = 6
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = ExtResource("4_51tiw")
+environment_item = SubResource("Resource_xo766")
 
 [node name="Crystal" parent="PanelContainer/HBoxContainer/GridContainer" instance=ExtResource("1_4pygp")]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-environment_item = SubResource("Resource_rf570")
+environment_item = SubResource("Resource_gk3e6")
 
 [connection signal="activity_completed" from="PanelContainer/HBoxContainer/GridContainer/Tree" to="." method="_on_activity_completed"]
 [connection signal="activity_pressed" from="PanelContainer/HBoxContainer/GridContainer/Tree" to="." method="_on_activity_pressed"]

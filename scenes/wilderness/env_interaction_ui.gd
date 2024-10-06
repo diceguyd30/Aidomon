@@ -1,4 +1,5 @@
 @tool
+class_name EnvInteractionUi
 extends Control
 
 const UTIL = preload("res://scripts/util.gd")
