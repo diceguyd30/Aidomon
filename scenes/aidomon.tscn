@@ -34,11 +34,16 @@ size_flags_horizontal = 0
 
 [node name="BaseActionGrid" type="GridContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+columns = 2
 
 [node name="InventoryBtn" type="Button" parent="HBoxContainer/VBoxContainer2/BaseActionGrid"]
 layout_mode = 2
 theme = SubResource("Theme_8tpyg")
 text = "Inventory"
+
+[node name="AidomonBtn" type="Button" parent="HBoxContainer/VBoxContainer2/BaseActionGrid"]
+layout_mode = 2
+text = "Aidomon"
 
 [node name="BaseActionPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
