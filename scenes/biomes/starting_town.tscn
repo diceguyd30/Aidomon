@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5yrx5jgkvg7u"]
+[gd_scene load_steps=13 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
@@ -6,10 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b0eiradaxlki3" path="res://scenes/wilderness/wilderness.tscn" id="5_dwx5a"]
 [ext_resource type="Texture2D" uid="uid://c0x3icnww880e" path="res://assets/images/buttons/wilderness/wilderness_hover.png" id="6_ombcp"]
 [ext_resource type="Texture2D" uid="uid://klvlsxl3xko3" path="res://assets/images/buttons/wilderness/wilderness_selected.png" id="7_5kcs3"]
-[ext_resource type="Texture2D" uid="uid://dmigp2q3u12nn" path="res://assets/images/buttons/craftbench/craftbench.png" id="8_pftn8"]
-[ext_resource type="Texture2D" uid="uid://q04t8dy8bve3" path="res://assets/images/buttons/craftbench/craftbench_hover.png" id="9_rm3gm"]
+[ext_resource type="Resource" uid="uid://48t3bpeipc1f" path="res://resources/unlocks/craftbench.tres" id="8_gjnbf"]
 [ext_resource type="PackedScene" uid="uid://bhnc7gpi2p7d2" path="res://scenes/wilderness/town_location.tscn" id="10_6dk6d"]
-[ext_resource type="Texture2D" uid="uid://d18q3ximanf4j" path="res://assets/images/buttons/craftbench/craftbench_selected.png" id="10_axrab"]
 [ext_resource type="Resource" uid="uid://m3ynggnj3fl4" path="res://resources/unlocks/wilderness.tres" id="11_qtf4h"]
 [ext_resource type="PackedScene" uid="uid://dtvb0ufibm0kq" path="res://scenes/craftbench/craftbench.tscn" id="12_pmi1a"]
 
@@ -55,7 +53,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_spjfr")
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer"]
 show_behind_parent = true
-clip_children = 1
+clip_children = 2
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gduuh")
@@ -67,23 +65,21 @@ texture = ExtResource("1_0q5ji")
 expand_mode = 1
 
 [node name="WildernessMapLocation" parent="PanelContainer/PanelContainer/TextureRect" instance=ExtResource("10_6dk6d")]
-offset_left = 72.0
-offset_top = 208.0
-offset_right = 72.0
-offset_bottom = 208.0
+offset_left = 86.0
+offset_top = 206.0
+offset_right = 86.0
+offset_bottom = 206.0
 unlock = ExtResource("11_qtf4h")
 texture = ExtResource("5_d2vnt")
 hover_texture = ExtResource("6_ombcp")
 selected_texture = ExtResource("7_5kcs3")
 
 [node name="CraftbenchMapLocation" parent="PanelContainer/PanelContainer/TextureRect" instance=ExtResource("10_6dk6d")]
-offset_left = 352.0
-offset_top = 168.0
-offset_right = 352.0
-offset_bottom = 168.0
-texture = ExtResource("8_pftn8")
-hover_texture = ExtResource("9_rm3gm")
-selected_texture = ExtResource("10_axrab")
+offset_left = 368.0
+offset_top = 191.0
+offset_right = 368.0
+offset_bottom = 191.0
+unlock = ExtResource("8_gjnbf")
 
 [node name="WildernessContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/TextureRect"]
 layout_mode = 1
@@ -97,7 +93,7 @@ offset_top = -105.0
 offset_bottom = 105.0
 grow_horizontal = 0
 grow_vertical = 2
-mouse_filter = 0
+mouse_filter = 2
 theme_override_constants/margin_right = 80
 
 [node name="WildernessPanel" type="PanelContainer" parent="PanelContainer/PanelContainer/TextureRect/WildernessContainer"]
@@ -117,6 +113,7 @@ offset_top = -20.0
 offset_right = 40.0
 offset_bottom = 20.0
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 40
 
 [node name="CraftbenchPanel" type="PanelContainer" parent="PanelContainer/PanelContainer/TextureRect/CraftbenchContainer"]

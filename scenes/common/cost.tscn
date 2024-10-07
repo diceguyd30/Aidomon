@@ -1,9 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbmv5pxijm5da"]
+[gd_scene load_steps=16 format=3 uid="uid://dbmv5pxijm5da"]
 
 [ext_resource type="Script" path="res://scenes/common/cost.gd" id="1_yvb4b"]
-[ext_resource type="Resource" uid="uid://48t3bpeipc1f" path="res://resources/unlocks/craftbench.tres" id="2_xugpg"]
+[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="2_ojx42"]
 [ext_resource type="LabelSettings" uid="uid://tlt8lh7am57b" path="res://assets/fonts/large_pixel_text.tres" id="3_5yl78"]
+[ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="3_374ul"]
+[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_detj8"]
 [ext_resource type="LabelSettings" uid="uid://cxmfmenswhmkb" path="res://assets/fonts/pixel_text.tres" id="4_obyij"]
+[ext_resource type="Script" path="res://resources/unlocks/unlock.gd" id="5_mlv3d"]
+
+[sub_resource type="Resource" id="Resource_5iijd"]
+script = ExtResource("2_ojx42")
+item = ExtResource("3_374ul")
+count = 0
+
+[sub_resource type="Resource" id="Resource_ogeua"]
+script = ExtResource("4_detj8")
+item_list = Array[ExtResource("2_ojx42")]([SubResource("Resource_5iijd")])
+
+[sub_resource type="Resource" id="Resource_dxmt3"]
+script = ExtResource("5_mlv3d")
+id = 1
+name = "Test Crafting"
+description = "Just for testing"
+cost = SubResource("Resource_ogeua")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4hi3"]
 bg_color = Color(0.235294, 0.235294, 0.235294, 0.509804)
@@ -43,7 +62,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 script = ExtResource("1_yvb4b")
-unlock = ExtResource("2_xugpg")
+unlock = SubResource("Resource_dxmt3")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -52,8 +71,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 140.0
-offset_bottom = 117.0
+offset_left = -82.5
+offset_top = -58.5
+offset_right = 82.5
+offset_bottom = 58.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -75,14 +96,14 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Craftbench"
+text = "Test Crafting"
 label_settings = ExtResource("3_5yl78")
 
 [node name="Description" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "Great for crafting all sorts of useful things"
+text = "Just for testing"
 label_settings = ExtResource("4_obyij")
 autowrap_mode = 1
 

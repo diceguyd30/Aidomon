@@ -27,7 +27,7 @@ func _ready() -> void:
 	_update_visibility()
 
 func _update_visibility() -> void:
-	if  Engine.is_editor_hint() or Player.biome_unlocks.unlock_map[unlock.id]:
+	if Engine.is_editor_hint() or Player.biome_unlocks.unlock_map[unlock.id]:
 		location_container.visible = true
 		cost_container.visible = false
 	else:
