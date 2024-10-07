@@ -1,15 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhnc7gpi2p7d2"]
+[gd_scene load_steps=7 format=3 uid="uid://bhnc7gpi2p7d2"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/town_location.gd" id="1_8hoe4"]
 [ext_resource type="Resource" uid="uid://48t3bpeipc1f" path="res://resources/unlocks/craftbench.tres" id="2_yspen"]
+[ext_resource type="Texture2D" uid="uid://dmigp2q3u12nn" path="res://assets/images/buttons/craftbench/craftbench.png" id="3_3ci7w"]
+[ext_resource type="Texture2D" uid="uid://q04t8dy8bve3" path="res://assets/images/buttons/craftbench/craftbench_hover.png" id="4_bjm34"]
+[ext_resource type="Texture2D" uid="uid://d18q3ximanf4j" path="res://assets/images/buttons/craftbench/craftbench_selected.png" id="5_ihm0x"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="6_lud8l"]
 
 [node name="TownLocation" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-size_flags_vertical = 4
 script = ExtResource("1_8hoe4")
 unlock = ExtResource("2_yspen")
+texture = ExtResource("3_3ci7w")
+hover_texture = ExtResource("4_bjm34")
+selected_texture = ExtResource("5_ihm0x")
 
 [node name="LocationContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -19,10 +24,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -24.5
-offset_right = 30.0
-offset_bottom = 24.5
+offset_right = 60.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -37,6 +40,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
+texture_normal = ExtResource("3_3ci7w")
+texture_pressed = ExtResource("5_ihm0x")
+texture_hover = ExtResource("4_bjm34")
 stretch_mode = 0
 
 [node name="LocationLbl" type="Label" parent="LocationContainer"]

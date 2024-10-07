@@ -42,7 +42,6 @@ theme_override_constants/margin_top = 5
 [node name="Inventory" parent="HBoxContainer/VBoxContainer2/MarginContainer" instance=ExtResource("3_8dr7n")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
 
 [node name="Collection" parent="HBoxContainer/VBoxContainer2/MarginContainer" instance=ExtResource("4_7pvog")]
 unique_name_in_owner = true
