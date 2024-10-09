@@ -13,6 +13,7 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+anti_aliasing = false
 
 [node name="Collection" type="Control"]
 custom_minimum_size = Vector2(145, 300)

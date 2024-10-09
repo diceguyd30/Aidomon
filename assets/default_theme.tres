@@ -1,7 +1,30 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://stwin42kygl6"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://stwin42kygl6"]
 
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="1_bgw26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gqdy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvpmo"]
+bg_color = Color(0.194349, 0.194349, 0.194349, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
 
 [resource]
 default_font = ExtResource("1_bgw26")
 default_font_size = 9
+Button/styles/focus = SubResource("StyleBoxFlat_2gqdy")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_wvpmo")
