@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="Creature" load_steps=16 format=3 uid="uid://dv618gs2ckm2"]
+
+[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="1_apjfb"]
+[ext_resource type="Texture2D" uid="uid://ctokthmj5rhui" path="res://assets/images/creatures/Nevhart.png" id="1_jptxl"]
+[ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_t6x0a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ek1r"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gttvb"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6gip"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1tuc"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaq2l"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob2yr"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j3w7"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ubic"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tohkr"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhqv0"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab2a6"]
+atlas = ExtResource("2_t6x0a")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udj5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ek1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gttvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6gip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1tuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaq2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob2yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j3w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tohkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhqv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab2a6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_apjfb")
+id = 5
+name = "Nevhart"
+idle_animation = SubResource("SpriteFrames_udj5q")
+icon = ExtResource("1_jptxl")

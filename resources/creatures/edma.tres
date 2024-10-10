@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Creature" load_steps=12 format=3 uid="uid://btlhb22lvjifr"]
+[gd_resource type="Resource" script_class="Creature" load_steps=13 format=3 uid="uid://btlhb22lvjifr"]
 
 [ext_resource type="Texture2D" uid="uid://cr7gx6fex4eay" path="res://assets/images/creatures/Edma-Sheet.png" id="1_cgmgk"]
 [ext_resource type="Script" path="res://resources/creatures/creature.gd" id="1_ghdnx"]
+[ext_resource type="Texture2D" uid="uid://c5uq7fwxamgey" path="res://assets/images/creatures/Edma.png" id="1_yecn6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_618uh"]
 atlas = ExtResource("1_cgmgk")
@@ -72,3 +73,4 @@ script = ExtResource("1_ghdnx")
 id = 4
 name = "Edma"
 idle_animation = SubResource("SpriteFrames_oq2r6")
+icon = ExtResource("1_yecn6")

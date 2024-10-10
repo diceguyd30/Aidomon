@@ -65,9 +65,6 @@ text = "Inventory"
 layout_mode = 2
 text = "Collection"
 
-[node name="BaseActionPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10

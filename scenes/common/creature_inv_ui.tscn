@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://beielis1al8p3"]
+
+[ext_resource type="Script" path="res://scenes/common/creature_inv_ui.gd" id="1_nhrmt"]
+[ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="2_rc1no"]
+[ext_resource type="Texture2D" uid="uid://ctokthmj5rhui" path="res://assets/images/creatures/Nevhart.png" id="3_rd08l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn7ge"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf66j"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[node name="CreatureInvUI" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -604.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+mouse_filter = 1
+script = ExtResource("1_nhrmt")
+creature = ExtResource("2_rc1no")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tn7ge")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer"]
+clip_children = 1
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hf66j")
+
+[node name="InventoryIcon" type="TextureRect" parent="PanelContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_rd08l")
+stretch_mode = 3

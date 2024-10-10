@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://y21xpn2k07td"]
+[gd_scene load_steps=6 format=3 uid="uid://y21xpn2k07td"]
 
 [ext_resource type="Script" path="res://scenes/collection/collection.gd" id="1_sh6js"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="2_5k0oj"]
+[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="2_i06pl"]
+[ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="3_rahtl"]
+[ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="4_2e8wl"]
 
 [node name="Collection" type="Control"]
 custom_minimum_size = Vector2(145, 300)
@@ -14,6 +17,7 @@ offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sh6js")
+collection = Array[ExtResource("2_i06pl")]([ExtResource("3_rahtl"), ExtResource("4_2e8wl"), null, null])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -31,7 +35,7 @@ horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer/VBoxContainer"]
@@ -44,8 +48,7 @@ theme_override_constants/margin_bottom = 2
 [node name="CollectionGrid" type="GridContainer" parent="PanelContainer/ScrollContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
-columns = 5
+columns = 3
