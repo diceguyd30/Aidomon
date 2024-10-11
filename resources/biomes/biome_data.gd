@@ -1,4 +1,4 @@
-class_name WildernessData
+class_name BiomeData
 extends Resource
 
 @export var id: int
