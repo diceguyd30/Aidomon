@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5yrx5jgkvg7u"]
+[gd_scene load_steps=13 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
@@ -28,8 +28,6 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnlsb"]
 
 [node name="Starting Town" type="Control"]
 custom_minimum_size = Vector2(467, 236)
@@ -84,6 +82,8 @@ offset_bottom = 191.0
 unlock = ExtResource("8_gjnbf")
 
 [node name="WildernessContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/TextureRect"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -98,16 +98,12 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_right = 80
 
-[node name="WildernessPanel" type="PanelContainer" parent="PanelContainer/PanelContainer/TextureRect/WildernessContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cnlsb")
-
-[node name="Wilderness" parent="PanelContainer/PanelContainer/TextureRect/WildernessContainer/WildernessPanel" instance=ExtResource("5_dwx5a")]
+[node name="Wilderness" parent="PanelContainer/PanelContainer/TextureRect/WildernessContainer" instance=ExtResource("5_dwx5a")]
 layout_mode = 2
 
 [node name="CraftbenchContainer" type="MarginContainer" parent="PanelContainer/PanelContainer/TextureRect"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -119,12 +115,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 40
 
-[node name="CraftbenchPanel" type="PanelContainer" parent="PanelContainer/PanelContainer/TextureRect/CraftbenchContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="Craftbench" parent="PanelContainer/PanelContainer/TextureRect/CraftbenchContainer/CraftbenchPanel" instance=ExtResource("12_pmi1a")]
+[node name="Craftbench" parent="PanelContainer/PanelContainer/TextureRect/CraftbenchContainer" instance=ExtResource("12_pmi1a")]
 layout_mode = 2
 
 [connection signal="toggled" from="PanelContainer/PanelContainer/TextureRect/WildernessMapLocation" to="." method="_on_wilderness_map_location_toggled"]
