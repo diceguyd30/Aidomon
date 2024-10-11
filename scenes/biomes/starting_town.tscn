@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5yrx5jgkvg7u"]
+[gd_scene load_steps=14 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
 [ext_resource type="Script" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
@@ -28,6 +28,8 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnlsb"]
 
 [node name="Starting Town" type="Control"]
 custom_minimum_size = Vector2(467, 236)
@@ -100,6 +102,7 @@ theme_override_constants/margin_right = 80
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cnlsb")
 
 [node name="Wilderness" parent="PanelContainer/PanelContainer/TextureRect/WildernessContainer/WildernessPanel" instance=ExtResource("5_dwx5a")]
 layout_mode = 2

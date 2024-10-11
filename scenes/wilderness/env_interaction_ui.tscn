@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdun18iw0br7p"]
+[gd_scene load_steps=14 format=3 uid="uid://bdun18iw0br7p"]
 
 [ext_resource type="Script" path="res://scenes/wilderness/env_interaction_ui.gd" id="1_edqk5"]
-[ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="2_gkkcd"]
-[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="3_cssqq"]
-[ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="3_sck0y"]
+[ext_resource type="Resource" uid="uid://bqukdu171l7sr" path="res://resources/items/environment/creature.tres" id="2_aygfr"]
+[ext_resource type="Texture2D" uid="uid://g0eel3nowluc" path="res://assets/images/creatures/concealed_creature.png" id="3_7lv6w"]
 [ext_resource type="LabelSettings" uid="uid://cxmfmenswhmkb" path="res://assets/fonts/pixel_text.tres" id="4_xbik4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo07r"]
@@ -22,17 +21,17 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b00i8"]
 resource_local_to_scene = true
 draw_center = false
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_620rv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svp3h"]
 resource_local_to_scene = true
-bg_color = Color(0.4, 0.223529, 0.192157, 1)
+bg_color = Color(0.187176, 0.187176, 0.187176, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0pm2"]
 bg_color = Color(0, 0, 0, 0)
@@ -48,9 +47,24 @@ corner_radius_bottom_left = 6
 corner_detail = 5
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nytaj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73sjv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cfgcn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbwap"]
 
 [node name="EnvInteractionUI" type="Control"]
 custom_minimum_size = Vector2(70, 80)
@@ -65,7 +79,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_edqk5")
-environment_item = ExtResource("2_gkkcd")
+environment_item = ExtResource("2_aygfr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 clip_contents = true
@@ -89,13 +103,13 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxEmpty_620rv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_svp3h")
-max_value = 5.0
+max_value = 30.0
 fill_mode = 3
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="PanelContainer/PanelContainer/ProgressBar"]
 unique_name_in_owner = true
-wait_time = 5.0
+wait_time = 30.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer"]
 layout_mode = 2
@@ -124,7 +138,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_cssqq")
+texture = ExtResource("3_7lv6w")
 
 [node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -140,12 +154,13 @@ theme_override_constants/margin_bottom = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nytaj")
 
 [node name="BtnCollect" type="Button" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer"]
 layout_mode = 2
-theme = ExtResource("3_sck0y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_73sjv")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cfgcn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xbwap")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -159,7 +174,7 @@ theme_override_constants/margin_left = 6
 [node name="ActivityVerbLbl" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Chop"
+text = "Search"
 label_settings = ExtResource("4_xbik4")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/PanelContainer/VBoxContainer/CenterContainer2/MarginContainer/PanelContainer/HBoxContainer"]

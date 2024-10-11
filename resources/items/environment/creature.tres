@@ -9,6 +9,6 @@ script = ExtResource("1_qhfup")
 id = 4
 name = "Creature"
 icon = ExtResource("1_y4trp")
-bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+bg_color = Color(0.230315, 0.230315, 0.230315, 1)
 activity_verb = "Search"
 activity_duration_seconds = 30.0

@@ -14,17 +14,19 @@
 [ext_resource type="Texture2D" uid="uid://c2fymf5mxqamd" path="res://assets/images/items/foragables/stone.png" id="10_6q0sx"]
 [ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="10_gw7eq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ein4n"]
-bg_color = Color(0.2, 0.2, 0.2, 0.458824)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf3qi"]
+resource_local_to_scene = true
+bg_color = Color(0.317647, 0.317647, 0.317647, 0.784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+anti_aliasing = false
 
 [sub_resource type="Resource" id="Resource_vfv0p"]
 script = ExtResource("3_s4lib")
@@ -47,7 +49,6 @@ activity_verb = "Chop"
 activity_duration_seconds = 5.0
 
 [sub_resource type="Resource" id="Resource_227qa"]
-resource_local_to_scene = true
 script = ExtResource("7_wk3tq")
 id = 4
 name = "Creature"
@@ -56,7 +57,7 @@ bg_color = Color(0.187176, 0.187176, 0.187176, 1)
 activity_verb = "Search"
 activity_duration_seconds = 30.0
 
-[sub_resource type="Resource" id="Resource_1uf02"]
+[sub_resource type="Resource" id="Resource_lqwad"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 2
@@ -64,16 +65,16 @@ name = "Stone"
 icon = ExtResource("10_6q0sx")
 max_stack_size = 10
 
-[sub_resource type="Resource" id="Resource_2178c"]
+[sub_resource type="Resource" id="Resource_d4jlf"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_1uf02")
+item = SubResource("Resource_lqwad")
 count = 3
 
-[sub_resource type="Resource" id="Resource_6ijxt"]
+[sub_resource type="Resource" id="Resource_v2plk"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_2178c")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_d4jlf")])
 
 [sub_resource type="Resource" id="Resource_l4fkh"]
 resource_local_to_scene = true
@@ -81,12 +82,12 @@ script = ExtResource("7_wk3tq")
 id = 3
 name = "Rock"
 icon = ExtResource("8_mgv27")
-reward = SubResource("Resource_6ijxt")
+reward = SubResource("Resource_v2plk")
 bg_color = Color(0.355314, 0.355314, 0.355314, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 10.0
 
-[sub_resource type="Resource" id="Resource_3l52x"]
+[sub_resource type="Resource" id="Resource_n6dml"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 3
@@ -94,16 +95,16 @@ name = "Aidonium"
 icon = ExtResource("7_u0wca")
 max_stack_size = 50
 
-[sub_resource type="Resource" id="Resource_lg3pv"]
+[sub_resource type="Resource" id="Resource_rtg06"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_3l52x")
+item = SubResource("Resource_n6dml")
 count = 4
 
-[sub_resource type="Resource" id="Resource_vynno"]
+[sub_resource type="Resource" id="Resource_1sqka"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_lg3pv")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_rtg06")])
 
 [sub_resource type="Resource" id="Resource_rf570"]
 resource_local_to_scene = true
@@ -111,7 +112,7 @@ script = ExtResource("7_wk3tq")
 id = 3
 name = "Aidonium Crystal"
 icon = ExtResource("10_gw7eq")
-reward = SubResource("Resource_vynno")
+reward = SubResource("Resource_1sqka")
 bg_color = Color(0.219626, 0.445708, 1, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 15.0
@@ -135,7 +136,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ein4n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pf3qi")
 
 [node name="HBoxContainer" type="ScrollContainer" parent="PanelContainer"]
 layout_mode = 2
