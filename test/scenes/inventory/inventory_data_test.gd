@@ -21,7 +21,7 @@ func test_empty_list_updated_on_add() -> void:
 	inventory_data = InventoryData.new().of_size(InventoryHelpers.DEFAULT_MAX_STACK_SIZE)
 	var item_stack: ItemStack = InventoryHelpers.build_test_item_stack()
 	assert_that(inventory_data._add_item_stack(item_stack)).is_null()
-	assert_that(inventory_data.inventory_metadata_map[null] \
+	assert_that(inventory_data.inventory_metadata_map[-1] \
 			.index_map.keys().size()).is_equal(InventoryHelpers.DEFAULT_MAX_STACK_SIZE - 1)
 
 func test_add_item_when_inventory_full() -> void:
@@ -99,7 +99,7 @@ func test_remove_item_exact_count_one_stack() -> void:
 	assert_that(inventory_data._remove_item_stack(item_stack)).is_null()
 	assert_that(inventory_data.inventory_metadata_map \
 			.has(item_stack.item.id)).is_equal(false)
-	assert_bool(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_true()
+	assert_bool(inventory_data.inventory_metadata_map[-1].index_map.has(0)).is_true()
 
 func test_remove_item_less_than_one_stack() -> void:
 	inventory_data = InventoryData.new().of_size(InventoryHelpers.DEFAULT_MAX_STACK_SIZE)
@@ -111,7 +111,7 @@ func test_remove_item_less_than_one_stack() -> void:
 	assert_that(inventory_data._remove_item_stack(remove_stack)).is_null()
 	assert_that(inventory_data.inventory_metadata_map \
 			.has(item_stack.item.id)).is_equal(true)
-	assert_bool(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_false()
+	assert_bool(inventory_data.inventory_metadata_map[-1].index_map.has(0)).is_false()
 	assert_that(inventory_data.inventory_metadata_map[item_stack.item.id].item_count == 2)
 
 func test_remove_item_more_than_one_stack() -> void:
@@ -126,7 +126,7 @@ func test_remove_item_more_than_one_stack() -> void:
 	assert_that(inventory_data._remove_item_stack(remove_stack)).is_equal(result_stack)
 	assert_that(inventory_data.inventory_metadata_map \
 			.has(item_stack.item.id)).is_equal(false)
-	assert_bool(inventory_data.inventory_metadata_map[null].index_map.has(0)).is_true()
+	assert_bool(inventory_data.inventory_metadata_map[-1].index_map.has(0)).is_true()
 
 func test_remove_stack_from_multiple_slots() -> void:
 	inventory_data = InventoryData.new().of_size(InventoryHelpers.DEFAULT_MAX_STACK_SIZE)

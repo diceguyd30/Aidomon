@@ -31,7 +31,7 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svp3h"]
 resource_local_to_scene = true
-bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+bg_color = Color(0.230315, 0.230315, 0.230315, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0pm2"]
 bg_color = Color(0, 0, 0, 0)
