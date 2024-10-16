@@ -10,7 +10,7 @@ extends Resource
 	set(value):
 		_initialze_inventory(value)
 # Dictionary<ItemID: _InventoryMetadata>
-var inventory_metadata_map: Dictionary = {}
+var inventory_metadata_map: Dictionary[int, _InventoryMetadata] = {}
 
 class _InventoryMetadata:
 	var item_count: int = 0
@@ -66,7 +66,7 @@ func _initialize_metadata_map() -> void:
 		var item_: ItemStack = inventory_items[i]
 		var id_: Variant
 		if item_.item == null:
-			id_ = null
+			id_ = -1
 		else:
 			id_ = item_.item.id
 		if inventory_metadata_map.has(id_):
@@ -84,7 +84,7 @@ func _add_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var metadata: InventoryData._InventoryMetadata = \
 		inventory_metadata_map.get(item_stack_.item.id)
 	if metadata == null:
-		var empty_dict: Dictionary = inventory_metadata_map[null].index_map
+		var empty_dict: Dictionary = inventory_metadata_map[-1].index_map
 		if empty_dict.size() < 1:
 			print("Inventory is full and does not already contain %s. It cannot be added." \
 				 % item_stack_.item.name)
@@ -107,7 +107,7 @@ func _add_new_item_stack(item_stack_: ItemStack) -> ItemStack:
 	var result: ItemStack = _update_and_return_overflow_item_stack(item_stack_)
 	inventory_items[empty_index] = item_stack_
 	_update_or_create_new_metadata(item_stack_, empty_index)
-	inventory_metadata_map[null].index_map.erase(empty_index)
+	inventory_metadata_map[-1].index_map.erase(empty_index)
 	return result
 
 func _find_first_empty_slot_index() -> int:
@@ -197,5 +197,5 @@ func _move_index_to_null_stack(item_stack_: ItemStack, index_: int) -> void:
 	metadata.index_map.erase(index_)
 	if metadata.index_map.is_empty():
 		inventory_metadata_map.erase(item_stack_.item.id)
-	var null_metadata: InventoryData._InventoryMetadata = inventory_metadata_map[null]
+	var null_metadata: InventoryData._InventoryMetadata = inventory_metadata_map[-1]
 	null_metadata.index_map[index_] = true
