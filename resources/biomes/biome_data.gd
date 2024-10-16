@@ -5,3 +5,4 @@ extends Resource
 @export var name: String
 @export var background: Texture
 @export var environment_items: Array[EnvironmentItemData] = []
+@export var native_creatures: Dictionary[float, Creature] = {}
