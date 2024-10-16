@@ -69,6 +69,7 @@ animations = [{
 }]
 
 [resource]
+resource_name = "Edma                                                                                                                 Edma                                      "
 script = ExtResource("1_ghdnx")
 id = 4
 name = "Edma"

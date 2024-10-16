@@ -90,6 +90,7 @@ animations = [{
 }]
 
 [resource]
+resource_name = "Nevhart"
 script = ExtResource("1_apjfb")
 id = 5
 name = "Nevhart"
