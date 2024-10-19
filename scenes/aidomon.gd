@@ -10,7 +10,7 @@ func _on_inventory_btn_pressed() -> void:
 	collection.visible = false
 	inventory.visible = true
 
-func _on_aidomon_btn_pressed() -> void:
+func _on_collection_btn_pressed() -> void:
 	collection.visible = true
 	inventory.visible = false
 

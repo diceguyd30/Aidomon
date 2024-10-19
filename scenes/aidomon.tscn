@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2vm0dawqcebo"]
+[gd_scene load_steps=36 format=3 uid="uid://c2vm0dawqcebo"]
 
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vs2xj"]
 [ext_resource type="Script" path="res://scenes/aidomon.gd" id="2_3faos"]
@@ -7,9 +7,116 @@
 [ext_resource type="PackedScene" uid="uid://b5yrx5jgkvg7u" path="res://scenes/biomes/starting_town.tscn" id="4_3bd0t"]
 [ext_resource type="PackedScene" uid="uid://y21xpn2k07td" path="res://scenes/collection/collection.tscn" id="4_7pvog"]
 [ext_resource type="PackedScene" uid="uid://td8q2wavc8qh" path="res://scenes/interactions/character_interactions.tscn" id="4_x8yiw"]
+[ext_resource type="Texture2D" uid="uid://c248j2r1y0fpv" path="res://assets/images/backgrounds/meadow.png" id="8_sn2ra"]
+[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="9_5u1ur"]
+[ext_resource type="Texture2D" uid="uid://bm5n7l6kajbx5" path="res://assets/images/items/environment/tree.png" id="10_lb4s4"]
+[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="11_24wwh"]
+[ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="12_rdg4r"]
+[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="13_cpayh"]
+[ext_resource type="Texture2D" uid="uid://kc50wqxuj4tm" path="res://assets/images/items/environment/rock.png" id="14_7bksp"]
+[ext_resource type="Texture2D" uid="uid://c2fymf5mxqamd" path="res://assets/images/items/foragables/stone.png" id="15_r01tj"]
+[ext_resource type="Script" path="res://resources/items/item.gd" id="16_pqu4b"]
+[ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="17_wd7b5"]
+[ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/foragables/aidonium.png" id="18_bilvx"]
+[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="19_vfnwy"]
+[ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="20_ibus2"]
+[ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="21_pjv3w"]
+[ext_resource type="Script" path="res://resources/biomes/biome_data.gd" id="22_ia2sk"]
 
 [sub_resource type="Theme" id="Theme_8tpyg"]
 Fonts/fonts/default = ExtResource("3_4t1hq")
+
+[sub_resource type="Resource" id="Resource_vfv0p"]
+script = ExtResource("11_24wwh")
+item = ExtResource("12_rdg4r")
+count = 2
+
+[sub_resource type="Resource" id="Resource_fvvru"]
+script = ExtResource("13_cpayh")
+item_list = Array[ExtResource("11_24wwh")]([SubResource("Resource_vfv0p")])
+
+[sub_resource type="Resource" id="Resource_kxn5k"]
+resource_local_to_scene = true
+script = ExtResource("9_5u1ur")
+id = 1
+name = "Tree"
+icon = ExtResource("10_lb4s4")
+reward = SubResource("Resource_fvvru")
+bg_color = Color(0.4, 0.223529, 0.192157, 1)
+activity_verb = "Chop"
+activity_duration_seconds = 5.0
+
+[sub_resource type="Resource" id="Resource_58jxd"]
+resource_local_to_scene = true
+script = ExtResource("16_pqu4b")
+id = 2
+name = "Stone"
+icon = ExtResource("15_r01tj")
+max_stack_size = 10
+
+[sub_resource type="Resource" id="Resource_xx8h1"]
+resource_local_to_scene = true
+script = ExtResource("11_24wwh")
+item = SubResource("Resource_58jxd")
+count = 3
+
+[sub_resource type="Resource" id="Resource_gst5a"]
+resource_local_to_scene = true
+script = ExtResource("13_cpayh")
+item_list = Array[ExtResource("11_24wwh")]([SubResource("Resource_xx8h1")])
+
+[sub_resource type="Resource" id="Resource_vlpix"]
+resource_local_to_scene = true
+script = ExtResource("9_5u1ur")
+id = 3
+name = "Rock"
+icon = ExtResource("14_7bksp")
+reward = SubResource("Resource_gst5a")
+bg_color = Color(0.355314, 0.355314, 0.355314, 1)
+activity_verb = "Mine"
+activity_duration_seconds = 10.0
+
+[sub_resource type="Resource" id="Resource_fjquc"]
+resource_local_to_scene = true
+script = ExtResource("16_pqu4b")
+id = 3
+name = "Aidonium"
+icon = ExtResource("18_bilvx")
+max_stack_size = 50
+
+[sub_resource type="Resource" id="Resource_1b41g"]
+resource_local_to_scene = true
+script = ExtResource("11_24wwh")
+item = SubResource("Resource_fjquc")
+count = 4
+
+[sub_resource type="Resource" id="Resource_ciqiv"]
+resource_local_to_scene = true
+script = ExtResource("13_cpayh")
+item_list = Array[ExtResource("11_24wwh")]([SubResource("Resource_1b41g")])
+
+[sub_resource type="Resource" id="Resource_k5cyf"]
+resource_local_to_scene = true
+script = ExtResource("9_5u1ur")
+id = 3
+name = "Aidonium Crystal"
+icon = ExtResource("17_wd7b5")
+reward = SubResource("Resource_ciqiv")
+bg_color = Color(0.219626, 0.445708, 1, 1)
+activity_verb = "Mine"
+activity_duration_seconds = 15.0
+
+[sub_resource type="Resource" id="Resource_2snen"]
+resource_local_to_scene = true
+script = ExtResource("22_ia2sk")
+id = 1
+name = "Starting"
+background = ExtResource("8_sn2ra")
+environment_items = Array[ExtResource("9_5u1ur")]([SubResource("Resource_kxn5k"), SubResource("Resource_vlpix"), SubResource("Resource_k5cyf")])
+native_creatures = Dictionary[ExtResource("19_vfnwy"), float]({
+ExtResource("20_ibus2"): 0.3,
+ExtResource("21_pjv3w"): 0.7
+})
 
 [node name="Aidomon" type="Control"]
 clip_contents = true
@@ -61,7 +168,7 @@ layout_mode = 2
 theme = SubResource("Theme_8tpyg")
 text = "Inventory"
 
-[node name="AidomonBtn" type="Button" parent="HBoxContainer/VBoxContainer2/MarginContainer2/BaseActionGrid"]
+[node name="CollectionBtn" type="Button" parent="HBoxContainer/VBoxContainer2/MarginContainer2/BaseActionGrid"]
 layout_mode = 2
 text = "Collection"
 
@@ -78,6 +185,7 @@ size_flags_vertical = 4
 [node name="Starting Town" parent="HBoxContainer/VBoxContainer" instance=ExtResource("4_3bd0t")]
 layout_mode = 2
 size_flags_vertical = 3
+biome_data = SubResource("Resource_2snen")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/MarginContainer2/BaseActionGrid/InventoryBtn" to="." method="_on_inventory_btn_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer2/MarginContainer2/BaseActionGrid/AidomonBtn" to="." method="_on_aidomon_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/MarginContainer2/BaseActionGrid/CollectionBtn" to="." method="_on_collection_btn_pressed"]
