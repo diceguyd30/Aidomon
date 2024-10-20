@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://c2fymf5mxqamd" path="res://assets/images/items/foragables/stone.png" id="15_r01tj"]
 [ext_resource type="Script" path="res://resources/items/item.gd" id="16_pqu4b"]
 [ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="17_wd7b5"]
-[ext_resource type="Texture2D" uid="uid://drxmrbg5x6n7e" path="res://assets/images/items/foragables/aidonium.png" id="18_bilvx"]
 [ext_resource type="Script" path="res://resources/creatures/creature.gd" id="19_vfnwy"]
 [ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="20_ibus2"]
 [ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="21_pjv3w"]
@@ -76,12 +75,15 @@ bg_color = Color(0.355314, 0.355314, 0.355314, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 10.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bmhg5"]
+load_path = "res://.godot/imported/aidonium.png-cece5efd5b2ab9260671b86e23a57cb4.ctex"
+
 [sub_resource type="Resource" id="Resource_fjquc"]
 resource_local_to_scene = true
 script = ExtResource("16_pqu4b")
 id = 3
 name = "Aidonium"
-icon = ExtResource("18_bilvx")
+icon = SubResource("CompressedTexture2D_bmhg5")
 max_stack_size = 50
 
 [sub_resource type="Resource" id="Resource_1b41g"]
