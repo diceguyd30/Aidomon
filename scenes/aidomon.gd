@@ -14,6 +14,9 @@ func _on_collection_btn_pressed() -> void:
 	collection.visible = true
 	inventory.visible = false
 
+func _on_save_game_btn_pressed() -> void:
+	SaveManager.save_game()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("fullscreen") and event.is_action("fullscreen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
