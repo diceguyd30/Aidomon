@@ -1,4 +1,3 @@
-class_name Util
 extends Node
 
 static func are_null(node: Node) -> bool:
