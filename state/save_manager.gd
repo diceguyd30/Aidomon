@@ -87,7 +87,6 @@ func _get_most_recent_save_from_folder() -> String:
 	dir.list_dir_begin()
 	var file_name: String = dir.get_next()
 	while file_name:
-		print(file_name)
 		if file_name.begins_with(save_prefix) and file_name.ends_with(file_extension):
 			save_files.append(file_name)
 		file_name = dir.get_next()

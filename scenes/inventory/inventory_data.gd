@@ -199,3 +199,10 @@ func _move_index_to_null_stack(item_stack_: ItemStack, index_: int) -> void:
 		inventory_metadata_map.erase(item_stack_.item.id)
 	var null_metadata: InventoryData._InventoryMetadata = inventory_metadata_map[-1]
 	null_metadata.index_map[index_] = true
+
+func serialize() -> Array:
+	return inventory_items.map(func(x: ItemStack) -> Dictionary: return x.serialize())
+
+func deserialize(data: Array) -> void:
+	inventory_items.assign(data.map(func(x: Dictionary) -> ItemStack: return ItemStack.deserialize(x)))
+	_initialize_metadata_map()

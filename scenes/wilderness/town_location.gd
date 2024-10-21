@@ -27,12 +27,13 @@ func _ready() -> void:
 	_update_visibility()
 
 func _update_visibility() -> void:
-	if Engine.is_editor_hint() or Player.biome_unlocks.unlock_map[unlock.id]:
+	if Engine.is_editor_hint():
 		location_container.visible = true
 		cost_container.visible = false
-	else:
-		location_container.visible = false
-		cost_container.visible = true
+		return
+	var unlocked: bool = Player.biome_unlocks.unlock_map[unlock.id]
+	location_container.visible = unlocked
+	cost_container.visible = !unlocked
 
 func _location_unlocked(unlock_: Unlock) -> void:
 	Player.player_inventory.remove_item_bundle(unlock_.cost)

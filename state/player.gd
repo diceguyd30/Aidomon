@@ -1,6 +1,7 @@
 extends Node
 
 const Constants = preload("res://scripts/constants.gd")
+const CODEX = preload("res://resources/codex.tres")
 
 var player_inventory_size: int = 10:
 	set(value):
@@ -17,7 +18,7 @@ func _ready() -> void:
 func save() -> Dictionary[String, Variant]:
 	var save_data: Dictionary[String, Variant] = {
 		"player_inventory_size" : player_inventory_size,
-		"inventory_items": player_inventory.inventory_items,
+		"inventory_items": player_inventory.serialize(),
 		"biome_unlocks": biome_unlocks.unlock_map,
 		"aidomon_collection": aidomon_collection,
 	}
@@ -25,6 +26,6 @@ func save() -> Dictionary[String, Variant]:
 
 func load(save_data: Dictionary[String, Variant]) -> void:
 	player_inventory_size = save_data["player_inventory_size"]
-	player_inventory.inventory_items.assign(save_data["inventory_items"])
-	biome_unlocks.unlock_map.merge(save_data["biome_unlocks"])
+	player_inventory.deserialize(save_data["inventory_items"])
+	biome_unlocks.deserialize(save_data["biome_unlocks"])
 	aidomon_collection.assign(save_data["aidomon_collection"])

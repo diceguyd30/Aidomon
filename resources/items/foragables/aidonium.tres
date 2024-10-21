@@ -6,7 +6,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_c3cpr")
-id = 3
+id = 2
 name = "Aidonium"
 icon = ExtResource("1_ad1yt")
 max_stack_size = 50
