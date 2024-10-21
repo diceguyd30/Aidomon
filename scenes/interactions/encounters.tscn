@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_u3fwb"]
 [ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_wt6u3"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="2_x3voh"]
-[ext_resource type="Texture2D" uid="uid://dhpsrgqg4qg6t" path="res://assets/images/items/craftables/capture_disc.png" id="5_rerre"]
+[ext_resource type="Texture2D" uid="uid://b7stbbqu2825c" path="res://assets/images/items/craftables/capture_disc.png" id="5_rerre"]
 [ext_resource type="Texture2D" uid="uid://c1420oa4iuc4d" path="res://assets/images/buttons/interactions/run.png" id="6_7xxy0"]
 [ext_resource type="Texture2D" uid="uid://cdxfqrgbyawl8" path="res://assets/images/buttons/interactions/settings.png" id="7_kdf2w"]
 
