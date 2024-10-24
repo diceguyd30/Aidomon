@@ -19,6 +19,7 @@ func _on_quit_btn_pressed() -> void:
 
 func _on_file_dialog_file_selected(path: String) -> void:
 	SaveManager.load_data_from_file(path)
+	file_dialog.hide()
 	_change_to_main_scene()
 
 func _change_to_main_scene() -> void:
