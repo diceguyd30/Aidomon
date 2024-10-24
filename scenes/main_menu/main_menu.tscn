@@ -81,7 +81,18 @@ theme_override_fonts/font = ExtResource("2_fnb1t")
 text = "Aidomon"
 label_settings = SubResource("LabelSettings_bjxxp")
 
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Select a Saved Game"
+initial_position = 2
+size = Vector2i(500, 300)
+ok_button_text = "Open"
+file_mode = 0
+access = 1
+root_subfolder = "saved_games"
+filters = PackedStringArray("*.json")
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/NewGameBtn" to="." method="_on_new_game_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/LoadGameBtn" to="." method="_on_load_game_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

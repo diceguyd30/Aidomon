@@ -23,10 +23,13 @@ func save_game() -> void:
 
 func load_recent_game() -> void:
 	var recent_save: String = _get_most_recent_save_from_folder()
-	if not FileAccess.file_exists(recent_save):
+	load_data_from_file(recent_save)
+
+func load_data_from_file(filename: String) -> void:
+	if not FileAccess.file_exists(filename):
 		return
 
-	var saved_file: FileAccess = FileAccess.open(recent_save, FileAccess.READ)
+	var saved_file: FileAccess = FileAccess.open(filename, FileAccess.READ)
 	var file_as_string: String = saved_file.get_as_text()
 	var json := JSON.new()
 
