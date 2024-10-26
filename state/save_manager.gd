@@ -48,7 +48,7 @@ func load_data_from_file(filename: String) -> void:
 func _save_data_to_file(save_data: Dictionary[String, Dictionary]) -> void:
 	var save_directory: String = "%s%s/" % [user_folder, save_folder]
 	_validate_or_create_save_directory(save_directory)
-	var filename: String = _create_timestampped_filename()
+	var filename: String = _create_timestamped_filename()
 	var filepath: String = "%s%s" % [save_directory, filename]
 	var file: FileAccess = FileAccess.open(filepath, FileAccess.WRITE)
 
@@ -67,7 +67,7 @@ func _validate_or_create_save_directory(directory_path: String) -> void:
 		var dir_create: DirAccess = DirAccess.open(user_folder)
 		dir_create.make_dir(save_folder)
 
-func _create_timestampped_filename() -> String:
+func _create_timestamped_filename() -> String:
 	var datetime: Dictionary = Time.get_datetime_dict_from_system()
 	var datetime_string: String = "%s-%s-%s_%s-%s-%s" % [
 		str(datetime.year), 
