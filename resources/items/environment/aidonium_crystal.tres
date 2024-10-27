@@ -15,7 +15,7 @@ count = 4
 [sub_resource type="Resource" id="Resource_gt53l"]
 resource_local_to_scene = true
 script = ExtResource("4_m1ahn")
-item_list = Array[ExtResource("3_ionpl")]([SubResource("Resource_napq1")])
+item_list = [SubResource("Resource_napq1")]
 
 [resource]
 resource_local_to_scene = true

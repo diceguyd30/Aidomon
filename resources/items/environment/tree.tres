@@ -13,7 +13,7 @@ count = 2
 
 [sub_resource type="Resource" id="Resource_fvvru"]
 script = ExtResource("4_jmok3")
-item_list = Array[ExtResource("3_nsfoy")]([SubResource("Resource_vfv0p")])
+item_list = [SubResource("Resource_vfv0p")]
 
 [resource]
 resource_local_to_scene = true

@@ -31,7 +31,7 @@ func _update() -> void:
 	if inventory_icon == null or item_count_label == null:
 		return
 	var item_count: int = self.item_stack.count
-	if item_stack.item == null:
+	if self.item_stack.item == null:
 		inventory_icon.texture = null
 		item_count = 0
 	else:
