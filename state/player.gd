@@ -7,10 +7,10 @@ var player_inventory_size: int = 10:
 	set(value):
 		player_inventory_size = value
 		player_inventory.max_inventory_size = player_inventory_size
-
 var player_inventory: InventoryData = InventoryData.new().of_size(player_inventory_size)
 var biome_unlocks: BiomeUnlocks = BiomeUnlocks.new()
 var aidomon_collection: Array[Creature] = []
+var current_biome: BiomeData
 
 func _ready() -> void:
 	add_to_group(Constants.PERSIST_GROUP)

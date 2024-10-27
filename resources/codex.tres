@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="CodexDefinition" load_steps=7 format=3 uid="uid://dcmwk60inmd14"]
+[gd_resource type="Resource" script_class="CodexDefinition" load_steps=9 format=3 uid="uid://dcmwk60inmd14"]
 
+[ext_resource type="Script" path="res://resources/biomes/biome_data.gd" id="1_iumyj"]
 [ext_resource type="Script" path="res://resources/items/item.gd" id="1_t8qty"]
+[ext_resource type="Resource" uid="uid://cvirmlwpd31x" path="res://resources/biomes/starting.tres" id="2_4rhqo"]
 [ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="2_cj08f"]
 [ext_resource type="Script" path="res://resources/codex_definition.gd" id="2_o4w1a"]
 [ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="3_ina27"]
@@ -10,3 +12,4 @@
 [resource]
 script = ExtResource("2_o4w1a")
 item_list = Array[ExtResource("1_t8qty")]([ExtResource("2_cj08f"), ExtResource("3_ina27"), ExtResource("4_g8sjm"), ExtResource("5_0dv0r")])
+biome_list = Array[ExtResource("1_iumyj")]([ExtResource("2_4rhqo")])
