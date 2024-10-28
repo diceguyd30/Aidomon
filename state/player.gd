@@ -14,17 +14,17 @@ var current_biome: BiomeData
 func _ready() -> void:
 	add_to_group(Constants.PERSIST_GROUP)
 
-func save() -> Dictionary[String, Variant]:
-	var save_data: Dictionary[String, Variant] = {
-		"player_inventory_size" : player_inventory_size,
-		"inventory_items": player_inventory.serialize(),
-		"biome_unlocks": biome_unlocks.unlock_map,
-		"aidomon_collection": aidomon_collection,
+func save() -> Dictionary[Constants.SaveDataIDs, Variant]:
+	var save_data: Dictionary[Constants.SaveDataIDs, Variant] = {
+		Constants.SaveDataIDs.PLAYER_INVENTORY_SIZE : player_inventory_size,
+		Constants.SaveDataIDs.INVENTORY_ITEMS: player_inventory.serialize(),
+		Constants.SaveDataIDs.BIOME_UNLOCKS: biome_unlocks.unlock_map,
+		Constants.SaveDataIDs.AIDOMON_COLLECTION: aidomon_collection,
 	}
 	return save_data
 
-func load(save_data: Dictionary[String, Variant]) -> void:
-	player_inventory_size = save_data["player_inventory_size"]
-	player_inventory.deserialize(save_data["inventory_items"])
-	biome_unlocks.deserialize(save_data["biome_unlocks"])
-	aidomon_collection.assign(save_data["aidomon_collection"])
+func load(save_data: Dictionary[Constants.SaveDataIDs, Variant]) -> void:
+	player_inventory_size = save_data[Constants.SaveDataIDs.PLAYER_INVENTORY_SIZE]
+	player_inventory.deserialize(save_data[Constants.SaveDataIDs.INVENTORY_ITEMS])
+	biome_unlocks.deserialize(save_data[Constants.SaveDataIDs.BIOME_UNLOCKS])
+	aidomon_collection.assign(save_data[Constants.SaveDataIDs.AIDOMON_COLLECTION])

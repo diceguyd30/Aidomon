@@ -17,7 +17,7 @@ func save_game() -> void:
 			print("Node '%s' is missing a %s() function, skipped" % [node.name, save_function])
 			continue
 
-		var node_data: Dictionary[String, Variant] = node.call(save_function)
+		var node_data: Dictionary[Constants.SaveDataIDs, Variant] = node.call(save_function)
 		save_data[node.name] = node_data
 	_save_data_to_file(save_data)
 
