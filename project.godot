@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 GameSignals="*res://state/game_signals.gd"
 Player="*res://state/player.gd"
 SaveManager="*res://state/save_manager.gd"
+Game="*res://state/game.gd"
 
 [debug]
 

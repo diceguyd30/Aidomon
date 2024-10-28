@@ -1,7 +1,6 @@
 extends Node
 
 const Constants = preload("res://scripts/constants.gd")
-const CODEX = preload("res://resources/codex.tres")
 
 var player_inventory_size: int = 10:
 	set(value):

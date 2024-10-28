@@ -13,6 +13,6 @@ func serialize() -> Dictionary:
 static func deserialize(data: Dictionary) -> ItemStack:
 	var new_stack := ItemStack.new()
 	if data.item_id != -1:
-		new_stack.item = Player.CODEX.item_list[data.item_id].duplicate()
+		new_stack.item = Game.CODEX.item_list[data.item_id].duplicate()
 	new_stack.count = data.count
 	return new_stack
