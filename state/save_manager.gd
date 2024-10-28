@@ -111,7 +111,8 @@ func _load_data_in_nodes(data: Dictionary[String, Dictionary]) -> void:
 		if !data.has(node.name):
 			print("Save is missing data for the %s node." % node.name)
 			continue
-		var node_data: Dictionary[String, Variant] = {}
-		node_data.merge(data[node.name])
+		var node_data: Dictionary[Constants.SaveDataIDs, Variant] = {}
+		for item: String in data[node.name]:
+			node_data[int(item)] = data[node.name][item]
 		node.call(load_function, node_data)
  
