@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CodexDefinition" load_steps=9 format=3 uid="uid://dcmwk60inmd14"]
+[gd_resource type="Resource" script_class="CodexDefinition" load_steps=12 format=3 uid="uid://dcmwk60inmd14"]
 
 [ext_resource type="Script" path="res://resources/biomes/biome_data.gd" id="1_iumyj"]
 [ext_resource type="Script" path="res://resources/items/item.gd" id="1_t8qty"]
@@ -6,10 +6,14 @@
 [ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="2_cj08f"]
 [ext_resource type="Script" path="res://resources/codex_definition.gd" id="2_o4w1a"]
 [ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="3_ina27"]
+[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="3_m1tmg"]
 [ext_resource type="Resource" uid="uid://bhn4cw38wj8m3" path="res://resources/items/foragables/aidonium.tres" id="4_g8sjm"]
+[ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="4_ltrnd"]
 [ext_resource type="Resource" uid="uid://bljj1kb67qkhk" path="res://resources/items/craftables/capture_disc.tres" id="5_0dv0r"]
+[ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="5_h5yui"]
 
 [resource]
 script = ExtResource("2_o4w1a")
 item_list = Array[ExtResource("1_t8qty")]([ExtResource("2_cj08f"), ExtResource("3_ina27"), ExtResource("4_g8sjm"), ExtResource("5_0dv0r")])
 biome_list = Array[ExtResource("1_iumyj")]([ExtResource("2_4rhqo")])
+creature_list = Array[ExtResource("3_m1tmg")]([ExtResource("4_ltrnd"), ExtResource("5_h5yui")])
