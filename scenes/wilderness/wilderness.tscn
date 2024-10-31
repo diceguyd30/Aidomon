@@ -57,7 +57,7 @@ bg_color = Color(0.187176, 0.187176, 0.187176, 1)
 activity_verb = "Search"
 activity_duration_seconds = 30.0
 
-[sub_resource type="Resource" id="Resource_4b2w0"]
+[sub_resource type="Resource" id="Resource_3lrwu"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 1
@@ -65,16 +65,16 @@ name = "Stone"
 icon = ExtResource("10_6q0sx")
 max_stack_size = 10
 
-[sub_resource type="Resource" id="Resource_au8ay"]
+[sub_resource type="Resource" id="Resource_4x1mc"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_4b2w0")
+item = SubResource("Resource_3lrwu")
 count = 3
 
-[sub_resource type="Resource" id="Resource_oq1se"]
+[sub_resource type="Resource" id="Resource_y7u04"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_au8ay")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_4x1mc")])
 
 [sub_resource type="Resource" id="Resource_l4fkh"]
 resource_local_to_scene = true
@@ -82,12 +82,12 @@ script = ExtResource("7_wk3tq")
 id = 3
 name = "Rock"
 icon = ExtResource("8_mgv27")
-reward = SubResource("Resource_oq1se")
+reward = SubResource("Resource_y7u04")
 bg_color = Color(0.355314, 0.355314, 0.355314, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 10.0
 
-[sub_resource type="Resource" id="Resource_mlf5m"]
+[sub_resource type="Resource" id="Resource_n4csn"]
 resource_local_to_scene = true
 script = ExtResource("5_3shp6")
 id = 2
@@ -95,16 +95,16 @@ name = "Aidonium"
 icon = ExtResource("7_u0wca")
 max_stack_size = 50
 
-[sub_resource type="Resource" id="Resource_cid5g"]
+[sub_resource type="Resource" id="Resource_qsd5i"]
 resource_local_to_scene = true
 script = ExtResource("3_s4lib")
-item = SubResource("Resource_mlf5m")
+item = SubResource("Resource_n4csn")
 count = 4
 
-[sub_resource type="Resource" id="Resource_rvi2g"]
+[sub_resource type="Resource" id="Resource_jf7qd"]
 resource_local_to_scene = true
 script = ExtResource("6_oyb1g")
-item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_cid5g")])
+item_list = Array[ExtResource("3_s4lib")]([SubResource("Resource_qsd5i")])
 
 [sub_resource type="Resource" id="Resource_rf570"]
 resource_local_to_scene = true
@@ -112,7 +112,7 @@ script = ExtResource("7_wk3tq")
 id = 3
 name = "Aidonium Crystal"
 icon = ExtResource("10_gw7eq")
-reward = SubResource("Resource_rvi2g")
+reward = SubResource("Resource_jf7qd")
 bg_color = Color(0.219626, 0.445708, 1, 1)
 activity_verb = "Mine"
 activity_duration_seconds = 15.0

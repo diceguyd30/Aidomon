@@ -2,7 +2,7 @@
 class_name Collection
 extends Control
 
-@export var collection: Array[SpeciesData]:
+@export var collection: Array[Creature]:
 	set(value):
 		collection = value
 		_update_collection()
@@ -20,7 +20,7 @@ func _update_collection() -> void:
 		return
 	UTIL.clear_children(collection_grid)
 	collection.map(
-		func(x: SpeciesData) -> void:
+		func(x: Creature) -> void:
 			var slot: CreatureInvUi = CREATURE_INV_UI.instantiate().with_data(x)
 			collection_grid.add_child(slot)
 	)
