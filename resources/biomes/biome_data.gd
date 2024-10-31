@@ -6,4 +6,4 @@ extends Resource
 @export var background: Texture
 @export var environment_items: Array[EnvironmentItemData] = []
 # Map of Creature to probability of the creature's appearance in the wilderness.
-@export var native_creatures: Dictionary[Creature, float] = {}
+@export var native_creatures: Dictionary[SpeciesData, float] = {}

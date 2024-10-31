@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/collection/collection.gd" id="1_sh6js"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="2_5k0oj"]
-[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="2_i06pl"]
+[ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="2_i06pl"]
 [ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="3_rahtl"]
 [ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="4_2e8wl"]
 

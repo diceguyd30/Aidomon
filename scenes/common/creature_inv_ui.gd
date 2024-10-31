@@ -2,14 +2,14 @@
 class_name CreatureInvUi
 extends Control
 
-@export var creature: Creature:
+@export var creature: SpeciesData:
 	set(value):
 		creature = value
 		_update()
 
 @onready var inventory_icon: TextureRect = %InventoryIcon
 
-func with_data(creature_: Creature) -> CreatureInvUi:
+func with_data(creature_: SpeciesData) -> CreatureInvUi:
 	self.creature = creature_
 	return self
 

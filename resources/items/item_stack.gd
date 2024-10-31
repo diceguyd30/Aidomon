@@ -1,7 +1,7 @@
 class_name ItemStack
 extends Resource
 
-@export var item: Item = null
+@export var item: ItemData = null
 @export var count: int = 0
 
 func serialize() -> Dictionary:

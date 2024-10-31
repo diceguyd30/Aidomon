@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="2_x4x11"]
 [ext_resource type="Resource" uid="uid://crc5mqk3kesya" path="res://resources/items/environment/rock.tres" id="3_ymd3m"]
 [ext_resource type="Resource" uid="uid://d0lasf3n7g662" path="res://resources/items/environment/aidonium_crystal.tres" id="4_n2383"]
-[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="6_afrcu"]
+[ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="6_afrcu"]
 [ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="7_xvtjo"]
 [ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="8_6vch6"]
 

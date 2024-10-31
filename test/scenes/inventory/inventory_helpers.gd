@@ -11,7 +11,7 @@ static func build_test_item_stack(
 		max_stack_size_: int = DEFAULT_MAX_STACK_SIZE, 
 		count_: int = DEFAULT_STACK_COUNT) -> ItemStack:
 	var item_stack: ItemStack = ItemStack.new()
-	var item: Item = Item.new()
+	var item: ItemData = ItemData.new()
 	item.id = id_
 	item.name = DEFAULT_ITEM_NAME % id_
 	item.max_stack_size = max_stack_size_
