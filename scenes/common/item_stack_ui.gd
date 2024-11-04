@@ -2,6 +2,8 @@
 class_name ItemStackUI
 extends Control
 
+const Util = preload("res://scripts/util.gd")
+
 @export var item_stack: ItemStack:
 	set(value):
 		item_stack = value
@@ -28,7 +30,7 @@ func _ready() -> void:
 		_update_color()
 	
 func _update() -> void:
-	if inventory_icon == null or item_count_label == null:
+	if [inventory_icon, item_count_label].any(Util.are_null):
 		return
 	var item_count: int = self.item_stack.count
 	if self.item_stack.item == null:

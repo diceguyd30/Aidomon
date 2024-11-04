@@ -10,9 +10,7 @@ func serialize() -> Dictionary:
 		"count": count
 	}
 
-static func deserialize(data: Dictionary) -> ItemStack:
-	var new_stack := ItemStack.new()
+func deserialize(data: Dictionary) -> void:
 	if data.item_id != -1:
-		new_stack.item = Game.CODEX.item_list[data.item_id].duplicate()
-	new_stack.count = data.count
-	return new_stack
+		self.item = Game.CODEX.item_list[data.item_id].duplicate()
+	self.count = data.count

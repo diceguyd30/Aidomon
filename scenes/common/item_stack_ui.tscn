@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_f685j"]
 [ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="4_hwkm2"]
 
-[sub_resource type="Resource" id="Resource_8o5yx"]
+[sub_resource type="Resource" id="Resource_tvoel"]
 script = ExtResource("3_f685j")
 item = ExtResource("2_vadxj")
 count = 15
@@ -47,7 +47,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 mouse_filter = 1
 script = ExtResource("1_svrjx")
-item_stack = SubResource("Resource_8o5yx")
+item_stack = SubResource("Resource_tvoel")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

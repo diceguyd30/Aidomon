@@ -204,5 +204,8 @@ func serialize() -> Array:
 	return inventory_items.map(func(x: ItemStack) -> Dictionary: return x.serialize())
 
 func deserialize(data: Array) -> void:
-	inventory_items.assign(data.map(func(x: Dictionary) -> ItemStack: return ItemStack.deserialize(x)))
+	inventory_items.assign(data.map(func(x: Dictionary) -> ItemStack:
+			var item_stack := ItemStack.new()
+			item_stack.deserialize(x)
+			return item_stack))
 	_initialize_metadata_map()
