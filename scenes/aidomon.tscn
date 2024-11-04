@@ -119,6 +119,8 @@ native_creatures = Dictionary[ExtResource("19_vfnwy"), float]({
 ExtResource("20_ibus2"): 0.3,
 ExtResource("21_pjv3w"): 0.7
 })
+min_creature_level = 0
+max_creature_level = 0
 
 [node name="Aidomon" type="Control"]
 clip_contents = true

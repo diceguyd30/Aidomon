@@ -21,3 +21,5 @@ native_creatures = Dictionary[ExtResource("6_afrcu"), float]({
 ExtResource("8_6vch6"): 0.3,
 ExtResource("7_xvtjo"): 0.7
 })
+min_creature_level = 1
+max_creature_level = 15
