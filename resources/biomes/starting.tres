@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BiomeData" load_steps=10 format=3 uid="uid://cvirmlwpd31x"]
+[gd_resource type="Resource" script_class="BiomeData" load_steps=9 format=3 uid="uid://cvirmlwpd31x"]
 
 [ext_resource type="Script" path="res://resources/biomes/biome_data.gd" id="1_30yfx"]
 [ext_resource type="Texture2D" uid="uid://c248j2r1y0fpv" path="res://assets/images/backgrounds/meadow.png" id="1_griyq"]
@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://crc5mqk3kesya" path="res://resources/items/environment/rock.tres" id="3_ymd3m"]
 [ext_resource type="Resource" uid="uid://d0lasf3n7g662" path="res://resources/items/environment/aidonium_crystal.tres" id="4_n2383"]
 [ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="6_afrcu"]
-[ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="7_xvtjo"]
 [ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="8_6vch6"]
 
 [resource]
@@ -17,9 +16,8 @@ id = 1
 name = "Starting"
 background = ExtResource("1_griyq")
 environment_items = Array[ExtResource("2_py8ub")]([ExtResource("2_x4x11"), ExtResource("3_ymd3m"), ExtResource("4_n2383")])
-native_creatures = Dictionary[ExtResource("6_afrcu"), float]({
-ExtResource("8_6vch6"): 0.3,
-ExtResource("7_xvtjo"): 0.7
+native_species = Dictionary[ExtResource("6_afrcu"), float]({
+ExtResource("8_6vch6"): 0.3
 })
 min_creature_level = 1
 max_creature_level = 15

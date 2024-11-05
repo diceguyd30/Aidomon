@@ -5,3 +5,4 @@ extends Resource
 @export var attack: int
 @export var defense: int
 @export var speed: int
+@export var affinity: int

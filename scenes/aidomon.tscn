@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c2vm0dawqcebo"]
+[gd_scene load_steps=34 format=3 uid="uid://c2vm0dawqcebo"]
 
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vs2xj"]
 [ext_resource type="Script" path="res://scenes/aidomon.gd" id="2_3faos"]
@@ -18,8 +18,6 @@
 [ext_resource type="Script" path="res://resources/items/item_data.gd" id="16_pqu4b"]
 [ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="17_wd7b5"]
 [ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="19_vfnwy"]
-[ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="20_ibus2"]
-[ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="21_pjv3w"]
 [ext_resource type="Script" path="res://resources/biomes/biome_data.gd" id="22_ia2sk"]
 
 [sub_resource type="Theme" id="Theme_8tpyg"]
@@ -115,10 +113,7 @@ id = 1
 name = "Starting"
 background = ExtResource("8_sn2ra")
 environment_items = Array[ExtResource("9_5u1ur")]([SubResource("Resource_kxn5k"), SubResource("Resource_vlpix"), SubResource("Resource_k5cyf")])
-native_creatures = Dictionary[ExtResource("19_vfnwy"), float]({
-ExtResource("20_ibus2"): 0.3,
-ExtResource("21_pjv3w"): 0.7
-})
+native_species = Dictionary[ExtResource("19_vfnwy"), float]({})
 min_creature_level = 0
 max_creature_level = 0
 
