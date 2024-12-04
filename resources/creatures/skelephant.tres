@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SpeciesData" load_steps=5 format=3 uid="uid://drjqnyyw8d4lt"]
+
+[ext_resource type="Texture2D" uid="uid://gdhve1dmsaiu" path="res://assets/images/creatures/Skelephant Draft.png" id="1_j71oq"]
+[ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="1_k1uax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1lir"]
+atlas = ExtResource("1_j71oq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kmvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1lir")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_k1uax")
+id = 0
+name = ""
+idle_animation = SubResource("SpriteFrames_4kmvm")
