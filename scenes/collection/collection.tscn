@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://y21xpn2k07td"]
 
-[ext_resource type="Script" path="res://scenes/collection/collection.gd" id="1_sh6js"]
+[ext_resource type="Script" uid="uid://c181k6wh17s86" path="res://scenes/collection/collection.gd" id="1_sh6js"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="2_5k0oj"]
-[ext_resource type="Script" path="res://resources/creatures/creature.gd" id="2_70pp8"]
+[ext_resource type="Script" uid="uid://bphg8mj854qp5" path="res://resources/creatures/creature.gd" id="2_70pp8"]
 [ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="3_rahtl"]
 [ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="4_2e8wl"]
-[ext_resource type="Script" path="res://resources/creatures/creature_stats.gd" id="4_jvhek"]
+[ext_resource type="Script" uid="uid://cxmu64ha30icb" path="res://resources/creatures/creature_stats.gd" id="4_jvhek"]
 
 [sub_resource type="Resource" id="Resource_5maq4"]
 script = ExtResource("4_jvhek")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgw4tl8gxnr3t"]
 
-[ext_resource type="Script" path="res://scenes/craftbench/crafting_menu_item.gd" id="1_h7hqn"]
+[ext_resource type="Script" uid="uid://bd8lx0qince1h" path="res://scenes/craftbench/crafting_menu_item.gd" id="1_h7hqn"]
 [ext_resource type="Resource" uid="uid://cnhwwpoxylh52" path="res://resources/recipes/capture_disc_recipe.tres" id="2_a3tob"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="2_duph1"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="3_8bp6u"]

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BiomeData" load_steps=9 format=3 uid="uid://cvirmlwpd31x"]
 
-[ext_resource type="Script" path="res://resources/biomes/biome_data.gd" id="1_30yfx"]
+[ext_resource type="Script" uid="uid://c4f1ujywi6idt" path="res://resources/biomes/biome_data.gd" id="1_30yfx"]
 [ext_resource type="Texture2D" uid="uid://c248j2r1y0fpv" path="res://assets/images/backgrounds/meadow.png" id="1_griyq"]
-[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="2_py8ub"]
+[ext_resource type="Script" uid="uid://be55tu2q8jwx" path="res://resources/items/environment/environment_item_data.gd" id="2_py8ub"]
 [ext_resource type="Resource" uid="uid://dubyfvmqtm5uq" path="res://resources/items/environment/tree.tres" id="2_x4x11"]
 [ext_resource type="Resource" uid="uid://crc5mqk3kesya" path="res://resources/items/environment/rock.tres" id="3_ymd3m"]
 [ext_resource type="Resource" uid="uid://d0lasf3n7g662" path="res://resources/items/environment/aidonium_crystal.tres" id="4_n2383"]
-[ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="6_afrcu"]
+[ext_resource type="Script" uid="uid://bq56bw01lpace" path="res://resources/creatures/species_data.gd" id="6_afrcu"]
 [ext_resource type="Resource" uid="uid://dv618gs2ckm2" path="res://resources/creatures/nevhart.tres" id="8_6vch6"]
 
 [resource]

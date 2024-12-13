@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SpeciesData" load_steps=13 format=3 uid="uid://btlhb22lvjifr"]
 
 [ext_resource type="Texture2D" uid="uid://cr7gx6fex4eay" path="res://assets/images/creatures/Edma-Sheet.png" id="1_cgmgk"]
-[ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="1_ghdnx"]
+[ext_resource type="Script" uid="uid://bq56bw01lpace" path="res://resources/creatures/species_data.gd" id="1_ghdnx"]
 [ext_resource type="Texture2D" uid="uid://c5uq7fwxamgey" path="res://assets/images/creatures/Edma.png" id="1_yecn6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_618uh"]

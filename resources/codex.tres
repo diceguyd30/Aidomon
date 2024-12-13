@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="CodexDefinition" load_steps=11 format=3 uid="uid://dcmwk60inmd14"]
+[gd_resource type="Resource" script_class="CodexDefinition" load_steps=12 format=3 uid="uid://dcmwk60inmd14"]
 
-[ext_resource type="Script" path="res://resources/biomes/biome_data.gd" id="1_iumyj"]
-[ext_resource type="Script" path="res://resources/items/item_data.gd" id="1_t8qty"]
+[ext_resource type="Script" uid="uid://c4f1ujywi6idt" path="res://resources/biomes/biome_data.gd" id="1_iumyj"]
+[ext_resource type="Script" uid="uid://bbhotpm641idn" path="res://resources/items/item_data.gd" id="1_t8qty"]
 [ext_resource type="Resource" uid="uid://cvirmlwpd31x" path="res://resources/biomes/starting.tres" id="2_4rhqo"]
 [ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="2_cj08f"]
-[ext_resource type="Script" path="res://resources/codex_definition.gd" id="2_o4w1a"]
+[ext_resource type="Script" uid="uid://cb7xtxsqeo6wg" path="res://resources/codex_definition.gd" id="2_o4w1a"]
 [ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="3_ina27"]
+[ext_resource type="Script" uid="uid://bq56bw01lpace" path="res://resources/creatures/species_data.gd" id="3_ku25s"]
 [ext_resource type="Resource" uid="uid://bhn4cw38wj8m3" path="res://resources/items/foragables/aidonium.tres" id="4_g8sjm"]
 [ext_resource type="Resource" uid="uid://btlhb22lvjifr" path="res://resources/creatures/edma.tres" id="4_ltrnd"]
 [ext_resource type="Resource" uid="uid://bljj1kb67qkhk" path="res://resources/items/craftables/capture_disc.tres" id="5_0dv0r"]
@@ -15,4 +16,4 @@
 script = ExtResource("2_o4w1a")
 item_list = Array[ExtResource("1_t8qty")]([ExtResource("2_cj08f"), ExtResource("3_ina27"), ExtResource("4_g8sjm"), ExtResource("5_0dv0r")])
 biome_list = Array[ExtResource("1_iumyj")]([ExtResource("2_4rhqo")])
-creature_list = [ExtResource("4_ltrnd"), ExtResource("5_h5yui")]
+creature_list = Array[ExtResource("3_ku25s")]([ExtResource("4_ltrnd"), ExtResource("5_h5yui")])

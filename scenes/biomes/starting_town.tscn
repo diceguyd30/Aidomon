@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b5yrx5jgkvg7u"]
 
 [ext_resource type="Texture2D" uid="uid://md7vheea3coi" path="res://assets/images/backgrounds/starting_town.png" id="1_0q5ji"]
-[ext_resource type="Script" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
+[ext_resource type="Script" uid="uid://6qrmw36yn00y" path="res://scenes/biomes/starting_town.gd" id="1_srsep"]
 [ext_resource type="Resource" uid="uid://cvirmlwpd31x" path="res://resources/biomes/starting.tres" id="2_uq1xk"]
 [ext_resource type="Texture2D" uid="uid://duh6mt145frff" path="res://assets/images/buttons/wilderness/wilderness_default.png" id="5_d2vnt"]
 [ext_resource type="PackedScene" uid="uid://b0eiradaxlki3" path="res://scenes/wilderness/wilderness.tscn" id="5_dwx5a"]

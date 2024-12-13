@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://bhnc7gpi2p7d2"]
 
-[ext_resource type="Script" path="res://scenes/wilderness/town_location.gd" id="1_8hoe4"]
-[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="2_g2ag5"]
+[ext_resource type="Script" uid="uid://dr1ng2hc4o28t" path="res://scenes/wilderness/town_location.gd" id="1_8hoe4"]
+[ext_resource type="Script" uid="uid://jyhhplbrtqlq" path="res://resources/items/item_stack.gd" id="2_g2ag5"]
 [ext_resource type="Texture2D" uid="uid://dmigp2q3u12nn" path="res://assets/images/buttons/craftbench/craftbench.png" id="3_3ci7w"]
 [ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="3_hii4c"]
-[ext_resource type="Script" path="res://resources/items/item_data.gd" id="4_aa85i"]
+[ext_resource type="Script" uid="uid://bbhotpm641idn" path="res://resources/items/item_data.gd" id="4_aa85i"]
 [ext_resource type="Texture2D" uid="uid://q04t8dy8bve3" path="res://assets/images/buttons/craftbench/craftbench_hover.png" id="4_bjm34"]
-[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="5_b7ily"]
+[ext_resource type="Script" uid="uid://dlkaetg4abdey" path="res://resources/items/item_bundle.gd" id="5_b7ily"]
 [ext_resource type="Texture2D" uid="uid://d18q3ximanf4j" path="res://assets/images/buttons/craftbench/craftbench_selected.png" id="5_ihm0x"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="6_lud8l"]
-[ext_resource type="Script" path="res://resources/unlocks/unlock.gd" id="6_yvoxf"]
+[ext_resource type="Script" uid="uid://dbuvomfardgdu" path="res://resources/unlocks/unlock.gd" id="6_yvoxf"]
 
 [sub_resource type="Resource" id="Resource_1y6fv"]
 script = ExtResource("4_aa85i")

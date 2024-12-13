@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://beielis1al8p3"]
 
-[ext_resource type="Script" path="res://scenes/common/creature_inv_ui.gd" id="1_nhrmt"]
+[ext_resource type="Script" uid="uid://4t6ih0xmkyir" path="res://scenes/common/creature_inv_ui.gd" id="1_nhrmt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn7ge"]
 bg_color = Color(0.207843, 0.207843, 0.207843, 0)

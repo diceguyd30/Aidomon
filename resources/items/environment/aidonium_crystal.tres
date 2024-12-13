@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="EnvironmentItemData" load_steps=8 format=3 uid="uid://d0lasf3n7g662"]
 
-[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="1_i6s00"]
+[ext_resource type="Script" uid="uid://be55tu2q8jwx" path="res://resources/items/environment/environment_item_data.gd" id="1_i6s00"]
 [ext_resource type="Texture2D" uid="uid://cys8d84emkk23" path="res://assets/images/items/environment/aidonium_crystal.png" id="1_rxgei"]
 [ext_resource type="Resource" uid="uid://bhn4cw38wj8m3" path="res://resources/items/foragables/aidonium.tres" id="2_2h41t"]
-[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="3_ionpl"]
-[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_m1ahn"]
+[ext_resource type="Script" uid="uid://jyhhplbrtqlq" path="res://resources/items/item_stack.gd" id="3_ionpl"]
+[ext_resource type="Script" uid="uid://dlkaetg4abdey" path="res://resources/items/item_bundle.gd" id="4_m1ahn"]
 
 [sub_resource type="Resource" id="Resource_napq1"]
 resource_local_to_scene = true
@@ -15,7 +15,7 @@ count = 4
 [sub_resource type="Resource" id="Resource_gt53l"]
 resource_local_to_scene = true
 script = ExtResource("4_m1ahn")
-item_list = [SubResource("Resource_napq1")]
+item_list = Array[ExtResource("3_ionpl")]([SubResource("Resource_napq1")])
 
 [resource]
 resource_local_to_scene = true

@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://dbmv5pxijm5da"]
 
-[ext_resource type="Script" path="res://scenes/common/cost.gd" id="1_yvb4b"]
-[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="2_ojx42"]
+[ext_resource type="Script" uid="uid://owlgjru3mdsc" path="res://scenes/common/cost.gd" id="1_yvb4b"]
+[ext_resource type="Script" uid="uid://jyhhplbrtqlq" path="res://resources/items/item_stack.gd" id="2_ojx42"]
 [ext_resource type="LabelSettings" uid="uid://tlt8lh7am57b" path="res://assets/fonts/large_pixel_text.tres" id="3_5yl78"]
 [ext_resource type="Resource" uid="uid://d4khwmi83krv2" path="res://resources/items/foragables/wood.tres" id="3_374ul"]
-[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_detj8"]
+[ext_resource type="Script" uid="uid://dlkaetg4abdey" path="res://resources/items/item_bundle.gd" id="4_detj8"]
 [ext_resource type="LabelSettings" uid="uid://cxmfmenswhmkb" path="res://assets/fonts/pixel_text.tres" id="4_obyij"]
-[ext_resource type="Script" path="res://resources/unlocks/unlock.gd" id="5_mlv3d"]
+[ext_resource type="Script" uid="uid://dbuvomfardgdu" path="res://resources/unlocks/unlock.gd" id="5_mlv3d"]
 
 [sub_resource type="Resource" id="Resource_5iijd"]
 script = ExtResource("2_ojx42")

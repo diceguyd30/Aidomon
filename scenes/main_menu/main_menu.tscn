@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_gjl0p"]
 [ext_resource type="FontFile" uid="uid://dmctje0ufcr10" path="res://assets/fonts/megahard-small-font.ttf" id="2_fnb1t"]
-[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="2_nj2hl"]
+[ext_resource type="Script" uid="uid://bedkpqhd4ioaa" path="res://scenes/main_menu/main_menu.gd" id="2_nj2hl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bjxxp"]
 font = ExtResource("2_fnb1t")

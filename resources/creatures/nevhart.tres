@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SpeciesData" load_steps=16 format=3 uid="uid://dv618gs2ckm2"]
 
-[ext_resource type="Script" path="res://resources/creatures/species_data.gd" id="1_apjfb"]
+[ext_resource type="Script" uid="uid://bq56bw01lpace" path="res://resources/creatures/species_data.gd" id="1_apjfb"]
 [ext_resource type="Texture2D" uid="uid://ctokthmj5rhui" path="res://assets/images/creatures/Nevhart.png" id="1_jptxl"]
 [ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_t6x0a"]
 

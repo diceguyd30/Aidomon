@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d4khwmi83krv2"]
 
 [ext_resource type="Texture2D" uid="uid://doiclqp8atdyy" path="res://assets/images/items/foragables/wood.png" id="1_sfjth"]
-[ext_resource type="Script" path="res://resources/items/item_data.gd" id="2_yhqio"]
+[ext_resource type="Script" uid="uid://bbhotpm641idn" path="res://resources/items/item_data.gd" id="2_yhqio"]
 
 [resource]
 resource_local_to_scene = true

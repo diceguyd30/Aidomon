@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://td8q2wavc8qh"]
 
-[ext_resource type="Script" path="res://scenes/interactions/character_interactions.gd" id="1_8eb50"]
+[ext_resource type="Script" uid="uid://c7hff1y1qact5" path="res://scenes/interactions/character_interactions.gd" id="1_8eb50"]
 [ext_resource type="Theme" uid="uid://stwin42kygl6" path="res://assets/default_theme.tres" id="1_vcxre"]
 [ext_resource type="PackedScene" uid="uid://y86be0nvi05v" path="res://scenes/interactions/party.tscn" id="2_gihlk"]
 [ext_resource type="PackedScene" uid="uid://cqgnm2o6g44w1" path="res://scenes/interactions/encounters.tscn" id="2_ohtai"]

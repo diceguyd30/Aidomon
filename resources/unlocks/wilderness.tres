@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Unlock" load_steps=5 format=3 uid="uid://m3ynggnj3fl4"]
 
-[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="1_gc646"]
-[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="2_np6vu"]
-[ext_resource type="Script" path="res://resources/unlocks/unlock.gd" id="3_24ny8"]
+[ext_resource type="Script" uid="uid://jyhhplbrtqlq" path="res://resources/items/item_stack.gd" id="1_gc646"]
+[ext_resource type="Script" uid="uid://dlkaetg4abdey" path="res://resources/items/item_bundle.gd" id="2_np6vu"]
+[ext_resource type="Script" uid="uid://dbuvomfardgdu" path="res://resources/unlocks/unlock.gd" id="3_24ny8"]
 
 [sub_resource type="Resource" id="Resource_ip61n"]
 script = ExtResource("2_np6vu")

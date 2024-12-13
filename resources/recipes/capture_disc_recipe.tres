@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Recipe" load_steps=12 format=3 uid="uid://cnhwwpoxylh52"]
 
-[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="1_6q4i2"]
+[ext_resource type="Script" uid="uid://on0h4sgqtry3" path="res://resources/recipes/recipe.gd" id="1_6q4i2"]
 [ext_resource type="Resource" uid="uid://bhn4cw38wj8m3" path="res://resources/items/foragables/aidonium.tres" id="1_vlhvy"]
-[ext_resource type="Script" path="res://resources/items/item_stack.gd" id="2_0mna4"]
+[ext_resource type="Script" uid="uid://jyhhplbrtqlq" path="res://resources/items/item_stack.gd" id="2_0mna4"]
 [ext_resource type="Resource" uid="uid://b0flrrw1r5c5h" path="res://resources/items/foragables/stone.tres" id="3_jlf6j"]
-[ext_resource type="Script" path="res://resources/items/item_bundle.gd" id="4_gtc5j"]
+[ext_resource type="Script" uid="uid://dlkaetg4abdey" path="res://resources/items/item_bundle.gd" id="4_gtc5j"]
 [ext_resource type="Resource" uid="uid://bljj1kb67qkhk" path="res://resources/items/craftables/capture_disc.tres" id="5_sqw1o"]
 
 [sub_resource type="Resource" id="Resource_6dy46"]

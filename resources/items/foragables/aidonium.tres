@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bhn4cw38wj8m3"]
 
 [ext_resource type="Texture2D" uid="uid://cufhix5f7tefo" path="res://assets/images/items/foragables/aidonium.png" id="1_ad1yt"]
-[ext_resource type="Script" path="res://resources/items/item_data.gd" id="2_c3cpr"]
+[ext_resource type="Script" uid="uid://bbhotpm641idn" path="res://resources/items/item_data.gd" id="2_c3cpr"]
 
 [resource]
 resource_local_to_scene = true

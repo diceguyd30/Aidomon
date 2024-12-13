@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnvironmentItemData" load_steps=3 format=3 uid="uid://bqukdu171l7sr"]
 
-[ext_resource type="Script" path="res://resources/items/environment/environment_item_data.gd" id="1_qhfup"]
+[ext_resource type="Script" uid="uid://be55tu2q8jwx" path="res://resources/items/environment/environment_item_data.gd" id="1_qhfup"]
 [ext_resource type="Texture2D" uid="uid://g0eel3nowluc" path="res://assets/images/creatures/concealed_creature.png" id="1_y4trp"]
 
 [resource]
