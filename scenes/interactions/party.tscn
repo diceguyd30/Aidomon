@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://y86be0nvi05v"]
+[gd_scene load_steps=16 format=3 uid="uid://y86be0nvi05v"]
 
 [ext_resource type="Texture2D" uid="uid://mo8qhv5b42vj" path="res://assets/images/creatures/Triangle Man.png" id="1_0lokg"]
 [ext_resource type="Texture2D" uid="uid://cqlv50ci3sp37" path="res://assets/images/creatures/Nevhart-Sheet.png" id="2_4lipm"]
-[ext_resource type="Texture2D" uid="uid://gdhve1dmsaiu" path="res://assets/images/creatures/Skelephant Draft.png" id="2_ut5vc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jgc23"]
 animations = [{
@@ -14,10 +13,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sh0c0"]
-atlas = ExtResource("2_ut5vc")
-region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_moqxs"]
 atlas = ExtResource("2_4lipm")
@@ -67,9 +62,6 @@ region = Rect2(480, 0, 48, 48)
 resource_local_to_scene = true
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sh0c0")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_moqxs")
 }, {
